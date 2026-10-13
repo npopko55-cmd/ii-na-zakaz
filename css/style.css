@@ -1054,7 +1054,7 @@ html,body{background:#060508}
 /* 1. личный таймер у первой кнопки — только с дедлайном из бота */
 .hero-timer{display:none;align-items:center;gap:14px;vertical-align:top;margin:clamp(24px,16px + 1.8vw,38px) 0 0 12px;height:clamp(60px, 54px + 1.5vw, 76px);padding:0 22px;border-radius:12px;white-space:nowrap}
 .has-deadline .hero-timer{display:inline-flex}
-.ht-l{font:700 14px/1.15 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);max-width:120px;white-space:normal}
+.ht-l{font:700 14px/1.15 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);max-width:170px;white-space:normal}
 .hero-timer b{font:800 clamp(24px, 20px + .9vw, 32px)/1 var(--f-text);font-variant-numeric:tabular-nums;color:#fff}
 @media (max-width:1199px){
   .hero-copy>.hero-timer{order:4;margin-left:0;align-self:flex-start}
@@ -1098,11 +1098,11 @@ html,body{background:#060508}
 
 /* 3. «Кто ведёт»: доказательство — бот мини-курса и подпись */
 .proof{display:grid;grid-template-columns:310px minmax(0,1fr);gap:clamp(18px, 2vw, 32px);align-items:center;margin-top:clamp(22px, 2.4vw, 36px);max-width:680px}
-.mock--minibot{aspect-ratio:10/12.6;-webkit-mask-image:linear-gradient(180deg,#000 90%,transparent 100%);mask-image:linear-gradient(180deg,#000 90%,transparent 100%)}
+.mock.mock--minibot{aspect-ratio:10/13;-webkit-mask-image:linear-gradient(180deg,#000 90%,transparent 100%);mask-image:linear-gradient(180deg,#000 90%,transparent 100%)}
 .mock--minibot .tg-kb span{white-space:normal;line-height:1.15}
 .mock--minibot .mphone{left:5%;right:5%;bottom:-5%}
 .mock--minibot .tg-chat{gap:.28em;padding:.45em .5em .8em}
-.mock--minibot .tg-kb--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mock--minibot .tg-kb--2{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
 .proof-k{margin:0;font:700 14px/1.25 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--text-3)}
 .proof-t{margin:10px 0 0;font-size:clamp(16px, 15.4px + .2vw, 18px);line-height:1.45;color:var(--text-2)}
 .proof-t b{color:#fff}
