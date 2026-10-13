@@ -184,10 +184,24 @@
   menu && menu.addEventListener('click', function (e) { if (e.target.closest('a') || e.target.closest('.menu-close')) menuOpen(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { menuOpen(false); closeVideo(); } });
 
-  /* ---------- нижняя панель «Выбрать тариф»: после первого экрана. Кнопка менеджера видна всегда ---------- */
+  /* ---------- нижняя панель «Выбрать тариф» + менеджер: после первого экрана; прячется, пока на экране тарифы, финал
+     или другая кнопка «Выбрать…» — двух одинаковых кнопок на экране не бывает ---------- */
   var dock = $('.dock'), heroCta = $('#cta-hero');
-  if (dock && heroCta && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { es.forEach(function (e) { var on = !e.isIntersecting && e.boundingClientRect.top < 0; dock.classList.toggle('show', on); doc.classList.toggle('dock-on', on); }); }).observe(heroCta);
+  if (dock && heroCta) {
+    var watch = $$('a.btn').filter(function (a) { return !a.closest('.dock') && !a.closest('.menu') && /Выбрать|tanlash|Tarif/i.test(a.textContent) || a.id === 'cta-hero'; })
+      .concat([$('#tariffs'), $('#final')].filter(Boolean));
+    var onScreen = new Map();
+    var updDock = function () {
+      var passed = heroCta.getBoundingClientRect().bottom < 0;
+      var busy = false; onScreen.forEach(function (v) { if (v) busy = true; });
+      var on = passed && !busy;
+      dock.classList.toggle('show', on); doc.classList.toggle('dock-on', on);
+    };
+    if ('IntersectionObserver' in window) {
+      var dio = new IntersectionObserver(function (es) { es.forEach(function (e) { onScreen.set(e.target, e.isIntersecting); }); updDock(); });
+      watch.forEach(function (el) { dio.observe(el); });
+    }
+    window.addEventListener('scroll', updDock, { passive: true }); updDock();
   }
 
   /* ---------- таймер спеццены: только по дедлайну из ссылки бота (?deadline=<unix>), без перезапусков ---------- */
@@ -282,6 +296,40 @@
       });
     }, { threshold: .35 });
     $$('[data-b]').forEach(function (s) { io.observe(s); });
+  }
+
+  /* ---------- микроанимации со смыслом: один раз при появлении блока; при prefers-reduced-motion и в режиме снимка всё статично ---------- */
+  var ANIM = doc.classList.contains('anim') && 'IntersectionObserver' in window;
+  function once(el, fn, thr) {
+    if (!el) return;
+    if (!ANIM) return;
+    var io2 = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { io2.disconnect(); fn(); } }); }, { threshold: thr || .35 });
+    io2.observe(el);
+  }
+  if (ANIM) {
+    // блок 1: переписка собирается по шагам — вопрос клиента, ответ с ценой, «Договорились»
+    $$('.screen .chat, .chat-float').forEach(function (c) {
+      once(c, function () { $$('.msg', c).forEach(function (m, i) { setTimeout(function () { m.classList.add('on'); }, 250 + i * 900); }); }, .2);
+    });
+    // блок 3: «49%» считает от нуля (слова из словаря не трогаем: меняем только число, в конце возвращаем исходный текст)
+    var num = $('.bignum');
+    if (num) {
+      var orig = num.innerHTML, m = num.textContent.match(/(\d+)/), target = m ? +m[1] : 0;
+      if (target) {
+        num.textContent = num.textContent.replace(/\d+/, '0');
+        once(num, function () {
+          var t0 = performance.now(), dur = 1200;
+          (function step(t) { var k = Math.min(1, (t - t0) / dur), v = Math.round(target * (1 - Math.pow(1 - k, 3)));
+            num.textContent = orig.replace(/<[^>]+>/g, '').replace(/\d+/, v); if (k < 1) requestAnimationFrame(step); else num.innerHTML = orig; })(t0);
+        }, .5);
+      }
+    }
+    // блок 4: «Сайт готов 100%» обгоняет «3%»
+    var era = $('.era-scene'); once(era, function () { era.classList.add('on'); }, .4);
+    // блок 6: лестница к $1000 растёт по месяцам
+    var lad = $('.lad'); once(lad, function () { lad.classList.add('on'); }, .5);
+    // блок 10: метки маршрута загораются по очереди, «Первый заказ» последним
+    var route = $('.route'); once(route, function () { route.classList.add('on'); }, .3);
   }
 
   /* ---------- старт ---------- */
