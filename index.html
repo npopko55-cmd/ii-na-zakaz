@@ -29,6 +29,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/mock.css">
+<style>/* порядок блоков в режиме «из бота» — собирает tools/build.py */.from-bot .page>[data-b="1"]{order:1}.from-bot .page>[data-b="1.5"]{order:2}.from-bot .page>[data-b="19"]{order:3}.from-bot .page>[data-b="20"]{order:4}.from-bot .page>[data-b="8"]{order:5}.from-bot .page>[data-b="21"]{order:6}.from-bot .page>[data-b="9"]{order:7}.from-bot .page>[data-b="11"]{order:8}.from-bot .page>[data-b="10"]{order:9}.from-bot .page>[data-b="12"]{order:10}.from-bot .page>[data-b="7"]{order:11}.from-bot .page>[data-b="13"]{order:12}.from-bot .page>[data-b="6"]{order:13}.from-bot .page>[data-b="15"]{order:14}.from-bot .page>[data-b="16"]{order:15}.from-bot .page>[data-b="17"]{order:16}.from-bot .page>[data-b="18"]{order:17}</style>
 </head>
 <body>
 <a class="skip" href="#tariffs" data-i18n="nav.skip">К тарифам</a>
@@ -57,11 +58,15 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="d1 worn">
-          <span class="line a" data-i18n="b1.h1a">Освой онлайн-профессию</span>
-          <span class="line b pink" data-i18n="b1.h1b">AI-специалиста</span>
+          <span class="line a only-cold" data-i18n="b1.h1a">Освой онлайн-профессию</span>
+          <span class="line b pink only-cold" data-i18n="b1.h1b">AI-специалиста</span>
+          <span class="line a only-bot" data-i18n="b1.bh1a">Ты уже собрал первый сайт.</span>
+          <span class="line b pink only-bot" data-i18n="b1.bh1b">Теперь&nbsp;— первый заказ</span>
         </h1>
-        <p class="lead" data-i18n="b1.lead">и&nbsp;выйди на&nbsp;доход <b class="nobr">$1000 в&nbsp;месяц</b>&nbsp;— <span class="br">даже без&nbsp;знаний программирования</span></p>
-        <p class="hint"><a class="hint-pill" href="#calc" data-i18n="b1.hint">$1000 = 3⁠–⁠4&nbsp;сайта по&nbsp;$300</a><span class="hint-note" data-i18n="b1.hint_note">это расчёт, а&nbsp;не&nbsp;обещание дохода</span></p>
+        <p class="lead only-cold" data-i18n="b1.lead">и&nbsp;выйди на&nbsp;доход <b class="nobr">$1000 в&nbsp;месяц</b>&nbsp;— <span class="br">даже без&nbsp;знаний программирования</span></p>
+        <p class="lead only-bot" data-i18n="b1.blead">Курс «Первый заказ на&nbsp;ИИ»: за&nbsp;30&nbsp;дней от&nbsp;первого сайта до&nbsp;первого заказа с&nbsp;предоплатой.</p>
+        <p class="hint only-cold"><a class="hint-pill" href="#calc" data-i18n="b1.hint">$1000 = 3⁠–⁠4&nbsp;сайта по&nbsp;$300</a></p>
+        <p class="course only-cold" data-i18n="b1.course"><b>Курс «Первый заказ на&nbsp;ИИ»:</b> за&nbsp;30&nbsp;дней от&nbsp;первого сайта до&nbsp;первого заказа</p>
 
         <div class="hero-scene" aria-hidden="false">
           <div class="glow hero-glow" aria-hidden="true"></div>
@@ -84,7 +89,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 
         <a class="btn" id="cta-hero" data-track="cta" data-place="hero" href="#tariffs">
           <span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span>
-          <span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span>
+          <span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span>
         </a>
         <p class="hero-timer gl"><span class="ht-l" data-i18n="b1.timer_l">Спеццена действует ещё</span> <b data-timer>—</b></p>
 
@@ -104,17 +109,18 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   <button class="menu-close" type="button" aria-label="Закрыть" data-i18n-aria-label="ui.close">×</button>
   <div class="lang lang--menu" hidden role="group" aria-label="Язык"><button type="button" data-lang="ru" aria-pressed="true">RU</button><button type="button" data-lang="uz" aria-pressed="false">UZ</button></div>
   <nav>
-    <a href="#skills" data-i18n="nav.skills">Услуги</a>
+    <a href="#kit" data-i18n="nav.kit">Что внутри</a>
+    <a href="#mentor" data-i18n="nav.mentor">Кто за&nbsp;курсом</a>
     <a href="#program" data-i18n="nav.program">Программа</a>
     <a href="#tariffs" data-i18n="nav.tariffs">Тарифы</a>
     <a href="#pay" data-i18n="nav.pay">Оплата</a>
     <a href="#faq" data-i18n="nav.faq">Вопросы</a>
   </nav>
-  <a class="btn btn--block" href="#tariffs"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span></a>
+  <a class="btn btn--block" href="#tariffs"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
 </div>
 
 <!-- ============ 1а. МИССИЯ ПРОЙДЕНА — только для тех, кто пришёл из бота (?deadline / ?ref / ?uid); остальным блок скрыт ============ -->
-<section class="sec s-black mission" id="mission" data-b="1.5" style="--prev:#0B090D">
+<section class="sec s-black mission only-bot" id="mission" data-b="1.5" style="--pb:#0B090D">
   <div class="surf" aria-hidden="true">
     <div class="glows">
     <div class="glow" style="left:50%;top:18%;width:min(900px,100vw);height:70%;transform:translateX(-50%);--a:.12"></div>
@@ -123,19 +129,20 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   <div class="wrap mission-in">
     <p class="mission-kick" data-i18n="b1a.kick">Мини-курс «ИИ на&nbsp;заказ»</p>
     <h2 class="h2 h2--xl worn mission-h"><span class="line" data-i18n="b1a.h2a">Миссия</span><span class="line pink" data-i18n="b1a.h2b">пройдена</span></h2>
-    <p class="lead mission-lead" data-i18n="b1a.lead">Ты уже собрал сайт для&nbsp;настоящей компании. Именно за&nbsp;такую работу бизнес и&nbsp;платит. Впереди 30&nbsp;дней курса и&nbsp;первые заказы.</p>
+    <p class="lead mission-lead" data-i18n="b1a.lead">Уроки пройдены, сайт для&nbsp;настоящей компании собран. Именно за&nbsp;такую работу бизнес и&nbsp;платит.</p>
     <ol class="track" role="list">
       <li class="tr done"><span class="tr-dot gl"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="b1a.s1">Уроки 1⁠–⁠3</b><span data-i18n="b1a.s1d">Профессия, 5&nbsp;услуг и&nbsp;цены</span></div></li>
       <li class="tr done"><span class="tr-dot gl"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="b1a.s2">Практика</b><span data-i18n="b1a.s2d">Сайт для&nbsp;настоящей компании</span></div></li>
       <li class="tr done"><span class="tr-dot gl"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="b1a.s3">Медали</b><span data-i18n="b1a.s3d">За&nbsp;старт, уроки и&nbsp;задания</span></div></li>
       <li class="tr next"><span class="tr-dot"><i></i></span><div><b data-i18n="b1a.s4">Курс · 30&nbsp;дней</b><span data-i18n="b1a.s4d">Услуги, портфолио и&nbsp;первые заказы</span></div></li>
     </ol>
-    <a class="btn" href="#tariffs" data-track="cta" data-place="mission"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span></a>
+    <div class="mission-next gl"><span class="mn-k" data-i18n="b1a.next_k">Следующая миссия</span><p class="mn-t" data-i18n="b1a.next">Освой онлайн-профессию AI-специалиста и&nbsp;выйди на&nbsp;доход $1000 в&nbsp;месяц&nbsp;— даже без&nbsp;знаний программирования</p><a class="mn-calc" href="#calc" data-i18n="b1a.next_calc">$1000 = 3⁠–⁠4 сайта по&nbsp;$300. Как это посчитано →</a></div>
+    <a class="btn" href="#tariffs" data-track="cta" data-place="mission"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
   </div>
 </section>
 
 <!-- ============ 2. УЗНАЁШЬ СЕБЯ? — фото-сцена: ночь, комната в многоэтажке, мысли-уведомления ============ -->
-<section class="sec who" id="who" data-b="2" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,18.4 L5.8,19.9 L12.1,22.2 L22.8,21.1 L33.4,21.2 L39.1,22.4 L57.0,23.4 L72.3,21.0 L89.9,17.9 L100.6,15.4 L109.1,19.4 L119.0,18.5 L125.3,16.5 L141.9,15.4 L157.8,13.2 L175.1,17.5 L193.4,15.0 L210.5,17.0 L225.7,18.5 L239.6,16.1 L257.2,18.2 L276.2,15.4 L292.8,15.6 L298.8,14.5 L304.2,14.4 L320.4,14.4 L337.6,13.4 L344.0,12.3 L350.0,10.7 L362.8,14.2 L369.3,16.9 L375.5,18.2 L381.4,18.2 L399.4,20.5 L407.4,19.1 L412.9,25.3 L427.9,25.7 L434.9,22.3 L448.5,21.6 L466.5,21.1 L484.0,23.8 L501.7,22.9 L514.0,25.2 L522.0,22.1 L536.0,22.4 L553.6,23.7 L560.9,21.1 L569.8,23.3 L586.7,19.7 L603.8,19.8 L617.2,18.7 L634.7,18.6 L645.9,17.8 L654.0,17.9 L669.3,16.8 L675.0,16.3 L685.9,14.4 L692.6,15.5 L707.3,18.5 L713.2,18.1 L724.8,14.3 L737.1,12.3 L744.9,14.4 L754.2,11.9 L761.7,9.6 L771.6,11.4 L778.1,11.6 L794.4,14.6 L804.8,16.0 L812.3,13.6 L829.1,11.2 L847.1,11.8 L861.1,12.1 L875.7,12.7 L891.6,11.1 L902.8,11.9 L914.6,14.1 L928.5,16.8 L940.5,19.2 L948.3,19.5 L961.2,19.1 L978.5,16.8 L996.6,18.5 L1003.5,17.0 L1021.4,14.1 L1030.1,17.2 L1045.9,17.6 L1062.0,20.3 L1077.1,21.5 L1090.3,22.2 L1101.6,20.1 L1117.4,24.0 L1129.0,23.9 L1139.4,23.7 L1153.9,23.2 L1172.6,23.1 L1180.0,19.9 L1192.4,16.5 L1199.9,18.1 L1206.2,16.0 L1221.3,16.5 L1227.3,14.1 L1244.6,12.6 L1253.8,12.3 L1270.3,11.6 L1282.3,12.6 L1298.7,12.5 L1312.1,14.2 L1329.1,11.9 L1338.2,9.6 L1354.8,12.1 L1365.7,12.6 L1371.6,13.7 L1378.4,11.3 L1387.9,11.7 L1405.3,9.8 L1419.1,11.4 L1430.4,10.9 L1440,8.2 L1440,40 Z'/%3E%3C/svg%3E&quot;);--prev:#100D12">
+<section class="sec who only-cold" id="who" data-b="2" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,18.4 L5.8,19.9 L12.1,22.2 L22.8,21.1 L33.4,21.2 L39.1,22.4 L57.0,23.4 L72.3,21.0 L89.9,17.9 L100.6,15.4 L109.1,19.4 L119.0,18.5 L125.3,16.5 L141.9,15.4 L157.8,13.2 L175.1,17.5 L193.4,15.0 L210.5,17.0 L225.7,18.5 L239.6,16.1 L257.2,18.2 L276.2,15.4 L292.8,15.6 L298.8,14.5 L304.2,14.4 L320.4,14.4 L337.6,13.4 L344.0,12.3 L350.0,10.7 L362.8,14.2 L369.3,16.9 L375.5,18.2 L381.4,18.2 L399.4,20.5 L407.4,19.1 L412.9,25.3 L427.9,25.7 L434.9,22.3 L448.5,21.6 L466.5,21.1 L484.0,23.8 L501.7,22.9 L514.0,25.2 L522.0,22.1 L536.0,22.4 L553.6,23.7 L560.9,21.1 L569.8,23.3 L586.7,19.7 L603.8,19.8 L617.2,18.7 L634.7,18.6 L645.9,17.8 L654.0,17.9 L669.3,16.8 L675.0,16.3 L685.9,14.4 L692.6,15.5 L707.3,18.5 L713.2,18.1 L724.8,14.3 L737.1,12.3 L744.9,14.4 L754.2,11.9 L761.7,9.6 L771.6,11.4 L778.1,11.6 L794.4,14.6 L804.8,16.0 L812.3,13.6 L829.1,11.2 L847.1,11.8 L861.1,12.1 L875.7,12.7 L891.6,11.1 L902.8,11.9 L914.6,14.1 L928.5,16.8 L940.5,19.2 L948.3,19.5 L961.2,19.1 L978.5,16.8 L996.6,18.5 L1003.5,17.0 L1021.4,14.1 L1030.1,17.2 L1045.9,17.6 L1062.0,20.3 L1077.1,21.5 L1090.3,22.2 L1101.6,20.1 L1117.4,24.0 L1129.0,23.9 L1139.4,23.7 L1153.9,23.2 L1172.6,23.1 L1180.0,19.9 L1192.4,16.5 L1199.9,18.1 L1206.2,16.0 L1221.3,16.5 L1227.3,14.1 L1244.6,12.6 L1253.8,12.3 L1270.3,11.6 L1282.3,12.6 L1298.7,12.5 L1312.1,14.2 L1329.1,11.9 L1338.2,9.6 L1354.8,12.1 L1365.7,12.6 L1371.6,13.7 L1378.4,11.3 L1387.9,11.7 L1405.3,9.8 L1419.1,11.4 L1430.4,10.9 L1440,8.2 L1440,40 Z'/%3E%3C/svg%3E&quot;);--pc:#0B090D">
   <svg class="torn" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="torn-shade" d="M0.0,18.4 L5.8,19.9 L12.1,22.2 L22.8,21.1 L33.4,21.2 L39.1,22.4 L57.0,23.4 L72.3,21.0 L89.9,17.9 L100.6,15.4 L109.1,19.4 L119.0,18.5 L125.3,16.5 L141.9,15.4 L157.8,13.2 L175.1,17.5 L193.4,15.0 L210.5,17.0 L225.7,18.5 L239.6,16.1 L257.2,18.2 L276.2,15.4 L292.8,15.6 L298.8,14.5 L304.2,14.4 L320.4,14.4 L337.6,13.4 L344.0,12.3 L350.0,10.7 L362.8,14.2 L369.3,16.9 L375.5,18.2 L381.4,18.2 L399.4,20.5 L407.4,19.1 L412.9,25.3 L427.9,25.7 L434.9,22.3 L448.5,21.6 L466.5,21.1 L484.0,23.8 L501.7,22.9 L514.0,25.2 L522.0,22.1 L536.0,22.4 L553.6,23.7 L560.9,21.1 L569.8,23.3 L586.7,19.7 L603.8,19.8 L617.2,18.7 L634.7,18.6 L645.9,17.8 L654.0,17.9 L669.3,16.8 L675.0,16.3 L685.9,14.4 L692.6,15.5 L707.3,18.5 L713.2,18.1 L724.8,14.3 L737.1,12.3 L744.9,14.4 L754.2,11.9 L761.7,9.6 L771.6,11.4 L778.1,11.6 L794.4,14.6 L804.8,16.0 L812.3,13.6 L829.1,11.2 L847.1,11.8 L861.1,12.1 L875.7,12.7 L891.6,11.1 L902.8,11.9 L914.6,14.1 L928.5,16.8 L940.5,19.2 L948.3,19.5 L961.2,19.1 L978.5,16.8 L996.6,18.5 L1003.5,17.0 L1021.4,14.1 L1030.1,17.2 L1045.9,17.6 L1062.0,20.3 L1077.1,21.5 L1090.3,22.2 L1101.6,20.1 L1117.4,24.0 L1129.0,23.9 L1139.4,23.7 L1153.9,23.2 L1172.6,23.1 L1180.0,19.9 L1192.4,16.5 L1199.9,18.1 L1206.2,16.0 L1221.3,16.5 L1227.3,14.1 L1244.6,12.6 L1253.8,12.3 L1270.3,11.6 L1282.3,12.6 L1298.7,12.5 L1312.1,14.2 L1329.1,11.9 L1338.2,9.6 L1354.8,12.1 L1365.7,12.6 L1371.6,13.7 L1378.4,11.3 L1387.9,11.7 L1405.3,9.8 L1419.1,11.4 L1430.4,10.9 L1440,8.2"/><path class="torn-fiber" d="M0.0,18.4 L5.8,19.9 L12.1,22.2 L22.8,21.1 L33.4,21.2 L39.1,22.4 L57.0,23.4 L72.3,21.0 L89.9,17.9 L100.6,15.4 L109.1,19.4 L119.0,18.5 L125.3,16.5 L141.9,15.4 L157.8,13.2 L175.1,17.5 L193.4,15.0 L210.5,17.0 L225.7,18.5 L239.6,16.1 L257.2,18.2 L276.2,15.4 L292.8,15.6 L298.8,14.5 L304.2,14.4 L320.4,14.4 L337.6,13.4 L344.0,12.3 L350.0,10.7 L362.8,14.2 L369.3,16.9 L375.5,18.2 L381.4,18.2 L399.4,20.5 L407.4,19.1 L412.9,25.3 L427.9,25.7 L434.9,22.3 L448.5,21.6 L466.5,21.1 L484.0,23.8 L501.7,22.9 L514.0,25.2 L522.0,22.1 L536.0,22.4 L553.6,23.7 L560.9,21.1 L569.8,23.3 L586.7,19.7 L603.8,19.8 L617.2,18.7 L634.7,18.6 L645.9,17.8 L654.0,17.9 L669.3,16.8 L675.0,16.3 L685.9,14.4 L692.6,15.5 L707.3,18.5 L713.2,18.1 L724.8,14.3 L737.1,12.3 L744.9,14.4 L754.2,11.9 L761.7,9.6 L771.6,11.4 L778.1,11.6 L794.4,14.6 L804.8,16.0 L812.3,13.6 L829.1,11.2 L847.1,11.8 L861.1,12.1 L875.7,12.7 L891.6,11.1 L902.8,11.9 L914.6,14.1 L928.5,16.8 L940.5,19.2 L948.3,19.5 L961.2,19.1 L978.5,16.8 L996.6,18.5 L1003.5,17.0 L1021.4,14.1 L1030.1,17.2 L1045.9,17.6 L1062.0,20.3 L1077.1,21.5 L1090.3,22.2 L1101.6,20.1 L1117.4,24.0 L1129.0,23.9 L1139.4,23.7 L1153.9,23.2 L1172.6,23.1 L1180.0,19.9 L1192.4,16.5 L1199.9,18.1 L1206.2,16.0 L1221.3,16.5 L1227.3,14.1 L1244.6,12.6 L1253.8,12.3 L1270.3,11.6 L1282.3,12.6 L1298.7,12.5 L1312.1,14.2 L1329.1,11.9 L1338.2,9.6 L1354.8,12.1 L1365.7,12.6 L1371.6,13.7 L1378.4,11.3 L1387.9,11.7 L1405.3,9.8 L1419.1,11.4 L1430.4,10.9 L1440,8.2"/></svg>
   <div class="surf who-bg" aria-hidden="true">
     <picture>
@@ -161,7 +168,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 </section>
 
 <!-- ============ 3. ЧТО ЭТО ЗА ПРОФЕССИЯ ============ -->
-<section class="sec s-black prof" id="prof" data-b="3" style="--prev:#0A080C">
+<section class="sec s-black prof only-cold" id="prof" data-b="3" style="--pc:#0A080C">
   <div class="surf tex-grid" aria-hidden="true">
     <div class="glows">
     <div class="glow" style="right:-6%;top:22%;width:64%;height:80%;--a:.13"></div>
@@ -186,7 +193,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 </section>
 
 <!-- ============ 4. НОВАЯ ЭРА ============ -->
-<section class="sec s-graphite era" id="era" data-b="4" style="--prev:#100D12">
+<section class="sec s-graphite era only-cold" id="era" data-b="4" style="--pc:#100D12">
   <div class="surf" aria-hidden="true"></div>
   <div class="wrap">
     <div class="era-copy">
@@ -220,15 +227,66 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       <p class="era-verdict" data-i18n="b4.verdict">Нейросеть делает, а&nbsp;ты ставишь задачу и&nbsp;проверяешь</p>
       <a class="btn" href="#tariffs" data-track="cta" data-place="era">
         <span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span>
-        <span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span>
+        <span class="btn-label" data-i18n="cta.learn">Научиться за&nbsp;30&nbsp;дней</span>
       </a>
       <p class="note" data-i18n="b4.note">*Цены на&nbsp;простой сайт из&nbsp;прайсов студий WebGO, Innosoft и&nbsp;MUVASAYT, сентябрь&nbsp;2026</p>
     </div>
   </div>
 </section>
 
+<!-- ============ 8. КТО СТОИТ ЗА КУРСОМ — фото-сцена его рабочего лофта; регалии Никиты Попко (канон school.host_nikita, 14.10) ============ -->
+<section class="sec s-black lead-sec" id="mentor" data-b="8" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,16.0 L10.0,17.4 L21.4,14.3 L33.0,20.6 L46.2,20.3 L60.9,21.0 L73.5,19.5 L86.3,17.0 L98.9,18.2 L104.7,17.5 L123.1,16.6 L130.9,15.0 L138.7,16.2 L151.8,17.0 L157.2,16.2 L168.4,15.3 L185.3,14.6 L199.9,12.6 L208.3,12.5 L222.1,15.8 L239.6,16.5 L252.3,17.9 L257.5,16.8 L264.7,16.0 L279.6,16.2 L287.5,15.9 L302.1,15.5 L309.7,12.7 L327.4,6.8 L333.2,9.9 L350.8,10.3 L361.1,7.9 L372.7,6.9 L387.2,10.6 L400.8,8.6 L415.8,7.9 L428.0,6.3 L433.9,7.5 L443.5,17.2 L453.2,18.4 L460.5,19.7 L466.7,21.3 L476.8,21.3 L484.7,22.3 L501.1,19.6 L513.5,20.6 L530.0,19.2 L541.2,21.2 L548.7,18.0 L564.8,17.6 L573.1,20.1 L581.0,17.1 L587.9,19.3 L606.8,21.9 L616.4,24.4 L625.4,26.1 L641.5,25.0 L648.0,23.8 L665.1,23.8 L683.8,25.8 L694.2,24.7 L711.9,24.0 L728.3,22.9 L739.6,25.1 L756.4,25.1 L775.3,23.9 L787.6,24.9 L803.9,27.0 L812.5,25.2 L830.3,26.2 L839.0,28.3 L848.9,26.8 L861.5,27.4 L873.5,26.6 L882.8,24.0 L899.1,22.5 L908.9,24.5 L914.5,25.3 L928.2,21.7 L937.2,24.5 L955.8,26.5 L973.2,22.8 L980.1,25.4 L987.8,27.1 L1005.1,29.0 L1017.1,27.8 L1027.4,25.0 L1041.0,26.6 L1053.2,29.2 L1067.2,25.3 L1075.2,27.0 L1092.6,28.7 L1104.4,29.7 L1115.1,29.9 L1123.1,29.9 L1132.2,26.1 L1139.8,29.8 L1152.2,23.0 L1163.2,22.1 L1176.8,20.8 L1195.2,20.2 L1204.3,18.1 L1218.2,14.8 L1226.8,14.5 L1245.1,18.4 L1258.4,15.9 L1263.6,15.7 L1280.7,16.8 L1293.1,18.9 L1304.9,21.8 L1315.5,22.5 L1327.7,26.8 L1332.9,28.4 L1341.6,26.7 L1350.5,23.7 L1359.7,23.4 L1378.2,22.4 L1396.1,23.0 L1411.7,21.5 L1423.2,22.0 L1429.5,18.8 L1440.0,16.9 L1440,19.6 L1440,40 Z'/%3E%3C/svg%3E&quot;);--pc:#19161C;--pb:#100D12">
+  <svg class="torn" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="torn-shade" d="M0.0,16.0 L10.0,17.4 L21.4,14.3 L33.0,20.6 L46.2,20.3 L60.9,21.0 L73.5,19.5 L86.3,17.0 L98.9,18.2 L104.7,17.5 L123.1,16.6 L130.9,15.0 L138.7,16.2 L151.8,17.0 L157.2,16.2 L168.4,15.3 L185.3,14.6 L199.9,12.6 L208.3,12.5 L222.1,15.8 L239.6,16.5 L252.3,17.9 L257.5,16.8 L264.7,16.0 L279.6,16.2 L287.5,15.9 L302.1,15.5 L309.7,12.7 L327.4,6.8 L333.2,9.9 L350.8,10.3 L361.1,7.9 L372.7,6.9 L387.2,10.6 L400.8,8.6 L415.8,7.9 L428.0,6.3 L433.9,7.5 L443.5,17.2 L453.2,18.4 L460.5,19.7 L466.7,21.3 L476.8,21.3 L484.7,22.3 L501.1,19.6 L513.5,20.6 L530.0,19.2 L541.2,21.2 L548.7,18.0 L564.8,17.6 L573.1,20.1 L581.0,17.1 L587.9,19.3 L606.8,21.9 L616.4,24.4 L625.4,26.1 L641.5,25.0 L648.0,23.8 L665.1,23.8 L683.8,25.8 L694.2,24.7 L711.9,24.0 L728.3,22.9 L739.6,25.1 L756.4,25.1 L775.3,23.9 L787.6,24.9 L803.9,27.0 L812.5,25.2 L830.3,26.2 L839.0,28.3 L848.9,26.8 L861.5,27.4 L873.5,26.6 L882.8,24.0 L899.1,22.5 L908.9,24.5 L914.5,25.3 L928.2,21.7 L937.2,24.5 L955.8,26.5 L973.2,22.8 L980.1,25.4 L987.8,27.1 L1005.1,29.0 L1017.1,27.8 L1027.4,25.0 L1041.0,26.6 L1053.2,29.2 L1067.2,25.3 L1075.2,27.0 L1092.6,28.7 L1104.4,29.7 L1115.1,29.9 L1123.1,29.9 L1132.2,26.1 L1139.8,29.8 L1152.2,23.0 L1163.2,22.1 L1176.8,20.8 L1195.2,20.2 L1204.3,18.1 L1218.2,14.8 L1226.8,14.5 L1245.1,18.4 L1258.4,15.9 L1263.6,15.7 L1280.7,16.8 L1293.1,18.9 L1304.9,21.8 L1315.5,22.5 L1327.7,26.8 L1332.9,28.4 L1341.6,26.7 L1350.5,23.7 L1359.7,23.4 L1378.2,22.4 L1396.1,23.0 L1411.7,21.5 L1423.2,22.0 L1429.5,18.8 L1440.0,16.9 L1440,19.6"/><path class="torn-fiber" d="M0.0,16.0 L10.0,17.4 L21.4,14.3 L33.0,20.6 L46.2,20.3 L60.9,21.0 L73.5,19.5 L86.3,17.0 L98.9,18.2 L104.7,17.5 L123.1,16.6 L130.9,15.0 L138.7,16.2 L151.8,17.0 L157.2,16.2 L168.4,15.3 L185.3,14.6 L199.9,12.6 L208.3,12.5 L222.1,15.8 L239.6,16.5 L252.3,17.9 L257.5,16.8 L264.7,16.0 L279.6,16.2 L287.5,15.9 L302.1,15.5 L309.7,12.7 L327.4,6.8 L333.2,9.9 L350.8,10.3 L361.1,7.9 L372.7,6.9 L387.2,10.6 L400.8,8.6 L415.8,7.9 L428.0,6.3 L433.9,7.5 L443.5,17.2 L453.2,18.4 L460.5,19.7 L466.7,21.3 L476.8,21.3 L484.7,22.3 L501.1,19.6 L513.5,20.6 L530.0,19.2 L541.2,21.2 L548.7,18.0 L564.8,17.6 L573.1,20.1 L581.0,17.1 L587.9,19.3 L606.8,21.9 L616.4,24.4 L625.4,26.1 L641.5,25.0 L648.0,23.8 L665.1,23.8 L683.8,25.8 L694.2,24.7 L711.9,24.0 L728.3,22.9 L739.6,25.1 L756.4,25.1 L775.3,23.9 L787.6,24.9 L803.9,27.0 L812.5,25.2 L830.3,26.2 L839.0,28.3 L848.9,26.8 L861.5,27.4 L873.5,26.6 L882.8,24.0 L899.1,22.5 L908.9,24.5 L914.5,25.3 L928.2,21.7 L937.2,24.5 L955.8,26.5 L973.2,22.8 L980.1,25.4 L987.8,27.1 L1005.1,29.0 L1017.1,27.8 L1027.4,25.0 L1041.0,26.6 L1053.2,29.2 L1067.2,25.3 L1075.2,27.0 L1092.6,28.7 L1104.4,29.7 L1115.1,29.9 L1123.1,29.9 L1132.2,26.1 L1139.8,29.8 L1152.2,23.0 L1163.2,22.1 L1176.8,20.8 L1195.2,20.2 L1204.3,18.1 L1218.2,14.8 L1226.8,14.5 L1245.1,18.4 L1258.4,15.9 L1263.6,15.7 L1280.7,16.8 L1293.1,18.9 L1304.9,21.8 L1315.5,22.5 L1327.7,26.8 L1332.9,28.4 L1341.6,26.7 L1350.5,23.7 L1359.7,23.4 L1378.2,22.4 L1396.1,23.0 L1411.7,21.5 L1423.2,22.0 L1429.5,18.8 L1440.0,16.9 L1440,19.6"/></svg>
+  <div class="surf mentor-bg" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 767px)" srcset="assets/img/bg_desk_m.webp">
+      <img src="assets/img/bg_desk_d.webp" alt="" loading="lazy">
+    </picture>
+  </div>
+  <div class="wrap mentor-grid">
+    <div class="mentor-copy">
+      <h2 class="h2 worn"><span data-i18n="b8.h2a">Кто стоит</span> <span class="pink" data-i18n="b8.h2b">за&nbsp;курсом</span></h2>
+      <p class="mentor-name" data-i18n="b8.name">Никита Попко</p>
+      <p class="mentor-role" data-i18n="b8.role">Основатель агентства AI-разработки</p>
+      <ul class="regalia" role="list">
+        <li class="rg rg1 gl"><b data-i18n="b8.rg1">$5&nbsp;000 в&nbsp;месяц</b><span data-i18n="b8.rg1d">личный доход через 2&nbsp;месяца после старта</span></li>
+        <li class="rg rg2 gl"><b data-i18n="b8.rg2">30+ проектов</b><span data-i18n="b8.rg2d">за&nbsp;полгода: приложения, сайты, платформы, CRM и&nbsp;боты</span></li>
+        <li class="rg rg3 gl"><b data-i18n="b8.rg3">7+ клиентов</b><span data-i18n="b8.rg3d">заказывают у&nbsp;него каждый месяц</span></li>
+      </ul>
+      <p class="body mentor-text" data-i18n="b8.text">Знает, что современные нейросети умеют, а&nbsp;что нет. Разбирается в&nbsp;новых моделях раньше других и&nbsp;сразу применяет их в&nbsp;малом и&nbsp;среднем бизнесе.</p>
+      <div class="proof">
+        <!-- мокап: бот мини-курса «ИИ на заказ» — настоящие сообщения из воронки 07 (B3.1, E1, E4) -->
+<div class="mock mock--tg mock--minibot" aria-hidden="true">
+  <div class="mphone">
+    <div class="tg-head"><span class="tg-back"></span><span class="tg-ava tg-ava--cur">ИИ</span><div><b data-i18n="mk.mb_name">ИИ на&nbsp;заказ</b><span data-i18n="mk.mb_sub">бот мини-курса</span></div></div>
+    <div class="tg-chat">
+      <div class="tg-msg in"><p data-i18n="mk.mb_m1">🏅 Медаль №2 твоя. Бонус&nbsp;— «Топ-10 каналов, где найти клиентов на&nbsp;ИИ-услуги» 👇</p></div>
+      <div class="tg-kb tg-kb--2"><span data-i18n="mk.mb_b1">✍️ Сдать задание</span><span data-i18n="mk.mb_b2">➡️ Перейти к&nbsp;следующему уроку</span></div>
+      <div class="tg-msg in"><p data-i18n="mk.mb_m2">🏅 Медаль №8&nbsp;— за&nbsp;первое предложение владельцу. Всего у&nbsp;тебя 8 из&nbsp;9.<br>Ещё недавно ты учился, а&nbsp;теперь уже работаешь.</p></div>
+      <div class="tg-msg in"><p data-i18n="mk.mb_m3">🎓 Держи свой сертификат: ты прошёл практический мини-курс «ИИ на&nbsp;заказ».</p></div>
+    </div>
+  </div>
+</div>
+        <div class="proof-cap">
+          <p class="proof-k" data-i18n="b8.proof_k">Сделано с&nbsp;ИИ. Проверь сам</p>
+          <p class="proof-t"><span class="only-bot" data-i18n="b8.proof_t"><b>Бот, в&nbsp;котором ты получал медали, и&nbsp;этот сайт</b> мы сделали с&nbsp;нейросетью. На&nbsp;курсе этому научишься и&nbsp;ты.</span><span class="only-cold" data-i18n="b8.proof_tc"><b>Бот мини-курса и&nbsp;этот сайт</b> мы сделали с&nbsp;нейросетью. На&nbsp;курсе этому научишься и&nbsp;ты.</span></p>
+        </div>
+      </div>
+      <!-- Место под кейсы со скринами: заполнить, когда будут материалы (README, «Кейсы и второй автор»). Пока скрыто, на странице ничего нет. -->
+      <div class="cases" data-slot="cases" hidden></div>
+      <!-- Место под второго автора (Василий): фото и проверяемые факты — после согласования (канон Q36). Пока скрыто. -->
+      <div class="cohost" data-slot="cohost" hidden></div>
+    </div>
+    <div class="mentor-art">
+      <div class="glow" aria-hidden="true"></div>
+      <img class="cut" src="assets/img/nikita_crossed.webp" alt="Никита Попко, основатель агентства AI-разработки" data-i18n-alt="b8.alt" width="737" height="1560" loading="lazy">
+    </div>
+  </div>
+</section>
+<template id="tpl-case"><!-- кейс: <figure class="case gl"><img src="assets/img/case_N.webp" alt=""><figcaption><b data-i18n="b8.caseN">…</b><span data-i18n="b8.caseNd">…</span></figcaption></figure> --></template>
+
 <!-- ============ 5. 5 УСЛУГ ============ -->
-<section class="sec s-black skills" id="skills" data-b="5" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,16.2 L10.9,14.4 L22.7,15.3 L37.6,7.9 L43.1,5.4 L50.0,6.6 L65.5,8.9 L71.6,11.6 L89.8,12.9 L103.5,20.2 L117.5,19.3 L131.0,16.9 L149.4,14.2 L162.1,16.2 L168.2,15.7 L180.1,12.0 L186.7,12.8 L192.8,11.3 L198.5,11.6 L209.1,13.7 L216.9,14.0 L230.3,16.5 L243.1,15.4 L260.9,12.5 L277.5,10.1 L291.5,11.4 L305.7,13.6 L313.4,12.9 L322.4,14.4 L336.4,15.3 L344.8,13.6 L351.8,10.6 L360.5,12.0 L377.4,14.3 L391.9,20.3 L400.1,17.4 L416.8,15.6 L433.1,13.6 L441.8,11.6 L457.5,11.4 L466.6,9.9 L473.1,13.1 L489.8,12.6 L498.5,11.2 L510.0,8.3 L519.4,9.9 L537.5,10.1 L544.3,10.9 L555.8,10.7 L566.9,8.6 L572.2,7.9 L579.5,8.8 L584.6,7.0 L594.5,4.6 L600.4,7.5 L617.3,9.6 L632.1,10.0 L650.2,9.2 L659.1,8.3 L677.4,11.8 L695.5,10.3 L714.0,8.9 L724.4,7.5 L730.3,12.6 L746.0,13.0 L753.5,15.7 L770.9,16.4 L781.9,10.3 L793.2,7.8 L808.4,6.4 L813.5,4 L829.4,6.3 L840.2,7.6 L847.3,4.7 L862.4,5.3 L875.8,8.7 L888.4,9.7 L902.7,8.8 L913.1,11.8 L929.7,13.4 L948.4,10.8 L965.3,11.4 L979.4,10.6 L986.5,10.8 L992.7,8.4 L1010.1,8.0 L1024.5,9.9 L1042.7,15.7 L1061.1,18.9 L1077.9,17.8 L1089.5,16.5 L1096.6,16.3 L1114.8,20.4 L1133.4,21.9 L1152.1,21.6 L1167.0,16.7 L1174.8,13.7 L1192.2,13.6 L1209.7,14.8 L1220.5,16.2 L1227.3,16.8 L1235.8,19.1 L1243.1,20.0 L1249.2,20.5 L1263.6,24.5 L1278.0,25.5 L1296.8,21.9 L1310.1,23.4 L1327.3,22.0 L1337.5,22.0 L1346.0,23.6 L1351.8,25.7 L1363.1,24.2 L1377.6,25.4 L1396.3,26.0 L1407.6,24.1 L1420.0,23.7 L1430.3,26.0 L1440,26.2 L1440,40 Z'/%3E%3C/svg%3E&quot;);--prev:#19161C">
+<section class="sec s-black skills only-cold" id="skills" data-b="5" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,16.2 L10.9,14.4 L22.7,15.3 L37.6,7.9 L43.1,5.4 L50.0,6.6 L65.5,8.9 L71.6,11.6 L89.8,12.9 L103.5,20.2 L117.5,19.3 L131.0,16.9 L149.4,14.2 L162.1,16.2 L168.2,15.7 L180.1,12.0 L186.7,12.8 L192.8,11.3 L198.5,11.6 L209.1,13.7 L216.9,14.0 L230.3,16.5 L243.1,15.4 L260.9,12.5 L277.5,10.1 L291.5,11.4 L305.7,13.6 L313.4,12.9 L322.4,14.4 L336.4,15.3 L344.8,13.6 L351.8,10.6 L360.5,12.0 L377.4,14.3 L391.9,20.3 L400.1,17.4 L416.8,15.6 L433.1,13.6 L441.8,11.6 L457.5,11.4 L466.6,9.9 L473.1,13.1 L489.8,12.6 L498.5,11.2 L510.0,8.3 L519.4,9.9 L537.5,10.1 L544.3,10.9 L555.8,10.7 L566.9,8.6 L572.2,7.9 L579.5,8.8 L584.6,7.0 L594.5,4.6 L600.4,7.5 L617.3,9.6 L632.1,10.0 L650.2,9.2 L659.1,8.3 L677.4,11.8 L695.5,10.3 L714.0,8.9 L724.4,7.5 L730.3,12.6 L746.0,13.0 L753.5,15.7 L770.9,16.4 L781.9,10.3 L793.2,7.8 L808.4,6.4 L813.5,4 L829.4,6.3 L840.2,7.6 L847.3,4.7 L862.4,5.3 L875.8,8.7 L888.4,9.7 L902.7,8.8 L913.1,11.8 L929.7,13.4 L948.4,10.8 L965.3,11.4 L979.4,10.6 L986.5,10.8 L992.7,8.4 L1010.1,8.0 L1024.5,9.9 L1042.7,15.7 L1061.1,18.9 L1077.9,17.8 L1089.5,16.5 L1096.6,16.3 L1114.8,20.4 L1133.4,21.9 L1152.1,21.6 L1167.0,16.7 L1174.8,13.7 L1192.2,13.6 L1209.7,14.8 L1220.5,16.2 L1227.3,16.8 L1235.8,19.1 L1243.1,20.0 L1249.2,20.5 L1263.6,24.5 L1278.0,25.5 L1296.8,21.9 L1310.1,23.4 L1327.3,22.0 L1337.5,22.0 L1346.0,23.6 L1351.8,25.7 L1363.1,24.2 L1377.6,25.4 L1396.3,26.0 L1407.6,24.1 L1420.0,23.7 L1430.3,26.0 L1440,26.2 L1440,40 Z'/%3E%3C/svg%3E&quot;);--pc:#0B090D">
   <svg class="torn" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="torn-shade" d="M0.0,16.2 L10.9,14.4 L22.7,15.3 L37.6,7.9 L43.1,5.4 L50.0,6.6 L65.5,8.9 L71.6,11.6 L89.8,12.9 L103.5,20.2 L117.5,19.3 L131.0,16.9 L149.4,14.2 L162.1,16.2 L168.2,15.7 L180.1,12.0 L186.7,12.8 L192.8,11.3 L198.5,11.6 L209.1,13.7 L216.9,14.0 L230.3,16.5 L243.1,15.4 L260.9,12.5 L277.5,10.1 L291.5,11.4 L305.7,13.6 L313.4,12.9 L322.4,14.4 L336.4,15.3 L344.8,13.6 L351.8,10.6 L360.5,12.0 L377.4,14.3 L391.9,20.3 L400.1,17.4 L416.8,15.6 L433.1,13.6 L441.8,11.6 L457.5,11.4 L466.6,9.9 L473.1,13.1 L489.8,12.6 L498.5,11.2 L510.0,8.3 L519.4,9.9 L537.5,10.1 L544.3,10.9 L555.8,10.7 L566.9,8.6 L572.2,7.9 L579.5,8.8 L584.6,7.0 L594.5,4.6 L600.4,7.5 L617.3,9.6 L632.1,10.0 L650.2,9.2 L659.1,8.3 L677.4,11.8 L695.5,10.3 L714.0,8.9 L724.4,7.5 L730.3,12.6 L746.0,13.0 L753.5,15.7 L770.9,16.4 L781.9,10.3 L793.2,7.8 L808.4,6.4 L813.5,4 L829.4,6.3 L840.2,7.6 L847.3,4.7 L862.4,5.3 L875.8,8.7 L888.4,9.7 L902.7,8.8 L913.1,11.8 L929.7,13.4 L948.4,10.8 L965.3,11.4 L979.4,10.6 L986.5,10.8 L992.7,8.4 L1010.1,8.0 L1024.5,9.9 L1042.7,15.7 L1061.1,18.9 L1077.9,17.8 L1089.5,16.5 L1096.6,16.3 L1114.8,20.4 L1133.4,21.9 L1152.1,21.6 L1167.0,16.7 L1174.8,13.7 L1192.2,13.6 L1209.7,14.8 L1220.5,16.2 L1227.3,16.8 L1235.8,19.1 L1243.1,20.0 L1249.2,20.5 L1263.6,24.5 L1278.0,25.5 L1296.8,21.9 L1310.1,23.4 L1327.3,22.0 L1337.5,22.0 L1346.0,23.6 L1351.8,25.7 L1363.1,24.2 L1377.6,25.4 L1396.3,26.0 L1407.6,24.1 L1420.0,23.7 L1430.3,26.0 L1440,26.2"/><path class="torn-fiber" d="M0.0,16.2 L10.9,14.4 L22.7,15.3 L37.6,7.9 L43.1,5.4 L50.0,6.6 L65.5,8.9 L71.6,11.6 L89.8,12.9 L103.5,20.2 L117.5,19.3 L131.0,16.9 L149.4,14.2 L162.1,16.2 L168.2,15.7 L180.1,12.0 L186.7,12.8 L192.8,11.3 L198.5,11.6 L209.1,13.7 L216.9,14.0 L230.3,16.5 L243.1,15.4 L260.9,12.5 L277.5,10.1 L291.5,11.4 L305.7,13.6 L313.4,12.9 L322.4,14.4 L336.4,15.3 L344.8,13.6 L351.8,10.6 L360.5,12.0 L377.4,14.3 L391.9,20.3 L400.1,17.4 L416.8,15.6 L433.1,13.6 L441.8,11.6 L457.5,11.4 L466.6,9.9 L473.1,13.1 L489.8,12.6 L498.5,11.2 L510.0,8.3 L519.4,9.9 L537.5,10.1 L544.3,10.9 L555.8,10.7 L566.9,8.6 L572.2,7.9 L579.5,8.8 L584.6,7.0 L594.5,4.6 L600.4,7.5 L617.3,9.6 L632.1,10.0 L650.2,9.2 L659.1,8.3 L677.4,11.8 L695.5,10.3 L714.0,8.9 L724.4,7.5 L730.3,12.6 L746.0,13.0 L753.5,15.7 L770.9,16.4 L781.9,10.3 L793.2,7.8 L808.4,6.4 L813.5,4 L829.4,6.3 L840.2,7.6 L847.3,4.7 L862.4,5.3 L875.8,8.7 L888.4,9.7 L902.7,8.8 L913.1,11.8 L929.7,13.4 L948.4,10.8 L965.3,11.4 L979.4,10.6 L986.5,10.8 L992.7,8.4 L1010.1,8.0 L1024.5,9.9 L1042.7,15.7 L1061.1,18.9 L1077.9,17.8 L1089.5,16.5 L1096.6,16.3 L1114.8,20.4 L1133.4,21.9 L1152.1,21.6 L1167.0,16.7 L1174.8,13.7 L1192.2,13.6 L1209.7,14.8 L1220.5,16.2 L1227.3,16.8 L1235.8,19.1 L1243.1,20.0 L1249.2,20.5 L1263.6,24.5 L1278.0,25.5 L1296.8,21.9 L1310.1,23.4 L1327.3,22.0 L1337.5,22.0 L1346.0,23.6 L1351.8,25.7 L1363.1,24.2 L1377.6,25.4 L1396.3,26.0 L1407.6,24.1 L1420.0,23.7 L1430.3,26.0 L1440,26.2"/></svg>
   <div class="surf tex-concrete" aria-hidden="true">
     <div class="glows">
@@ -251,19 +309,19 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
         <li><button class="skill" type="button" aria-pressed="false"><span class="skill-art"><img src="assets/img/ic_design.webp" alt="" width="520" height="462" loading="lazy"></span><span class="skill-n" data-i18n="b5.s5">Дизайн</span><span class="skill-p" data-i18n="b5.p5">1,4⁠–⁠5,6 млн&nbsp;сум в&nbsp;месяц</span></button></li>
       </ul>
     </div>
-    <p class="note skills-note" data-i18n="b5.note">Цены примерные: по&nbsp;прайсам фрилансеров и&nbsp;студий Ташкента, сентябрь&nbsp;2026</p>
+    <p class="note skills-note" data-i18n="b5.note">Цены по&nbsp;прайсам фрилансеров и&nbsp;студий Ташкента, сентябрь&nbsp;2026</p>
   </div>
 </section>
 
 <!-- ============ 6. КАЛЬКУЛЯТОР ============ -->
-<section class="sec s-wine calc" id="calc" data-b="6" style="--prev:#100D12">
+<section class="sec s-wine calc" id="calc" data-b="6" style="--pc:#100D12;--pb:#100D12">
   <div class="surf tex-grid" aria-hidden="true" style="--grid-x:76%;--grid-y:50%">
     <div class="glows">
     <div class="glow" style="right:-4%;top:12%;width:52%;height:86%;--a:.15"></div>
     </div>
   </div>
   <div class="wrap" data-calc>
-    <h2 class="h2 worn calc-h"><span class="line" data-i18n="b6.h2a">$1000 в&nbsp;месяц&nbsp;— не&nbsp;обещание,</span><span class="line"><span data-i18n="b6.h2b">а</span> <span class="pink" data-i18n="b6.h2c">простой расчёт</span></span></h2>
+    <h2 class="h2 worn calc-h"><span class="line" data-i18n="b6.h2a">Как выйти на&nbsp;$1000:</span><span class="line pink" data-i18n="b6.h2c">посчитай сам</span></h2>
     <div class="calc-grid">
     <div class="calc-l">
       <div class="sliders glass">
@@ -293,9 +351,9 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       <p class="calc-usd">≈&nbsp;<span data-usd>$949</span></p>
       <a class="btn" href="#tariffs" data-track="cta" data-place="calc">
         <span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span>
-        <span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span>
+        <span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span>
       </a>
-      <p class="note calc-note" data-i18n="b6.note">Это примерный расчёт, а&nbsp;не&nbsp;обещание дохода. Цены взяты по&nbsp;нижней границе прайсов Ташкента, сентябрь&nbsp;2026. Курс <span class="nobr">$1&nbsp;≈ 11&nbsp;800&nbsp;сум</span></p>
+      <p class="note calc-note" data-i18n="b6.note">Цены по&nbsp;нижней границе прайсов Ташкента, сентябрь&nbsp;2026. Курс <span class="nobr">$1&nbsp;≈ 11&nbsp;800&nbsp;сум</span></p>
     </div>
     </div>
     <div class="ladder">
@@ -305,78 +363,111 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
         <li style="--h:.6"><b class="lad-sum" data-i18n="b6.lad2s">$500⁠–⁠700</b><i class="lad-bar" aria-hidden="true"></i><span class="lad-m" data-i18n="b6.lad2m">Месяц 2</span><span class="lad-d" data-i18n="b6.lad2d">2⁠–⁠3 заказа</span></li>
         <li style="--h:1"><b class="lad-sum" data-i18n="b6.lad3s">≈&nbsp;$1000</b><i class="lad-bar" aria-hidden="true"></i><span class="lad-m" data-i18n="b6.lad3m">Месяц 3</span><span class="lad-d" data-i18n="b6.lad3d">3⁠–⁠4 заказа по&nbsp;$300</span></li>
       </ol>
-      <p class="note ladder-note" data-i18n="b6.lad_note">$1000&nbsp;— это расчёт, а&nbsp;не&nbsp;обещание: 3⁠–⁠4 заказа по&nbsp;$300. По&nbsp;урокам путь такой: в&nbsp;первый месяц первый заказ на&nbsp;$100⁠–⁠150, во&nbsp;второй 2⁠–⁠3 заказа на&nbsp;$500⁠–⁠700, в&nbsp;третий 3⁠–⁠4 заказа по&nbsp;$300. Всё зависит от&nbsp;твоих действий.</p>
+      <p class="note ladder-note" data-i18n="b6.lad_note">Это расчёт, а&nbsp;не&nbsp;обещание дохода: всё зависит от&nbsp;того, сколько заказов ты найдёшь и&nbsp;сделаешь.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 7. ВСЁ ЧЕСТНО ============ -->
-<section class="sec s-graphite honest" id="honest" data-b="7" style="--prev:#24091A">
-  <div class="surf tex-concrete" aria-hidden="true">
+<!-- ============ 19. ЦЕНА БЕЗДЕЙСТВИЯ — «Если остановиться сейчас» (тексты для режима «из бота» и обычного) ============ -->
+<section class="sec s-graphite inaction" id="stop" data-b="19" style="--pc:#24091A;--pb:#100D12">
+  <div class="surf" aria-hidden="true">
     <div class="glows">
-    <div class="glow" style="left:2%;top:10%;width:46%;height:84%;--a:.17"></div>
+    <div class="glow glow--violet" style="right:2%;top:10%;width:46%;height:86%;--a:.12"></div>
     </div>
   </div>
-  <div class="wrap honest-grid">
-    <div class="honest-art" aria-hidden="true">
-      <div class="floor"></div>
-      <img class="cut" src="assets/img/shield.webp" alt="" width="837" height="1100" loading="lazy">
+  <div class="wrap inaction-grid">
+    <div class="inaction-copy">
+      <h2 class="h2 worn"><span class="line" data-i18n="b19.h2a">Если остановиться</span><span class="line pink" data-i18n="b19.h2b">сейчас</span></h2>
+      <ol class="pain" role="list">
+        <li><span class="pain-n" aria-hidden="true">01</span><p><span class="only-bot" data-i18n="b19.b1">Сайт, который ты собрал на&nbsp;практике, так и&nbsp;останется черновиком.</span><span class="only-cold" data-i18n="b19.c1">Половина компаний Ташкента ещё без&nbsp;сайта. Если не&nbsp;ты, к&nbsp;ним придёт кто-то другой.</span></p></li>
+        <li><span class="pain-n" aria-hidden="true">02</span><p><span class="only-bot" data-i18n="b19.b2">Владелец ответит «сколько стоит?», а&nbsp;сказать про цену и&nbsp;предоплату будет нечего. И&nbsp;он найдёт другого.</span><span class="only-cold" data-i18n="b19.c2">Владелец спросит «сколько стоит сайт?», а&nbsp;ответить будет нечего.</span></p></li>
+        <li><span class="pain-n" aria-hidden="true">03</span><p data-i18n="b19.x3">Через год&nbsp;— те&nbsp;же смены и&nbsp;снова просить у&nbsp;родителей.</p></li>
+      </ol>
+      <p class="inaction-out" data-i18n="b19.out">Курс нужен, чтобы этого не&nbsp;случилось. Его цель&nbsp;— за&nbsp;30&nbsp;дней довести тебя до&nbsp;первого заказа с&nbsp;предоплатой.</p>
     </div>
-    <div class="honest-copy">
-      <h2 class="h2 worn"><span data-i18n="b7.h2a">Всё</span> <span class="pink" data-i18n="b7.h2b">честно</span></h2>
-      <ul class="facts-list" role="list">
-        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t1">4 урока бесплатно.</b> <span data-i18n="b7.d1">Сайт ты собрал сам ещё до&nbsp;оплаты.</span></p></li>
-        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t2">Договор-оферта.</b> <span data-i18n="b7.d2">Курс продаёт ИП&nbsp;Беляков Василий Александрович.</span></p></li>
-        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t3">Оплата через Tribute.</b> <span data-i18n="b7.d3">Картой, а&nbsp;«Про» можно частями.</span></p></li>
-        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t4">$1000 за&nbsp;неделю не&nbsp;обещаем.</b> <span data-i18n="b7.d4">Доход зависит от&nbsp;того, сколько заказов ты возьмёшь.</span></p></li>
+    <div class="inaction-art">
+      <!-- мокап: владелец бизнеса ответил на первое предложение и ждёт цену; ответа нет (блок «Цена бездействия») -->
+<div class="mock mock--tg mock--owner" aria-hidden="true">
+  <div class="mphone">
+    <div class="tg-head"><span class="tg-back"></span><span class="tg-ava tg-ava--owner">T</span><div><b data-i18n="mk.ow_name">Автосервис «Turbo»</b><span data-i18n="mk.ow_sub">был недавно</span></div></div>
+    <div class="tg-chat">
+      <p class="tg-day" data-i18n="mk.ow_d1">Вчера</p>
+      <div class="tg-msg out"><p data-i18n="mk.ow_m1">Ассалому алайкум! Сделал для&nbsp;вашего автосервиса пример сайта. Посмотрите?</p><time>19:42 ✓✓</time></div>
+      <p class="tg-day" data-i18n="mk.ow_d2">Сегодня</p>
+      <div class="tg-msg in"><p data-i18n="mk.ow_m2">Посмотрел, хорошо получилось. Сколько будет стоить и&nbsp;как платить?</p><time>10:15</time></div>
+    </div>
+    <div class="tg-input"><span data-i18n="mk.ow_in">Сообщение</span><i></i></div>
+  </div>
+</div>
+      <p class="mock-note" data-i18n="b19.mock_note">Пример переписки</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 20. ЧТО БУДЕТ ЧЕРЕЗ 30 ДНЕЙ — результат покупки (канон: offer.promise, offer.result_30d, program.m6, program.m7) ============ -->
+<section class="sec s-black result30" id="result" data-b="20" style="--pc:#19161C;--pb:#19161C">
+  <div class="surf" aria-hidden="true">
+    <div class="glows">
+    <div class="glow" style="right:4%;top:8%;width:44%;height:90%;--a:.15"></div>
+    </div>
+  </div>
+  <div class="wrap result-grid">
+    <div class="result-copy">
+      <h2 class="h2 worn"><span class="line" data-i18n="b20.h2a">Что будет</span><span class="line pink" data-i18n="b20.h2b">через 30&nbsp;дней</span></h2>
+      <p class="body result-sub" data-i18n="b20.sub">Цель курса&nbsp;— первый оплаченный заказ. Вот с&nbsp;чем ты подойдёшь к&nbsp;концу месяца.</p>
+      <ul class="res" role="list">
+        <li class="res-main gl"><span class="res-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b><span data-i18n="b20.r1">Первый заказ с&nbsp;предоплатой</span> <span class="lv-pro res-pro"><svg class="lv-lock" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><rect x="4" y="9" width="12" height="8.5" rx="2"/><path d="M6.8 9V6.6a3.2 3.2 0 0 1 6.4 0V9"/></svg><span data-i18n="b11.pro">Про</span></span></b><span data-i18n="b20.r1d">Назовёшь цену, проведёшь созвон с&nbsp;владельцем и&nbsp;возьмёшь предоплату по&nbsp;договору.</span></div></li>
+        <li><span class="res-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="b20.r2">5 услуг, за&nbsp;которые платят</b><span data-i18n="b20.r2d">Боты, сайты, контент, рилсы и&nbsp;дизайн. В&nbsp;«Базовом» 4, без&nbsp;рилсов.</span></div></li>
+        <li><span class="res-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="b20.r3">Портфолио</b><span data-i18n="b20.r3d">Работы для&nbsp;настоящих компаний из&nbsp;твоего списка.</span></div></li>
+        <li><span class="res-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="b20.r4">Свой прайс</b><span data-i18n="b20.r4d">Знаешь, сколько просить за&nbsp;каждую услугу. В&nbsp;«Про» прайс из&nbsp;3&nbsp;пакетов.</span></div></li>
+        <li><span class="res-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b><span data-i18n="b20.r5">Список из&nbsp;30&nbsp;компаний</span> <span class="lv-pro res-pro"><svg class="lv-lock" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><rect x="4" y="9" width="12" height="8.5" rx="2"/><path d="M6.8 9V6.6a3.2 3.2 0 0 1 6.4 0V9"/></svg><span data-i18n="b11.pro">Про</span></span></b><span data-i18n="b20.r5d">И&nbsp;первые 10&nbsp;сообщений владельцам уже отправлены.</span></div></li>
       </ul>
     </div>
-  </div>
-</section>
-
-<!-- ============ 8. КТО ВЕДЁТ — фото-сцена: его рабочий лофт ============ -->
-<section class="sec s-black lead-sec" id="mentor" data-b="8" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,16.0 L10.0,17.4 L21.4,14.3 L33.0,20.6 L46.2,20.3 L60.9,21.0 L73.5,19.5 L86.3,17.0 L98.9,18.2 L104.7,17.5 L123.1,16.6 L130.9,15.0 L138.7,16.2 L151.8,17.0 L157.2,16.2 L168.4,15.3 L185.3,14.6 L199.9,12.6 L208.3,12.5 L222.1,15.8 L239.6,16.5 L252.3,17.9 L257.5,16.8 L264.7,16.0 L279.6,16.2 L287.5,15.9 L302.1,15.5 L309.7,12.7 L327.4,6.8 L333.2,9.9 L350.8,10.3 L361.1,7.9 L372.7,6.9 L387.2,10.6 L400.8,8.6 L415.8,7.9 L428.0,6.3 L433.9,7.5 L443.5,17.2 L453.2,18.4 L460.5,19.7 L466.7,21.3 L476.8,21.3 L484.7,22.3 L501.1,19.6 L513.5,20.6 L530.0,19.2 L541.2,21.2 L548.7,18.0 L564.8,17.6 L573.1,20.1 L581.0,17.1 L587.9,19.3 L606.8,21.9 L616.4,24.4 L625.4,26.1 L641.5,25.0 L648.0,23.8 L665.1,23.8 L683.8,25.8 L694.2,24.7 L711.9,24.0 L728.3,22.9 L739.6,25.1 L756.4,25.1 L775.3,23.9 L787.6,24.9 L803.9,27.0 L812.5,25.2 L830.3,26.2 L839.0,28.3 L848.9,26.8 L861.5,27.4 L873.5,26.6 L882.8,24.0 L899.1,22.5 L908.9,24.5 L914.5,25.3 L928.2,21.7 L937.2,24.5 L955.8,26.5 L973.2,22.8 L980.1,25.4 L987.8,27.1 L1005.1,29.0 L1017.1,27.8 L1027.4,25.0 L1041.0,26.6 L1053.2,29.2 L1067.2,25.3 L1075.2,27.0 L1092.6,28.7 L1104.4,29.7 L1115.1,29.9 L1123.1,29.9 L1132.2,26.1 L1139.8,29.8 L1152.2,23.0 L1163.2,22.1 L1176.8,20.8 L1195.2,20.2 L1204.3,18.1 L1218.2,14.8 L1226.8,14.5 L1245.1,18.4 L1258.4,15.9 L1263.6,15.7 L1280.7,16.8 L1293.1,18.9 L1304.9,21.8 L1315.5,22.5 L1327.7,26.8 L1332.9,28.4 L1341.6,26.7 L1350.5,23.7 L1359.7,23.4 L1378.2,22.4 L1396.1,23.0 L1411.7,21.5 L1423.2,22.0 L1429.5,18.8 L1440.0,16.9 L1440,19.6 L1440,40 Z'/%3E%3C/svg%3E&quot;);--prev:#19161C">
-  <svg class="torn" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="torn-shade" d="M0.0,16.0 L10.0,17.4 L21.4,14.3 L33.0,20.6 L46.2,20.3 L60.9,21.0 L73.5,19.5 L86.3,17.0 L98.9,18.2 L104.7,17.5 L123.1,16.6 L130.9,15.0 L138.7,16.2 L151.8,17.0 L157.2,16.2 L168.4,15.3 L185.3,14.6 L199.9,12.6 L208.3,12.5 L222.1,15.8 L239.6,16.5 L252.3,17.9 L257.5,16.8 L264.7,16.0 L279.6,16.2 L287.5,15.9 L302.1,15.5 L309.7,12.7 L327.4,6.8 L333.2,9.9 L350.8,10.3 L361.1,7.9 L372.7,6.9 L387.2,10.6 L400.8,8.6 L415.8,7.9 L428.0,6.3 L433.9,7.5 L443.5,17.2 L453.2,18.4 L460.5,19.7 L466.7,21.3 L476.8,21.3 L484.7,22.3 L501.1,19.6 L513.5,20.6 L530.0,19.2 L541.2,21.2 L548.7,18.0 L564.8,17.6 L573.1,20.1 L581.0,17.1 L587.9,19.3 L606.8,21.9 L616.4,24.4 L625.4,26.1 L641.5,25.0 L648.0,23.8 L665.1,23.8 L683.8,25.8 L694.2,24.7 L711.9,24.0 L728.3,22.9 L739.6,25.1 L756.4,25.1 L775.3,23.9 L787.6,24.9 L803.9,27.0 L812.5,25.2 L830.3,26.2 L839.0,28.3 L848.9,26.8 L861.5,27.4 L873.5,26.6 L882.8,24.0 L899.1,22.5 L908.9,24.5 L914.5,25.3 L928.2,21.7 L937.2,24.5 L955.8,26.5 L973.2,22.8 L980.1,25.4 L987.8,27.1 L1005.1,29.0 L1017.1,27.8 L1027.4,25.0 L1041.0,26.6 L1053.2,29.2 L1067.2,25.3 L1075.2,27.0 L1092.6,28.7 L1104.4,29.7 L1115.1,29.9 L1123.1,29.9 L1132.2,26.1 L1139.8,29.8 L1152.2,23.0 L1163.2,22.1 L1176.8,20.8 L1195.2,20.2 L1204.3,18.1 L1218.2,14.8 L1226.8,14.5 L1245.1,18.4 L1258.4,15.9 L1263.6,15.7 L1280.7,16.8 L1293.1,18.9 L1304.9,21.8 L1315.5,22.5 L1327.7,26.8 L1332.9,28.4 L1341.6,26.7 L1350.5,23.7 L1359.7,23.4 L1378.2,22.4 L1396.1,23.0 L1411.7,21.5 L1423.2,22.0 L1429.5,18.8 L1440.0,16.9 L1440,19.6"/><path class="torn-fiber" d="M0.0,16.0 L10.0,17.4 L21.4,14.3 L33.0,20.6 L46.2,20.3 L60.9,21.0 L73.5,19.5 L86.3,17.0 L98.9,18.2 L104.7,17.5 L123.1,16.6 L130.9,15.0 L138.7,16.2 L151.8,17.0 L157.2,16.2 L168.4,15.3 L185.3,14.6 L199.9,12.6 L208.3,12.5 L222.1,15.8 L239.6,16.5 L252.3,17.9 L257.5,16.8 L264.7,16.0 L279.6,16.2 L287.5,15.9 L302.1,15.5 L309.7,12.7 L327.4,6.8 L333.2,9.9 L350.8,10.3 L361.1,7.9 L372.7,6.9 L387.2,10.6 L400.8,8.6 L415.8,7.9 L428.0,6.3 L433.9,7.5 L443.5,17.2 L453.2,18.4 L460.5,19.7 L466.7,21.3 L476.8,21.3 L484.7,22.3 L501.1,19.6 L513.5,20.6 L530.0,19.2 L541.2,21.2 L548.7,18.0 L564.8,17.6 L573.1,20.1 L581.0,17.1 L587.9,19.3 L606.8,21.9 L616.4,24.4 L625.4,26.1 L641.5,25.0 L648.0,23.8 L665.1,23.8 L683.8,25.8 L694.2,24.7 L711.9,24.0 L728.3,22.9 L739.6,25.1 L756.4,25.1 L775.3,23.9 L787.6,24.9 L803.9,27.0 L812.5,25.2 L830.3,26.2 L839.0,28.3 L848.9,26.8 L861.5,27.4 L873.5,26.6 L882.8,24.0 L899.1,22.5 L908.9,24.5 L914.5,25.3 L928.2,21.7 L937.2,24.5 L955.8,26.5 L973.2,22.8 L980.1,25.4 L987.8,27.1 L1005.1,29.0 L1017.1,27.8 L1027.4,25.0 L1041.0,26.6 L1053.2,29.2 L1067.2,25.3 L1075.2,27.0 L1092.6,28.7 L1104.4,29.7 L1115.1,29.9 L1123.1,29.9 L1132.2,26.1 L1139.8,29.8 L1152.2,23.0 L1163.2,22.1 L1176.8,20.8 L1195.2,20.2 L1204.3,18.1 L1218.2,14.8 L1226.8,14.5 L1245.1,18.4 L1258.4,15.9 L1263.6,15.7 L1280.7,16.8 L1293.1,18.9 L1304.9,21.8 L1315.5,22.5 L1327.7,26.8 L1332.9,28.4 L1341.6,26.7 L1350.5,23.7 L1359.7,23.4 L1378.2,22.4 L1396.1,23.0 L1411.7,21.5 L1423.2,22.0 L1429.5,18.8 L1440.0,16.9 L1440,19.6"/></svg>
-  <div class="surf mentor-bg" aria-hidden="true">
-    <picture>
-      <source media="(max-width: 767px)" srcset="assets/img/bg_desk_m.webp">
-      <img src="assets/img/bg_desk_d.webp" alt="" loading="lazy">
-    </picture>
-  </div>
-  <div class="wrap mentor-grid">
-    <div class="mentor-copy">
-      <h2 class="h2 worn"><span data-i18n="b8.h2a">Кто</span> <span class="pink" data-i18n="b8.h2b">ведёт</span></h2>
-      <p class="mentor-name" data-i18n="b8.name">Никита</p>
-      <p class="mentor-role" data-i18n="b8.role">AI-специалист, ведущий курса</p>
-      <p class="body mentor-text" data-i18n="b8.text">Делаю для&nbsp;бизнеса сайты, ботов и&nbsp;контент с&nbsp;нейросетью. На&nbsp;курсе показываю, как работаю сам, а&nbsp;ты повторяешь на&nbsp;своём заказе.</p>
-      <div class="proof">
-        <!-- мокап: бот мини-курса «ИИ на заказ» — настоящие сообщения из воронки 07 (B3.1, E1, E4) -->
-<div class="mock mock--tg mock--minibot" aria-hidden="true">
+    <div class="result-art">
+      <!-- мокап: первый заказ с предоплатой — переписка с владельцем (блок «Что будет через 30 дней») -->
+<div class="mock mock--tg mock--deal" aria-hidden="true">
   <div class="mphone">
-    <div class="tg-head"><span class="tg-back"></span><span class="tg-ava tg-ava--cur">ИИ</span><div><b data-i18n="mk.mb_name">ИИ на&nbsp;заказ</b><span data-i18n="mk.mb_sub">бот мини-курса</span></div></div>
+    <div class="tg-push"><span class="tg-push-i"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 12.5l4 4 9-9.5"/></svg></span><div><b data-i18n="mk.dl_push_t">Оплата получена</b><span data-i18n="mk.dl_push">Предоплата по&nbsp;договору за&nbsp;сайт</span></div></div>
+    <div class="tg-head"><span class="tg-back"></span><span class="tg-ava tg-ava--deal">K</span><div><b data-i18n="mk.dl_name">Кофейня «Kofe Bor»</b><span data-i18n="mk.dl_sub">в&nbsp;сети</span></div></div>
     <div class="tg-chat">
-      <div class="tg-msg in"><p data-i18n="mk.mb_m1">🏅 Медаль №2 твоя. Бонус&nbsp;— «Топ-10 каналов, где найти клиентов на&nbsp;ИИ-услуги» 👇</p></div>
-      <div class="tg-kb tg-kb--2"><span data-i18n="mk.mb_b1">✍️ Сдать задание</span><span data-i18n="mk.mb_b2">➡️ Перейти к&nbsp;следующему уроку</span></div>
-      <div class="tg-msg in"><p data-i18n="mk.mb_m2">🏅 Медаль №8&nbsp;— за&nbsp;первое предложение владельцу. Всего у&nbsp;тебя 8 из&nbsp;9.<br>Ещё недавно ты учился, а&nbsp;теперь уже работаешь.</p></div>
-      <div class="tg-msg in"><p data-i18n="mk.mb_m3">🎓 Держи свой сертификат: ты прошёл практический мини-курс «ИИ на&nbsp;заказ».</p></div>
+      <div class="tg-msg out"><p data-i18n="mk.dl_m1">Отправил договор и&nbsp;прайс. Начинаю после предоплаты.</p><time>12:04 ✓✓</time></div>
+      <div class="tg-msg in"><p data-i18n="mk.dl_m2">Договор подписал, предоплату отправил 👍</p><time>12:31</time></div>
+      <div class="tg-msg out"><p data-i18n="mk.dl_m3">Получил, спасибо! Сайт будет готов в&nbsp;четверг.</p><time>12:33 ✓✓</time></div>
     </div>
   </div>
 </div>
-        <div class="proof-cap">
-          <p class="proof-k" data-i18n="b8.proof_k">Сделано с&nbsp;ИИ. Проверь сам</p>
-          <p class="proof-t" data-i18n="b8.proof_t"><b>Бот, в&nbsp;котором ты получал медали, и&nbsp;этот сайт</b> мы сделали с&nbsp;нейросетью. На&nbsp;курсе этому научишься и&nbsp;ты.</p>
-        </div>
+      <p class="mock-note" data-i18n="b20.mock_note">Пример: так выглядит первый заказ с&nbsp;предоплатой</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 21. НАПОМНЮ, ПОЧЕМУ ЭТО РАБОТАЕТ — только «из бота»: блоки 2–5 одним экраном ============ -->
+<section class="sec s-graphite remind only-bot" id="why" data-b="21" style="--pb:#0B090D">
+  <div class="surf tex-grid" aria-hidden="true" style="--grid-x:28%;--grid-y:58%">
+    <div class="glows">
+    <div class="glow" style="left:-4%;top:20%;width:50%;height:80%;--a:.14"></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <h2 class="h2 worn remind-h"><span data-i18n="b21.h2a">Напомню, почему</span> <span class="pink" data-i18n="b21.h2b">это работает</span></h2>
+    <div class="remind-grid">
+      <div class="remind-map">
+        <img src="assets/img/map_iso.webp" alt="" width="1500" height="1168" loading="lazy">
+        <p class="remind-big"><b data-i18n="b21.n1">49%</b><span data-i18n="b21.n1l">компаний Ташкента без&nbsp;сайта*</span></p>
       </div>
+      <ul class="remind-list" role="list">
+        <li><b data-i18n="b21.n2">2,5⁠–⁠5&nbsp;млн&nbsp;сум</b><span data-i18n="b21.n2l">берёт студия за&nbsp;простой сайт</span></li>
+        <li><b data-i18n="b21.n3">1&nbsp;вечер</b><span data-i18n="b21.n3l">чтобы собрать сайт с&nbsp;нейросетью. Раньше на&nbsp;это учились 3&nbsp;года</span></li>
+        <li><b data-i18n="b21.n4">5&nbsp;услуг</b><span data-i18n="b21.n4l">бот&nbsp;— от&nbsp;0,7&nbsp;млн&nbsp;сум, сайт&nbsp;— от&nbsp;1,4&nbsp;млн, дизайн&nbsp;— от&nbsp;1,4&nbsp;млн в&nbsp;месяц</span></li>
+      </ul>
     </div>
-    <div class="mentor-art">
-      <div class="glow" aria-hidden="true"></div>
-      <img class="cut" src="assets/img/nikita_crossed.webp" alt="Никита, ведущий курса" data-i18n-alt="b8.alt" width="737" height="1560" loading="lazy">
-    </div>
+    <p class="remind-out" data-i18n="b21.out">Работа нужна, делается она теперь быстро, а&nbsp;платят за&nbsp;неё по-прежнему. Осталось научиться находить заказы, и&nbsp;этому учит курс.</p>
+    <p class="note" data-i18n="b21.note">*Наша проверка Яндекс&nbsp;Карт, октябрь 2026: 146 из&nbsp;300 компаний в&nbsp;12&nbsp;нишах. Цены&nbsp;— прайсы студий и&nbsp;фрилансеров Ташкента, сентябрь&nbsp;2026</p>
   </div>
 </section>
 
 <!-- ============ 9. ЧТО ТЫ ПОЛУЧАЕШЬ — 3×2 настоящих экрана (мокапы src/mock) ============ -->
-<section class="sec s-aub kit" id="kit" data-b="9" style="--prev:#0B090D">
+<section class="sec s-aub kit" id="kit" data-b="9" style="--pc:#100D12;--pb:#19161C">
   <div class="surf tex-concrete" aria-hidden="true">
     <div class="glows">
     <div class="glow" style="left:50%;top:20%;width:min(1100px,110vw);height:80%;transform:translateX(-50%);--a:.13"></div>
@@ -460,28 +551,8 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   </div>
 </section>
 
-<!-- ============ 10. КАК ПРОХОДИТ ОБУЧЕНИЕ — фото-сцена: вечерний город сверху, неоновый GPS-маршрут ============ -->
-<section class="sec path-sec" id="path" data-b="10" style="--prev:#190C1B">
-  <div class="wrap path-top">
-    <h2 class="h2 worn path-h"><span class="line" data-i18n="b10.h2a">Ты не&nbsp;останешься</span><span class="line pink" data-i18n="b10.h2b">один</span></h2>
-  </div>
-  <div class="route">
-    <picture class="route-img" aria-hidden="true">
-      <source media="(max-width: 1099px)" srcset="assets/img/path_m.webp">
-      <img src="assets/img/path_d.webp" alt="" loading="lazy">
-    </picture>
-    <ol class="wps" role="list">
-        <li class="wp wp--above" style="--dx:18.2%;--dy:86.3%;--mx:15.9%;--my:96%;--mrest:0.841"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">01</span><b data-i18n="b10.c1">Урок</b><span data-i18n="b10.d1">Короткий, по&nbsp;шагам</span></div></li>
-        <li class="wp wp--above" style="--dx:33.9%;--dy:85.9%;--mx:28.6%;--my:74.5%;--mrest:0.714"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">02</span><b data-i18n="b10.c2">Задание</b><span data-i18n="b10.d2">Делаешь на&nbsp;своём проекте</span></div></li>
-        <li class="wp wp--above" style="--dx:51.3%;--dy:80.7%;--mx:35.9%;--my:51.6%;--mrest:0.641"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">03</span><b data-i18n="b10.c3">ИИ-куратор помогает</b><span data-i18n="b10.d3">В&nbsp;«Про». Застрял? Спроси, он отвечает 24/7</span></div></li>
-        <li class="wp wp--below" style="--dx:69.6%;--dy:60.6%;--mx:35.6%;--my:36.2%;--mrest:0.644"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">04</span><b data-i18n="b10.c4">Практика</b><span data-i18n="b10.d4">С&nbsp;реальным бизнесом</span></div></li>
-        <li class="wp wp--al wp--boss" style="--dx:87.1%;--dy:38.7%;--mx:26%;--my:22.2%;--mrest:0.740"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">05</span><b data-i18n="b10.c5">Первый заказ с&nbsp;предоплатой</b><span data-i18n="b10.d5">в&nbsp;тарифе «Про»</span></div></li>
-    </ol>
-  </div>
-</section>
-
 <!-- ============ 11. ПРОГРАММА ============ -->
-<section class="sec s-graphite pgm-sec" id="program" data-b="11" style="--prev:#0A080C">
+<section class="sec s-graphite pgm-sec" id="program" data-b="11" style="--pc:#190C1B;--pb:#190C1B">
   <div class="surf" aria-hidden="true">
     <div class="glows">
     <div class="glow" style="left:-4%;top:30%;width:42%;height:70%;--a:.15"></div>
@@ -496,7 +567,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
     <div class="levels" data-acc>
       <details class="lv" open>
         <summary><span class="lv-n">0</span><span class="lv-t" data-i18n="b11.l0">Старт и мышление</span><span class="lv-chev" aria-hidden="true"></span></summary>
-        <div class="lv-body"><p class="lv-res"><b data-i18n="b11.res">Результат:</b> <span data-i18n="b11.l0r">Посчитаешь цель в&nbsp;заказах, поставишь нейросети и&nbsp;составишь план на&nbsp;30&nbsp;дней</span></p><ul><li data-i18n="b11.l0b0">Сколько заказов нужно под&nbsp;твою цель</li><li data-i18n="b11.l0b1">Ставим Claude Code, Codex и&nbsp;Gemini по&nbsp;шагам</li><li data-i18n="b11.l0b2">Свой ИИ-агент, который ведёт тебя весь курс</li></ul></div>
+        <div class="lv-body"><p class="lv-res"><b data-i18n="b11.res">Результат:</b> <span data-i18n="b11.l0r">Посчитаешь цель в&nbsp;заказах, поставишь нейросети и&nbsp;составишь план на&nbsp;30&nbsp;дней</span></p><ul><li data-i18n="b11.l0b0">Сколько заказов нужно под&nbsp;твою цель</li><li data-i18n="b11.l0b1">Ставим нейросети по&nbsp;шагам, без&nbsp;программирования <small class="lv-tools">Claude Code, Codex, Gemini</small></li><li data-i18n="b11.l0b2">Свой ИИ-агент, который ведёт тебя весь курс</li></ul></div>
       </details>
       <details class="lv">
         <summary><span class="lv-n">1</span><span class="lv-t" data-i18n="b11.l1">Боты, которые продают</span><span class="lv-chev" aria-hidden="true"></span></summary>
@@ -530,8 +601,28 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   </div>
 </section>
 
+<!-- ============ 10. КАК ПРОХОДИТ ОБУЧЕНИЕ — фото-сцена: вечерний город сверху, неоновый GPS-маршрут ============ -->
+<section class="sec path-sec" id="path" data-b="10" style="--pc:#19161C;--pb:#19161C">
+  <div class="wrap path-top">
+    <h2 class="h2 worn path-h"><span class="line" data-i18n="b10.h2a">Ты не&nbsp;останешься</span><span class="line pink" data-i18n="b10.h2b">один</span></h2>
+  </div>
+  <div class="route">
+    <picture class="route-img" aria-hidden="true">
+      <source media="(max-width: 1099px)" srcset="assets/img/path_m.webp">
+      <img src="assets/img/path_d.webp" alt="" loading="lazy">
+    </picture>
+    <ol class="wps" role="list">
+        <li class="wp wp--above" style="--dx:18.2%;--dy:86.3%;--mx:15.9%;--my:96%;--mrest:0.841"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">01</span><b data-i18n="b10.c1">Урок</b><span data-i18n="b10.d1">Короткий, по&nbsp;шагам</span></div></li>
+        <li class="wp wp--above" style="--dx:33.9%;--dy:85.9%;--mx:28.6%;--my:74.5%;--mrest:0.714"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">02</span><b data-i18n="b10.c2">Задание</b><span data-i18n="b10.d2">Делаешь на&nbsp;своём проекте</span></div></li>
+        <li class="wp wp--above" style="--dx:51.3%;--dy:80.7%;--mx:35.9%;--my:51.6%;--mrest:0.641"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">03</span><b data-i18n="b10.c3">ИИ-куратор помогает</b><span data-i18n="b10.d3">В&nbsp;«Про». Застрял? Спроси, он отвечает 24/7</span></div></li>
+        <li class="wp wp--below" style="--dx:69.6%;--dy:60.6%;--mx:35.6%;--my:36.2%;--mrest:0.644"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">04</span><b data-i18n="b10.c4">Практика</b><span data-i18n="b10.d4">С&nbsp;реальным бизнесом</span></div></li>
+        <li class="wp wp--al wp--boss" style="--dx:87.1%;--dy:38.7%;--mx:26%;--my:22.2%;--mrest:0.740"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">05</span><b data-i18n="b10.c5">Первый заказ с&nbsp;предоплатой</b><span data-i18n="b10.d5">в&nbsp;тарифе «Про»</span></div></li>
+    </ol>
+  </div>
+</section>
+
 <!-- ============ 12. ТАРИФЫ — громкий блок ============ -->
-<section class="sec s-wine tariffs" id="tariffs" data-b="12" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,15.4 L18.7,16.1 L30.8,14.1 L47.6,12.4 L62.4,14.0 L79.3,13.3 L94.3,7.8 L106.5,11.3 L125.1,8.7 L137.8,11.7 L149.0,13.3 L160.9,13.0 L171.4,11.0 L178.8,9.2 L190.3,12.7 L200.3,9.9 L209.6,11.3 L227.9,11.1 L243.2,14.4 L249.6,14.1 L258.2,15.7 L269.3,17.4 L275.8,15.9 L290.6,15.1 L309.4,17.4 L324.5,19.0 L342.7,21.4 L352.3,19.2 L357.7,20.9 L369.9,20.5 L386.3,19.7 L402.8,20.6 L412.7,17.7 L419.9,18.5 L429.1,17.4 L444.8,16.6 L463.5,15.1 L475.7,13.1 L484.0,20.1 L493.4,22.0 L505.7,28.4 L520.1,25.1 L528.8,25.3 L539.5,25.2 L558.2,29.8 L569.4,29.7 L585.2,29.8 L598.6,29.1 L608.8,27.3 L620.9,24.1 L627.2,21.2 L638.5,21.3 L650.3,24.1 L664.9,26.5 L673.6,27.4 L679.4,28.2 L691.3,25.5 L709.3,27.9 L722.5,27.5 L731.6,22.4 L749.4,22.7 L761.2,22.6 L767.9,23.4 L785.5,22.6 L803.9,23.5 L811.7,23.3 L830.3,27.0 L843.9,28.7 L849.4,30 L865.0,29.9 L879.1,28.1 L889.8,22.6 L901.1,24.3 L919.0,25.3 L934.3,21.8 L946.2,21.4 L953.9,22.4 L963.7,22.4 L969.2,22.9 L982.6,23.1 L993.1,25.1 L1011.1,26.8 L1018.8,29.0 L1033.9,27.2 L1040.5,24.3 L1059.3,20.4 L1071.4,20.0 L1088.1,17.4 L1097.6,17.0 L1114.0,15.1 L1131.1,14.6 L1142.9,17.4 L1158.6,18.5 L1169.6,20.4 L1187.1,21.8 L1198.2,20.4 L1212.9,19.9 L1231.2,17.5 L1238.9,14.3 L1252.7,11.0 L1264.4,13.8 L1279.0,11.7 L1297.5,12.5 L1310.9,12.5 L1318.9,14.1 L1335.1,14.0 L1344.2,12.5 L1350.4,10.1 L1363.1,11.6 L1379.4,12.6 L1395.4,15.6 L1409.9,11.8 L1424.9,12.5 L1431.1,15.2 L1440,17.6 L1440,40 Z'/%3E%3C/svg%3E&quot;);--prev:#19161C">
+<section class="sec s-wine tariffs" id="tariffs" data-b="12" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,15.4 L18.7,16.1 L30.8,14.1 L47.6,12.4 L62.4,14.0 L79.3,13.3 L94.3,7.8 L106.5,11.3 L125.1,8.7 L137.8,11.7 L149.0,13.3 L160.9,13.0 L171.4,11.0 L178.8,9.2 L190.3,12.7 L200.3,9.9 L209.6,11.3 L227.9,11.1 L243.2,14.4 L249.6,14.1 L258.2,15.7 L269.3,17.4 L275.8,15.9 L290.6,15.1 L309.4,17.4 L324.5,19.0 L342.7,21.4 L352.3,19.2 L357.7,20.9 L369.9,20.5 L386.3,19.7 L402.8,20.6 L412.7,17.7 L419.9,18.5 L429.1,17.4 L444.8,16.6 L463.5,15.1 L475.7,13.1 L484.0,20.1 L493.4,22.0 L505.7,28.4 L520.1,25.1 L528.8,25.3 L539.5,25.2 L558.2,29.8 L569.4,29.7 L585.2,29.8 L598.6,29.1 L608.8,27.3 L620.9,24.1 L627.2,21.2 L638.5,21.3 L650.3,24.1 L664.9,26.5 L673.6,27.4 L679.4,28.2 L691.3,25.5 L709.3,27.9 L722.5,27.5 L731.6,22.4 L749.4,22.7 L761.2,22.6 L767.9,23.4 L785.5,22.6 L803.9,23.5 L811.7,23.3 L830.3,27.0 L843.9,28.7 L849.4,30 L865.0,29.9 L879.1,28.1 L889.8,22.6 L901.1,24.3 L919.0,25.3 L934.3,21.8 L946.2,21.4 L953.9,22.4 L963.7,22.4 L969.2,22.9 L982.6,23.1 L993.1,25.1 L1011.1,26.8 L1018.8,29.0 L1033.9,27.2 L1040.5,24.3 L1059.3,20.4 L1071.4,20.0 L1088.1,17.4 L1097.6,17.0 L1114.0,15.1 L1131.1,14.6 L1142.9,17.4 L1158.6,18.5 L1169.6,20.4 L1187.1,21.8 L1198.2,20.4 L1212.9,19.9 L1231.2,17.5 L1238.9,14.3 L1252.7,11.0 L1264.4,13.8 L1279.0,11.7 L1297.5,12.5 L1310.9,12.5 L1318.9,14.1 L1335.1,14.0 L1344.2,12.5 L1350.4,10.1 L1363.1,11.6 L1379.4,12.6 L1395.4,15.6 L1409.9,11.8 L1424.9,12.5 L1431.1,15.2 L1440,17.6 L1440,40 Z'/%3E%3C/svg%3E&quot;);--pc:#0A080C;--pb:#0A080C">
   <svg class="torn" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="torn-shade" d="M0.0,15.4 L18.7,16.1 L30.8,14.1 L47.6,12.4 L62.4,14.0 L79.3,13.3 L94.3,7.8 L106.5,11.3 L125.1,8.7 L137.8,11.7 L149.0,13.3 L160.9,13.0 L171.4,11.0 L178.8,9.2 L190.3,12.7 L200.3,9.9 L209.6,11.3 L227.9,11.1 L243.2,14.4 L249.6,14.1 L258.2,15.7 L269.3,17.4 L275.8,15.9 L290.6,15.1 L309.4,17.4 L324.5,19.0 L342.7,21.4 L352.3,19.2 L357.7,20.9 L369.9,20.5 L386.3,19.7 L402.8,20.6 L412.7,17.7 L419.9,18.5 L429.1,17.4 L444.8,16.6 L463.5,15.1 L475.7,13.1 L484.0,20.1 L493.4,22.0 L505.7,28.4 L520.1,25.1 L528.8,25.3 L539.5,25.2 L558.2,29.8 L569.4,29.7 L585.2,29.8 L598.6,29.1 L608.8,27.3 L620.9,24.1 L627.2,21.2 L638.5,21.3 L650.3,24.1 L664.9,26.5 L673.6,27.4 L679.4,28.2 L691.3,25.5 L709.3,27.9 L722.5,27.5 L731.6,22.4 L749.4,22.7 L761.2,22.6 L767.9,23.4 L785.5,22.6 L803.9,23.5 L811.7,23.3 L830.3,27.0 L843.9,28.7 L849.4,30 L865.0,29.9 L879.1,28.1 L889.8,22.6 L901.1,24.3 L919.0,25.3 L934.3,21.8 L946.2,21.4 L953.9,22.4 L963.7,22.4 L969.2,22.9 L982.6,23.1 L993.1,25.1 L1011.1,26.8 L1018.8,29.0 L1033.9,27.2 L1040.5,24.3 L1059.3,20.4 L1071.4,20.0 L1088.1,17.4 L1097.6,17.0 L1114.0,15.1 L1131.1,14.6 L1142.9,17.4 L1158.6,18.5 L1169.6,20.4 L1187.1,21.8 L1198.2,20.4 L1212.9,19.9 L1231.2,17.5 L1238.9,14.3 L1252.7,11.0 L1264.4,13.8 L1279.0,11.7 L1297.5,12.5 L1310.9,12.5 L1318.9,14.1 L1335.1,14.0 L1344.2,12.5 L1350.4,10.1 L1363.1,11.6 L1379.4,12.6 L1395.4,15.6 L1409.9,11.8 L1424.9,12.5 L1431.1,15.2 L1440,17.6"/><path class="torn-fiber" d="M0.0,15.4 L18.7,16.1 L30.8,14.1 L47.6,12.4 L62.4,14.0 L79.3,13.3 L94.3,7.8 L106.5,11.3 L125.1,8.7 L137.8,11.7 L149.0,13.3 L160.9,13.0 L171.4,11.0 L178.8,9.2 L190.3,12.7 L200.3,9.9 L209.6,11.3 L227.9,11.1 L243.2,14.4 L249.6,14.1 L258.2,15.7 L269.3,17.4 L275.8,15.9 L290.6,15.1 L309.4,17.4 L324.5,19.0 L342.7,21.4 L352.3,19.2 L357.7,20.9 L369.9,20.5 L386.3,19.7 L402.8,20.6 L412.7,17.7 L419.9,18.5 L429.1,17.4 L444.8,16.6 L463.5,15.1 L475.7,13.1 L484.0,20.1 L493.4,22.0 L505.7,28.4 L520.1,25.1 L528.8,25.3 L539.5,25.2 L558.2,29.8 L569.4,29.7 L585.2,29.8 L598.6,29.1 L608.8,27.3 L620.9,24.1 L627.2,21.2 L638.5,21.3 L650.3,24.1 L664.9,26.5 L673.6,27.4 L679.4,28.2 L691.3,25.5 L709.3,27.9 L722.5,27.5 L731.6,22.4 L749.4,22.7 L761.2,22.6 L767.9,23.4 L785.5,22.6 L803.9,23.5 L811.7,23.3 L830.3,27.0 L843.9,28.7 L849.4,30 L865.0,29.9 L879.1,28.1 L889.8,22.6 L901.1,24.3 L919.0,25.3 L934.3,21.8 L946.2,21.4 L953.9,22.4 L963.7,22.4 L969.2,22.9 L982.6,23.1 L993.1,25.1 L1011.1,26.8 L1018.8,29.0 L1033.9,27.2 L1040.5,24.3 L1059.3,20.4 L1071.4,20.0 L1088.1,17.4 L1097.6,17.0 L1114.0,15.1 L1131.1,14.6 L1142.9,17.4 L1158.6,18.5 L1169.6,20.4 L1187.1,21.8 L1198.2,20.4 L1212.9,19.9 L1231.2,17.5 L1238.9,14.3 L1252.7,11.0 L1264.4,13.8 L1279.0,11.7 L1297.5,12.5 L1310.9,12.5 L1318.9,14.1 L1335.1,14.0 L1344.2,12.5 L1350.4,10.1 L1363.1,11.6 L1379.4,12.6 L1395.4,15.6 L1409.9,11.8 L1424.9,12.5 L1431.1,15.2 L1440,17.6"/></svg>
   <div class="surf" aria-hidden="true">
     <div class="t-rays"></div>
@@ -544,7 +635,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   <div class="wrap">
     <div class="t-head">
       <h2 class="h2 worn"><span data-i18n="b12.h2a">Выбери свой</span> <span class="pink" data-i18n="b12.h2b">тариф</span></h2>
-      <p class="medals glass"><img src="assets/img/medal_coin.webp" alt="" width="227" height="300" loading="lazy"><span data-i18n="b12.medals">Скидку за&nbsp;медали из&nbsp;мини-курса бот покажет в&nbsp;сообщении с&nbsp;тарифами</span></p>
+      <p class="medals glass only-bot"><img src="assets/img/medal_coin.webp" alt="" width="227" height="300" loading="lazy"><span data-i18n="b12.medals"><b>Твои медали превращаются в&nbsp;скидку.</b> Сумму со&nbsp;скидкой бот покажет в&nbsp;сообщении с&nbsp;тарифами</span></p>
     </div>
     <div class="t-cards">
       <article class="tcard t-base">
@@ -561,8 +652,8 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
         <h3 class="tc-name" data-i18n="b12.n2">Про</h3>
         <p class="tc-price" data-i18n="b12.p2">1&nbsp;649&nbsp;990&nbsp;сум</p>
         <p class="tc-sub" data-i18n="b12.s2">$139 · можно частями · доступ 6&nbsp;месяцев</p>
-        <ul class="tc-list"><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2a">Всё из&nbsp;«Базового»</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2b">Рилсы с&nbsp;нейросетью</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2c">Как искать клиентов и&nbsp;первый заказ с&nbsp;предоплатой</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2d">ИИ-куратор 24/7 и&nbsp;Gemini на&nbsp;1,5&nbsp;года</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2e">Бот, который сам находит заказы</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2f">Сертификат</span></li></ul>
-        <a class="btn btn--block tc-btn" href="#pay" data-link="pay_pro" data-track="tariff" data-tariff="pro"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label" data-i18n="b12.b2">Выбрать «Про»</span></a>
+        <ul class="tc-list"><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2a">Всё из&nbsp;«Базового»</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2b">Рилсы с&nbsp;нейросетью</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2c">Как искать клиентов и&nbsp;первый заказ с&nbsp;предоплатой</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2d">ИИ-куратор 24/7 и&nbsp;Gemini на&nbsp;1,5&nbsp;года</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2e">Бот, который сам находит заказы и&nbsp;вакансии</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2f">Сертификат</span></li></ul>
+        <a class="btn btn--block tc-btn" href="#pay" data-link="pay_pro" data-track="tariff" data-tariff="pro"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.pro">Записаться в&nbsp;«Про»</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
       </article>
       <article class="tcard t-mentor">
         <h3 class="tc-name" data-i18n="b12.n3">Наставничество</h3>
@@ -573,12 +664,38 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
         <a class="btn-o tc-btn" href="#pay" data-link="pay_mentor" data-track="tariff" data-tariff="mentor" data-i18n="b12.b3">Выбрать «Наставничество»</a>
       </article>
     </div>
+    <div class="pro-value">
+      <h3 class="pv-h"><span data-i18n="b12.pv_h">Что даёт</span> <span class="pv-pro" data-i18n="b12.pv_h2">«Про»</span></h3>
+      <ul class="pv" role="list">
+          <li><b data-i18n="b12.pv1a">Модули «Как искать клиентов» и&nbsp;«Первый заказ с&nbsp;предоплатой»</b><svg class="pv-arr" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span data-i18n="b12.pv1b">Знаешь, где брать заказчиков и&nbsp;как взять предоплату, а&nbsp;не&nbsp;работать бесплатно</span></li>
+          <li><b data-i18n="b12.pv2a">Бот, который сам находит заказы и&nbsp;вакансии</b><svg class="pv-arr" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span data-i18n="b12.pv2b">Меньше ручного поиска: подходящие заказы он присылает сам</span></li>
+          <li><b data-i18n="b12.pv3a">Рилсы с&nbsp;нейросетью</b><svg class="pv-arr" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span data-i18n="b12.pv3b">Ещё одна услуга: 70⁠–⁠700&nbsp;тыс.&nbsp;сум за&nbsp;ролик, а&nbsp;клиенту их нужны десятки</span></li>
+          <li><b data-i18n="b12.pv4a">ИИ-куратор 24/7</b><svg class="pv-arr" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span data-i18n="b12.pv4b">Застрял ночью перед сдачей&nbsp;— ответ сразу, а&nbsp;не&nbsp;через день</span></li>
+          <li><b data-i18n="b12.pv5a">Gemini на&nbsp;1,5&nbsp;года</b><svg class="pv-arr" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span data-i18n="b12.pv5b">За&nbsp;нейросеть платить не&nbsp;нужно</span></li>
+      </ul>
+    </div>
     <div class="t-timer glass"><span class="tt-live"><span class="tt-l" data-i18n="b12.timer">Спеццена:</span> <b class="tt-v" data-timer>—</b></span><span class="tt-static" data-i18n="b12.timer_static">Спеццена действует 24&nbsp;часа после практического урока, потом цена растёт</span><span class="tt-over" data-i18n="b12.timer_over">Спеццена закончилась. Актуальную цену подскажет менеджер</span></div>
   </div>
 </section>
 
+<!-- ============ 7. ВСЁ ЧЕСТНО — компактная полоса под тарифами ============ -->
+<section class="sec s-graphite honest-strip" id="honest" data-b="7" style="--pc:#24091A;--pb:#24091A">
+  <div class="surf" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hs-in">
+      <p class="hs-h"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.6 12.2l2.4 2.4 4.6-5" stroke-linecap="round"/></svg><span data-i18n="b7.h">Всё честно</span></p>
+      <ul class="hs-list" role="list">
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t1">4 урока бесплатно.</b> <span class="only-bot" data-i18n="b7.d1">Сайт ты собрал сам ещё до&nbsp;оплаты.</span><span class="only-cold" data-i18n="b7.d1c">Сначала пробуешь сам, потом решаешь.</span></p></li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t2">Договор-оферта.</b> <span data-i18n="b7.d2">Курс продаёт ИП&nbsp;Беляков Василий Александрович.</span></p></li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t3">Оплата через Tribute.</b> <span data-i18n="b7.d3">Картой, а&nbsp;«Про» можно частями.</span></p></li>
+        <li><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="13.5"/><path d="M10 16.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b data-i18n="b7.t4">Без сказок про $1000 за&nbsp;неделю.</b> <span data-i18n="b7.d4">Деньги приходят с&nbsp;заказами, которые ты сделал.</span></p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 13. ДАВАЙ ПОСЧИТАЕМ — экран «VS» ============ -->
-<section class="sec s-black vs-sec" id="count" data-b="13" style="--prev:#24091A">
+<section class="sec s-black vs-sec" id="count" data-b="13" style="--pc:#19161C;--pb:#19161C">
   <div class="surf" aria-hidden="true">
     <div class="vs-panels"><i></i><i></i><i></i></div>
   </div>
@@ -608,14 +725,14 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       </div>
     </div>
     <div class="vs-foot">
-      <a class="btn" href="#tariffs" data-track="cta" data-place="count"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label" data-i18n="b13.cta">Выбрать «Про»</span></a>
-      <p class="note" data-i18n="b13.note">Нет всей суммы? «Про» можно оплатить частями. Цифры примерные, это не&nbsp;обещание дохода. *Kursiv, 2024: таксист в&nbsp;Ташкенте зарабатывает около 8&nbsp;млн сум чистыми в&nbsp;месяц. 26&nbsp;смен мы взяли сами для&nbsp;расчёта.</p>
+      <a class="btn" href="#tariffs" data-track="cta" data-place="count"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.pro">Записаться в&nbsp;«Про»</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
+      <p class="note" data-i18n="b13.note">Нет всей суммы? «Про» можно оплатить частями. *Kursiv, 2024: таксист в&nbsp;Ташкенте зарабатывает около 8&nbsp;млн сум чистыми в&nbsp;месяц. 26&nbsp;смен мы взяли сами для&nbsp;расчёта.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ 15. КАК ОПЛАТИТЬ ============ -->
-<section class="sec s-graphite pay-sec" id="pay" data-b="15" style="--prev:#100D12">
+<section class="sec s-graphite pay-sec" id="pay" data-b="15" style="--pc:#100D12;--pb:#24091A">
   <div class="surf tex-concrete" aria-hidden="true">
     <div class="glows">
     <div class="glow" style="right:6%;top:6%;width:40%;height:90%;--a:.16"></div>
@@ -659,7 +776,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 </section>
 
 <!-- ============ 16. ФИНАЛ — фото-сцена: развилка двух дорог ============ -->
-<section class="sec s-black final" id="final" data-b="16" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,15.9 L17.6,16.1 L30.7,19.3 L44.9,19.0 L54.5,20.8 L68.7,16.7 L75.0,14.9 L81.8,14.8 L95.1,14.2 L111.9,15.7 L120.6,18.4 L137.5,16.8 L148.9,15.7 L162.2,18.9 L167.5,19.4 L183.7,21.3 L201.6,21.2 L215.5,18.6 L226.9,15.6 L232.8,18.1 L240.5,17.0 L249.6,16.1 L261.3,24.2 L267.3,23.5 L285.6,23.1 L293.7,23.2 L301.5,25.5 L315.2,25.5 L323.8,25.5 L340.9,22.3 L355.3,19.6 L361.2,22.2 L371.2,22.3 L389.4,21.6 L405.2,24.0 L417.4,25.5 L433.1,26.4 L449.0,30 L455.6,30 L469.6,30 L480.2,28.1 L490.9,27.5 L499.0,24.9 L507.9,21.5 L524.2,22.7 L540.0,23.4 L552.0,23.8 L561.3,30 L574.4,28.0 L587.4,29.4 L600.4,28.2 L610.9,27.7 L627.8,28.2 L645.7,27.0 L656.3,25.3 L663.2,22.0 L671.2,22.0 L684.0,23.9 L691.6,20.4 L704.8,21.3 L723.2,20.4 L731.0,17.0 L749.8,13.2 L763.3,13.6 L768.4,14.0 L785.3,12.5 L800.1,5.6 L814.2,4 L826.0,7.0 L844.8,9.7 L858.5,13.1 L873.8,11.8 L884.9,15.2 L896.4,15.3 L905.4,18.1 L922.5,11.2 L933.5,10.7 L946.0,10.7 L958.5,9.8 L974.7,13.0 L984.1,12.7 L992.6,12.9 L1009.0,16.3 L1017.5,15.7 L1025.3,17.3 L1031.2,17.2 L1049.8,16.2 L1064.1,18.8 L1070.4,16.5 L1081.4,15.4 L1096.4,17.5 L1104.0,18.0 L1112.2,17.3 L1131.1,15.1 L1139.4,15.9 L1150.8,16.6 L1159.9,19.4 L1166.6,22.0 L1184.4,23.2 L1193.7,22.2 L1203.7,20.4 L1214.2,19.4 L1225.1,22.1 L1232.9,21.3 L1243.9,18.7 L1259.0,21.6 L1265.6,18.3 L1279.3,17.9 L1294.0,15.4 L1303.7,15.7 L1318.9,15.6 L1337.1,12.5 L1355.4,14.6 L1363.0,17.0 L1375.4,15.7 L1385.9,18.1 L1400.0,20.3 L1405.2,17.0 L1415.7,17.5 L1431.3,19.9 L1440,11.8 L1440,40 Z'/%3E%3C/svg%3E&quot;);--prev:#19161C">
+<section class="sec s-black final" id="final" data-b="16" data-torn style="--torn-mask:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath d='M0,40 L0.0,15.9 L17.6,16.1 L30.7,19.3 L44.9,19.0 L54.5,20.8 L68.7,16.7 L75.0,14.9 L81.8,14.8 L95.1,14.2 L111.9,15.7 L120.6,18.4 L137.5,16.8 L148.9,15.7 L162.2,18.9 L167.5,19.4 L183.7,21.3 L201.6,21.2 L215.5,18.6 L226.9,15.6 L232.8,18.1 L240.5,17.0 L249.6,16.1 L261.3,24.2 L267.3,23.5 L285.6,23.1 L293.7,23.2 L301.5,25.5 L315.2,25.5 L323.8,25.5 L340.9,22.3 L355.3,19.6 L361.2,22.2 L371.2,22.3 L389.4,21.6 L405.2,24.0 L417.4,25.5 L433.1,26.4 L449.0,30 L455.6,30 L469.6,30 L480.2,28.1 L490.9,27.5 L499.0,24.9 L507.9,21.5 L524.2,22.7 L540.0,23.4 L552.0,23.8 L561.3,30 L574.4,28.0 L587.4,29.4 L600.4,28.2 L610.9,27.7 L627.8,28.2 L645.7,27.0 L656.3,25.3 L663.2,22.0 L671.2,22.0 L684.0,23.9 L691.6,20.4 L704.8,21.3 L723.2,20.4 L731.0,17.0 L749.8,13.2 L763.3,13.6 L768.4,14.0 L785.3,12.5 L800.1,5.6 L814.2,4 L826.0,7.0 L844.8,9.7 L858.5,13.1 L873.8,11.8 L884.9,15.2 L896.4,15.3 L905.4,18.1 L922.5,11.2 L933.5,10.7 L946.0,10.7 L958.5,9.8 L974.7,13.0 L984.1,12.7 L992.6,12.9 L1009.0,16.3 L1017.5,15.7 L1025.3,17.3 L1031.2,17.2 L1049.8,16.2 L1064.1,18.8 L1070.4,16.5 L1081.4,15.4 L1096.4,17.5 L1104.0,18.0 L1112.2,17.3 L1131.1,15.1 L1139.4,15.9 L1150.8,16.6 L1159.9,19.4 L1166.6,22.0 L1184.4,23.2 L1193.7,22.2 L1203.7,20.4 L1214.2,19.4 L1225.1,22.1 L1232.9,21.3 L1243.9,18.7 L1259.0,21.6 L1265.6,18.3 L1279.3,17.9 L1294.0,15.4 L1303.7,15.7 L1318.9,15.6 L1337.1,12.5 L1355.4,14.6 L1363.0,17.0 L1375.4,15.7 L1385.9,18.1 L1400.0,20.3 L1405.2,17.0 L1415.7,17.5 L1431.3,19.9 L1440,11.8 L1440,40 Z'/%3E%3C/svg%3E&quot;);--pc:#19161C;--pb:#19161C">
   <svg class="torn" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="torn-shade" d="M0.0,15.9 L17.6,16.1 L30.7,19.3 L44.9,19.0 L54.5,20.8 L68.7,16.7 L75.0,14.9 L81.8,14.8 L95.1,14.2 L111.9,15.7 L120.6,18.4 L137.5,16.8 L148.9,15.7 L162.2,18.9 L167.5,19.4 L183.7,21.3 L201.6,21.2 L215.5,18.6 L226.9,15.6 L232.8,18.1 L240.5,17.0 L249.6,16.1 L261.3,24.2 L267.3,23.5 L285.6,23.1 L293.7,23.2 L301.5,25.5 L315.2,25.5 L323.8,25.5 L340.9,22.3 L355.3,19.6 L361.2,22.2 L371.2,22.3 L389.4,21.6 L405.2,24.0 L417.4,25.5 L433.1,26.4 L449.0,30 L455.6,30 L469.6,30 L480.2,28.1 L490.9,27.5 L499.0,24.9 L507.9,21.5 L524.2,22.7 L540.0,23.4 L552.0,23.8 L561.3,30 L574.4,28.0 L587.4,29.4 L600.4,28.2 L610.9,27.7 L627.8,28.2 L645.7,27.0 L656.3,25.3 L663.2,22.0 L671.2,22.0 L684.0,23.9 L691.6,20.4 L704.8,21.3 L723.2,20.4 L731.0,17.0 L749.8,13.2 L763.3,13.6 L768.4,14.0 L785.3,12.5 L800.1,5.6 L814.2,4 L826.0,7.0 L844.8,9.7 L858.5,13.1 L873.8,11.8 L884.9,15.2 L896.4,15.3 L905.4,18.1 L922.5,11.2 L933.5,10.7 L946.0,10.7 L958.5,9.8 L974.7,13.0 L984.1,12.7 L992.6,12.9 L1009.0,16.3 L1017.5,15.7 L1025.3,17.3 L1031.2,17.2 L1049.8,16.2 L1064.1,18.8 L1070.4,16.5 L1081.4,15.4 L1096.4,17.5 L1104.0,18.0 L1112.2,17.3 L1131.1,15.1 L1139.4,15.9 L1150.8,16.6 L1159.9,19.4 L1166.6,22.0 L1184.4,23.2 L1193.7,22.2 L1203.7,20.4 L1214.2,19.4 L1225.1,22.1 L1232.9,21.3 L1243.9,18.7 L1259.0,21.6 L1265.6,18.3 L1279.3,17.9 L1294.0,15.4 L1303.7,15.7 L1318.9,15.6 L1337.1,12.5 L1355.4,14.6 L1363.0,17.0 L1375.4,15.7 L1385.9,18.1 L1400.0,20.3 L1405.2,17.0 L1415.7,17.5 L1431.3,19.9 L1440,11.8"/><path class="torn-fiber" d="M0.0,15.9 L17.6,16.1 L30.7,19.3 L44.9,19.0 L54.5,20.8 L68.7,16.7 L75.0,14.9 L81.8,14.8 L95.1,14.2 L111.9,15.7 L120.6,18.4 L137.5,16.8 L148.9,15.7 L162.2,18.9 L167.5,19.4 L183.7,21.3 L201.6,21.2 L215.5,18.6 L226.9,15.6 L232.8,18.1 L240.5,17.0 L249.6,16.1 L261.3,24.2 L267.3,23.5 L285.6,23.1 L293.7,23.2 L301.5,25.5 L315.2,25.5 L323.8,25.5 L340.9,22.3 L355.3,19.6 L361.2,22.2 L371.2,22.3 L389.4,21.6 L405.2,24.0 L417.4,25.5 L433.1,26.4 L449.0,30 L455.6,30 L469.6,30 L480.2,28.1 L490.9,27.5 L499.0,24.9 L507.9,21.5 L524.2,22.7 L540.0,23.4 L552.0,23.8 L561.3,30 L574.4,28.0 L587.4,29.4 L600.4,28.2 L610.9,27.7 L627.8,28.2 L645.7,27.0 L656.3,25.3 L663.2,22.0 L671.2,22.0 L684.0,23.9 L691.6,20.4 L704.8,21.3 L723.2,20.4 L731.0,17.0 L749.8,13.2 L763.3,13.6 L768.4,14.0 L785.3,12.5 L800.1,5.6 L814.2,4 L826.0,7.0 L844.8,9.7 L858.5,13.1 L873.8,11.8 L884.9,15.2 L896.4,15.3 L905.4,18.1 L922.5,11.2 L933.5,10.7 L946.0,10.7 L958.5,9.8 L974.7,13.0 L984.1,12.7 L992.6,12.9 L1009.0,16.3 L1017.5,15.7 L1025.3,17.3 L1031.2,17.2 L1049.8,16.2 L1064.1,18.8 L1070.4,16.5 L1081.4,15.4 L1096.4,17.5 L1104.0,18.0 L1112.2,17.3 L1131.1,15.1 L1139.4,15.9 L1150.8,16.6 L1159.9,19.4 L1166.6,22.0 L1184.4,23.2 L1193.7,22.2 L1203.7,20.4 L1214.2,19.4 L1225.1,22.1 L1232.9,21.3 L1243.9,18.7 L1259.0,21.6 L1265.6,18.3 L1279.3,17.9 L1294.0,15.4 L1303.7,15.7 L1318.9,15.6 L1337.1,12.5 L1355.4,14.6 L1363.0,17.0 L1375.4,15.7 L1385.9,18.1 L1400.0,20.3 L1405.2,17.0 L1415.7,17.5 L1431.3,19.9 L1440,11.8"/></svg>
   <div class="surf final-bg" aria-hidden="true"><img src="assets/img/fork_d.webp" alt="" loading="lazy"></div>
   <div class="wrap">
@@ -673,19 +790,19 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       <div class="sign sign--go">
         <div class="sign-img" aria-hidden="true"><img src="assets/img/fork_d.webp" alt="" loading="lazy"></div>
         <p class="sign-t" data-i18n="b16.n">Начать</p>
-        <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b16.n1">Через 30&nbsp;дней у&nbsp;тебя портфолио и&nbsp;свой прайс</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b16.n2">Дальше первые заказы</span></li></ul>
+        <ul><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b16.n1">Цель на 30&nbsp;дней&nbsp;— первый заказ с&nbsp;предоплатой</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b16.n2">Дальше новые заказы и&nbsp;свои деньги</span></li></ul>
       </div>
     </div>
     <div class="final-cta">
       <p class="t-timer t-timer--sm glass"><span class="tt-live"><span class="tt-l" data-i18n="b12.timer">Спеццена:</span> <b class="tt-v" data-timer>—</b></span><span class="tt-static" data-i18n="b16.timer_static">Спеццена действует 24&nbsp;часа после практического урока</span><span class="tt-over" data-i18n="b12.timer_over">Спеццена закончилась. Актуальную цену подскажет менеджер</span></p>
-      <a class="btn" href="#tariffs" data-track="cta" data-place="final"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span></a>
+      <a class="btn" href="#tariffs" data-track="cta" data-place="final"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
       <a class="link" href="#faq" data-link="manager" data-track="manager" data-place="final" data-i18n="b16.ask">Задать вопрос менеджеру</a>
     </div>
   </div>
 </section>
 
 <!-- ============ 17. ВОПРОСЫ ============ -->
-<section class="sec s-black faq" id="faq" data-b="17" style="--prev:#0A080C">
+<section class="sec s-black faq" id="faq" data-b="17" style="--pc:#0A080C;--pb:#0A080C">
   <div class="surf" aria-hidden="true">
     <div class="glows">
     <div class="glow" style="right:-4%;top:20%;width:40%;height:70%;--a:.14"></div>
@@ -695,18 +812,18 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
     <div class="faq-l">
       <h2 class="h2 worn"><span data-i18n="b17.h2a">Остались</span> <span class="pink" data-i18n="b17.h2b">вопросы?</span></h2>
       <div class="qas" data-acc>
-        <details class="qa" open><summary><span class="qa-q" data-i18n="b17.q0">Это не лохотрон?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a0">4 урока ты прошёл бесплатно и сам собрал сайт. Курс продаёт ИП Беляков Василий Александрович по договору-оферте. $1000 за неделю мы не обещаем.</p></details>
-        <details class="qa"><summary><span class="qa-q" data-i18n="b17.q13">Есть отзывы?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a13">Честно: отзывов пока нет, и&nbsp;выдумывать их мы не&nbsp;будем. Истории учеников появятся после первого потока. А&nbsp;как всё устроено, ты уже видел на&nbsp;бесплатных уроках.</p></details>
+        <details class="qa" open><summary><span class="qa-q" data-i18n="b17.q0">Это не лохотрон?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a0">Сначала 4 урока бесплатно, и&nbsp;сайт ты собираешь сам ещё до&nbsp;оплаты. Курс продаёт ИП&nbsp;Беляков Василий Александрович по&nbsp;договору-оферте. $1000 за&nbsp;неделю мы не&nbsp;обещаем.</p></details>
+        <details class="qa"><summary><span class="qa-q" data-i18n="b17.q13">Есть отзывы?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a13">Курс новый, поэтому честно: истории учеников появятся после первого потока, придумывать их мы не&nbsp;будем. А&nbsp;пока посмотри, что сделал автор: Никита Попко вышел на&nbsp;$5&nbsp;000 в&nbsp;месяц через 2&nbsp;месяца после старта и&nbsp;за&nbsp;полгода собрал 30+ проектов. Этот сайт и&nbsp;бот мини-курса тоже сделаны с&nbsp;нейросетью.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q1">Я не&nbsp;программист. Справлюсь?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a1">Программировать не&nbsp;нужно. Код пишет нейросеть, а&nbsp;ты отвечаешь за&nbsp;задачу, вкус и&nbsp;общение с&nbsp;клиентом. Код ботов уже написали программисты, а&nbsp;сайты ты собираешь из&nbsp;готовых.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q2">Нужен ноутбук?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a2">Уроки можно смотреть с&nbsp;телефона. А&nbsp;сайты и&nbsp;ботов для&nbsp;клиентов делают на&nbsp;ноутбуке.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q3">Сколько нужно времени, если днём учёба?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a3">2⁠–⁠3 вечера в&nbsp;неделю. В&nbsp;модуле «Старт» составишь расписание на&nbsp;30&nbsp;дней.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q4">Мне 20. Кто мне доверит заказ?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a4">Это одно из&nbsp;12&nbsp;возражений, которые мы разбираем в&nbsp;модуле «Первый заказ с&nbsp;предоплатой». Там учим говорить с&nbsp;владельцем, который старше тебя.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q5">У меня нет портфолио</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a5">Соберёшь его по&nbsp;ходу курса: каждая услуга&nbsp;— это работа для&nbsp;настоящей компании из&nbsp;твоего списка.</p></details>
-        <details class="qa"><summary><span class="qa-q" data-i18n="b17.q6">Вы даёте клиентов?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a6">Нет — учим находить: 15 бесплатных способов и таблица из 30 компаний. Это модуль «Как искать клиентов» в «Про» и «Наставничестве».</p></details>
+        <details class="qa"><summary><span class="qa-q" data-i18n="b17.q6">Вы даёте клиентов?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a6">Учим находить самому: 15&nbsp;бесплатных способов и&nbsp;таблица из&nbsp;30&nbsp;компаний. А&nbsp;в&nbsp;«Про» ещё бот, который сам находит заказы и&nbsp;вакансии.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q7">Можно оплатить частями?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a7">Да, «Про» можно оплатить частями через партнёров по рассрочке. Партнёра, срок и итоговую сумму пришлёт менеджер до оплаты.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q8">Нужно платить за нейросети?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a8">На старте хватает бесплатных. В «Про» и «Наставничестве» подписка Gemini на 1,5 года уже включена.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q9">Родители против. Что им сказать?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a9">Понимаем, их мнение важно. Покажи им сайт, который ты собрал на&nbsp;практике, и&nbsp;программу курса: это не&nbsp;«схема», а&nbsp;сайты и&nbsp;боты для&nbsp;обычного бизнеса, по&nbsp;вечерам, без&nbsp;пропуска пар. В&nbsp;модуле «Старт» есть часть о&nbsp;том, как объяснить это семье.</p></details>
-        <details class="qa"><summary><span class="qa-q" data-i18n="b17.q10">А если не получится?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a10">Доход зависит от&nbsp;тебя: сколько заказов найдёшь и&nbsp;сделаешь. Поэтому школа его не&nbsp;гарантирует. Но&nbsp;одного тебя не&nbsp;оставим: задания делаешь с&nbsp;настоящей компанией, в&nbsp;«Про» помогает ИИ-куратор 24/7, а&nbsp;с&nbsp;любым вопросом можно написать менеджеру.</p></details>
+        <details class="qa"><summary><span class="qa-q" data-i18n="b17.q10">А если не получится?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a10">Доход зависит от&nbsp;тебя: сколько заказов найдёшь и&nbsp;сделаешь. Но&nbsp;одного тебя не&nbsp;оставим: задания делаешь с&nbsp;настоящей компанией, в&nbsp;«Про» помогает ИИ-куратор 24/7, а&nbsp;с&nbsp;любым вопросом можно написать менеджеру.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q11">Когда придёт доступ и сколько он длится?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a11">После проверки оплаты. Первым откроется модуль «Старт». Доступ: «Базовый» на&nbsp;3&nbsp;месяца, «Про» на&nbsp;6, «Наставничество» на&nbsp;12.</p></details>
         <details class="qa"><summary><span class="qa-q" data-i18n="b17.q12">Чем это лучше YouTube?</span><span class="lv-chev" aria-hidden="true"></span></summary><p class="qa-a" data-i18n="b17.a12">Здесь всё уже собрано в&nbsp;одном месте: готовые боты и&nbsp;сайты, промпты, практика с&nbsp;настоящим бизнесом, а&nbsp;в&nbsp;«Про» ещё и&nbsp;ИИ-куратор 24/7. Искать по&nbsp;кусочкам не&nbsp;придётся.</p></details>
       </div>
@@ -733,7 +850,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 </section>
 
 <!-- ============ 18. ПОДВАЛ ============ -->
-<footer class="sec s-black foot" id="footer" data-b="18" style="--prev:#100D12">
+<footer class="sec s-black foot" id="footer" data-b="18" style="--pc:#100D12;--pb:#100D12">
   <div class="surf" aria-hidden="true">
     <svg class="skyline" viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0,160 L0,118 L40,118 L40,96 L70,96 L70,124 L110,124 L110,70 L150,70 L150,110 L190,110 L190,88 L215,88 L215,40 L250,40 L250,100 L300,100 L300,122 L340,122 L340,80 L380,80 L380,58 L410,58 L410,104 L460,104 L460,126 L500,126 L500,90 L540,90 L540,30 L560,30 L560,22 L580,22 L580,30 L600,30 L600,96 L650,96 L650,116 L700,116 L700,74 L740,74 L740,108 L790,108 L790,64 L830,64 L830,120 L880,120 L880,92 L920,92 L920,48 L955,48 L955,104 L1000,104 L1000,128 L1040,128 L1040,84 L1080,84 L1080,60 L1110,60 L1110,110 L1160,110 L1160,90 L1200,90 L1200,36 L1235,36 L1235,100 L1280,100 L1280,122 L1320,122 L1320,78 L1360,78 L1360,112 L1400,112 L1400,96 L1440,96 L1440,160 Z" fill="#060508"/></svg>
     <div class="foot-lights"></div>
@@ -760,7 +877,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 <div class="dock" role="region" aria-label="Быстрые действия" data-i18n-aria-label="dock.region">
   <div class="dock-in">
     <p class="dock-info"><span class="di-price"><span data-i18n="dock.price_l">«Про»</span> <b data-i18n="dock.price">1&nbsp;649&nbsp;990&nbsp;сум</b></span><span class="di-timer"><span data-i18n="b12.timer">Спеццена:</span> <b data-timer>—</b></span></p>
-    <a class="btn dock-btn" href="#tariffs" data-track="cta" data-place="dock"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label" data-i18n="b1.cta">Выбрать тариф</span></a>
+    <a class="btn dock-btn" href="#tariffs" data-track="cta" data-place="dock"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal_s">«Про» по&nbsp;спеццене</span></span></a>
     <a class="dock-mgr" href="#faq" data-link="manager" data-track="manager" data-place="dock" aria-label="Написать менеджеру" data-i18n-aria-label="dock.mgr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M21 4.5L3.5 11.2l5.6 2.1 2.1 6.2 3-3.9 4.6 3.4z"/><path d="M9.1 13.3l8.3-6.1"/></svg></a>
   </div>
 </div>

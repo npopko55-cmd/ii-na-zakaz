@@ -93,3 +93,6 @@
   .mwin,.mphone{font-size:max(12px, 4cqi)}
   .mphone{left:7%;right:7%}
 }
+
+/* подпись под иллюстративной перепиской: это пример, а не настоящий кейс */
+.mock-note{margin:12px 0 0;font:500 14px/1.35 var(--f-text,'Inter',system-ui,sans-serif);color:var(--text-3,rgba(255,255,255,.55));text-align:center}

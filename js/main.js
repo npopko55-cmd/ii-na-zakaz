@@ -188,7 +188,8 @@
      или другая кнопка «Выбрать…» — двух одинаковых кнопок на экране не бывает ---------- */
   var dock = $('.dock'), heroCta = $('#cta-hero');
   if (dock && heroCta) {
-    var watch = $$('a.btn').filter(function (a) { return !a.closest('.dock') && !a.closest('.menu') && /Выбрать|tanlash|Tarif/i.test(a.textContent) || a.id === 'cta-hero'; })
+    // любая другая главная кнопка на экране (по смыслу, а не по тексту: подписи разные) + блоки тарифов и финала
+    var watch = $$('a.btn[data-track="cta"], a.btn[data-track="tariff"], a.btn-o[data-track="tariff"]').filter(function (a) { return !a.closest('.dock') && !a.closest('.menu'); })
       .concat([$('#tariffs'), $('#final')].filter(Boolean));
     var onScreen = new Map();
     var updDock = function () {
