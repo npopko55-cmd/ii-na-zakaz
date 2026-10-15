@@ -67,7 +67,7 @@
 .tg-back{flex:none;width:.6em;height:.6em;border-left:2px solid #6AB2F2;border-bottom:2px solid #6AB2F2;transform:rotate(45deg);margin-left:.15em}
 .tg-ava{flex:none;width:2em;height:2em;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.92em}
 .tg-ava--barber{background:linear-gradient(135deg,#F7B267,#E05A47);color:#fff;font-size:1em}
-.tg-ava--cur{background:linear-gradient(135deg,#FF5A9C,#7D6BFF);color:#fff}
+.tg-ava--agent{background:linear-gradient(135deg,#FF5A9C,#7D6BFF);color:#fff}
 .tg-chat{flex:1;display:flex;flex-direction:column;gap:.3em;padding:.5em .55em 1em;
   background:radial-gradient(120% 60% at 80% 0%,rgba(80,110,150,.18),transparent 70%),#0E1621}
 .tg-msg{position:relative;max-width:90%;padding:.4em .6em;border-radius:.85em;font-size:.95em;color:#F2F5F8}

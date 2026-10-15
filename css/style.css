@@ -897,7 +897,7 @@ h1.worn,h2.worn,h1.worn-hard,h2.worn-hard{padding-block:.16em .1em;margin-block:
 .wp-l{position:absolute;width:15vw;min-width:170px;padding:12px 16px 14px;border-radius:16px;display:flex;flex-direction:column;gap:3px}
 .wp-n{font:800 13px/1 var(--f-text);letter-spacing:.14em;color:rgba(255,255,255,.7)}
 .wp-l b{font:700 clamp(16px, 15px + .3vw, 20px)/1.22 var(--f-text);color:#fff}
-.wp-l>span:last-child{font-size:clamp(14px, 13.6px + .15vw, 16px);line-height:1.35;color:#E1DCE8}
+.wp-l>.wp-d{font-size:clamp(14px, 13.6px + .15vw, 16px);line-height:1.35;color:#E1DCE8}
 .wp--above .wp-l{left:0;bottom:24px;transform:translateX(-50%)}
 .wp--below .wp-l{left:0;top:24px;transform:translateX(-50%)}
 .wp--al .wp-l{right:-18px;bottom:34px}
@@ -940,7 +940,7 @@ h1.worn,h2.worn,h1.worn-hard,h2.worn-hard{padding-block:.16em .1em;margin-block:
   .route{margin-top:-14px}
   .wp-l,.wp--above .wp-l,.wp--below .wp-l,.wp--al .wp-l{left:20px;width:calc(100vw * var(--mrest) - 40px)}
   .wp-l b{font-size:16px}
-  .wp-l>span:last-child{font-size:14px}
+  .wp-l>.wp-d{font-size:14px}
   .wp-dot{width:20px;height:20px}
   .wp--boss .wp-dot{width:32px;height:32px}
 }
@@ -949,10 +949,10 @@ h1.worn,h2.worn,h1.worn-hard,h2.worn-hard{padding-block:.16em .1em;margin-block:
   .route{overflow:visible}
   .wp-l{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:8px;row-gap:2px;align-items:baseline}
   .wp-l .wp-n{white-space:normal}
-  .wp-l b,.wp-l>span:last-child{overflow-wrap:anywhere}
+  .wp-l b,.wp-l>.wp-d{overflow-wrap:anywhere}
   .wp-l .wp-n{grid-row:1}
   .wp-l b{grid-column:2}
-  .wp-l>span:last-child{grid-column:1 / -1}
+  .wp-l>.wp-d{grid-column:1 / -1}
   .wps li:first-child .wp-l{transform:translateY(-78%)}
 }
 
@@ -1274,7 +1274,6 @@ html:not(.from-bot) .only-bot{display:none!important}
 .tc-later b{font-weight:700;color:#E9E4EE;white-space:nowrap}
 .has-deadline .tc-later{display:block}
 .tc-why{margin:14px 0 0;padding:10px 12px;border-radius:10px;background:rgba(255,42,127,.14);border:1px solid rgba(255,90,156,.38);font:700 clamp(15px, 14.4px + .2vw, 17px)/1.35 var(--f-text);color:#fff}
-.t-foot{margin:clamp(16px, 1.6vw, 22px) auto 0;text-align:center}
 .prize img{display:block;width:100%;height:auto;margin-top:14px;border-radius:12px}
 
 /* медали → цена «Про» (только из бота; ?m=N; сгорают вместе со спецценой) */
@@ -1318,10 +1317,10 @@ html:not(.from-bot) .only-bot{display:none!important}
 .wp-n{align-self:flex-start;padding:4px 8px 3px;border-radius:6px;background:var(--pink);font:800 14px/1.1 var(--f-text);letter-spacing:.06em;color:#fff;white-space:nowrap}
 .wp-l b{font:900 clamp(24px, 19px + 1.1vw, 34px)/1.02 var(--f-disp);color:#fff;margin-top:4px}
 .wp--boss .wp-l b{font-size:clamp(26px, 20px + 1.3vw, 38px)}
-.wp-l>span:last-child{font-size:clamp(15px, 14.4px + .2vw, 17px)}
+.wp-l>.wp-d{font-size:clamp(15px, 14.4px + .2vw, 17px)}
 @media (max-width:1099px){
   .wp-l b,.wp--boss .wp-l b{font-size:clamp(22px, 6vw, 28px);margin-top:0}
-  .wp-l>span:last-child{font-size:15px}
+  .wp-l>.wp-d{font-size:15px}
 }
 
 /* VS: «Про» в день против стакана кофе — два бойца */
@@ -1342,3 +1341,7 @@ html:not(.from-bot) .only-bot{display:none!important}
 .po{display:none}
 .deadline-over .po{display:revert}
 .deadline-over .sp{display:none}
+
+/* уровни: у LVL 80 — строка плана «через 1–2 месяца после курса» (путь из урока 3, правка Никиты 15.10) */
+.wp-plan{display:block;margin-top:4px;font:600 clamp(14px, 13.6px + .15vw, 15px)/1.3 var(--f-text);color:#FFB3D1}
+@media (max-width:1099px){ .wp-l>.wp-plan{grid-column:1 / -1;font-size:14px} }
