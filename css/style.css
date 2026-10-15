@@ -1003,7 +1003,7 @@ html,body{background:#060508}
 .dock-info b{color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
 .di-timer{display:none}
 .has-deadline .di-timer{display:inline}
-.has-deadline .di-price,.deadline-over .di-price{display:none}
+.has-deadline .di-price{display:none}
 .dock-btn{min-height:52px;padding:6px 26px 6px 6px;border-radius:13px}
 .dock-btn .btn-ico{width:40px;height:40px}
 .dock-mgr{flex:none;width:52px;height:52px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);transition:background .2s}
@@ -1337,3 +1337,8 @@ html:not(.from-bot) .only-bot{display:none!important}
 /* место под настоящий скрин оплаты от клиента Никиты (пока скрыто) */
 .pay-proof{margin:16px 0 0}
 .pay-proof img{display:block;width:100%;max-width:420px;height:auto;margin:0 auto;border-radius:16px}
+
+/* после дедлайна (только из бота): спеццены уходят, на их месте — цены «потом» (879 990 / 2 069 990 / 17 499 990); медали сгорели */
+.po{display:none}
+.deadline-over .po{display:revert}
+.deadline-over .sp{display:none}
