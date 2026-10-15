@@ -13,9 +13,11 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
   /* ================= НАСТРОЙКИ (вписывает Никита) ================= */
-  // Ссылки: Telegram менеджера, оплата Tribute по тарифам, документы. Пустая строка — ссылки ещё нет:
+  // Ссылки: Telegram менеджера, оплата по тарифам, документы. Пустая строка — ссылки ещё нет:
   // тарифы ведут к блоку «Как оплатить», менеджер — к блоку «Вопросы», оферта и политика в подвале скрыты.
-  var LINKS = { manager: '', pay_base: '', pay_pro: '', pay_mentor: '', offer: '', privacy: '' };
+  // pay_pro_m5 / pay_pro_m9 — оплата «Про» по цене за медали (5–8 медалей — 1 499 990, все 9 — 1 349 990 сум);
+  // пусто — кнопка «Про» ведёт на обычную ссылку pay_pro.
+  var LINKS = { manager: '', pay_base: '', pay_pro: '', pay_pro_m5: '', pay_pro_m9: '', pay_mentor: '', offer: '', privacy: '' };
   // Счётчики: номер Яндекс Метрики и/или id проекта Microsoft Clarity. Пусто — не подключаются.
   var ANALYTICS = { metrika: '', clarity: '' };
 
@@ -56,6 +58,16 @@
       return url.toString();
     } catch (e) { return u; }
   }
+  /* ---------- медали из бота (?m=0…9): своя цена «Про» по ступени; медали сгорают вместе со спецценой ---------- */
+  var medals = null, mq = qs.get('m');
+  if (mq !== null && /^\d$/.test(mq)) { medals = +mq; store.set('offer_medals', mq); }
+  else { var ms = store.get('offer_medals'); if (ms !== null && /^\d$/.test(ms)) medals = +ms; }
+  var tier = medals === null ? null : (medals >= 9 ? 9 : medals >= 5 ? 5 : 0);
+  if (tier !== null) {
+    doc.classList.add('has-medals', 'mt-' + tier, 'from-bot');
+    $$('[data-medals]').forEach(function (el) { el.textContent = String(medals); });
+    if (tier && LINKS['pay_pro_m' + tier]) LINKS.pay_pro = LINKS['pay_pro_m' + tier];
+  }
   $$('[data-link]').forEach(function (a) {
     var key = a.getAttribute('data-link'), u = LINKS[key];
     if (u) { a.href = /^https?:/.test(u) ? withAttrib(u) : u; if (/^https?:/.test(u)) { a.target = '_blank'; a.rel = 'noopener'; } }
@@ -64,7 +76,10 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest('[data-track]'); if (!a) return;
     var kind = a.getAttribute('data-track'), place = a.getAttribute('data-place') || '';
-    if (kind === 'tariff') { var t = a.getAttribute('data-tariff'); track('tariff_click', { tariff: t }); if (LINKS['pay_' + t]) track('pay_click', { tariff: t }); }
+    if (kind === 'tariff') {
+      var t = a.getAttribute('data-tariff'), mt = t === 'pro' && tier !== null && !doc.classList.contains('deadline-over') ? tier : '';
+      track('tariff_click', { tariff: t, medals_tier: mt }); if (LINKS['pay_' + t]) track('pay_click', { tariff: t, medals_tier: mt });
+    }
     else if (kind === 'manager') track('manager_click', { place: place, linked: !!LINKS.manager });
     else track('cta_click', { place: place });
   });
@@ -206,7 +221,7 @@
   }
 
   /* ---------- таймер спеццены: только по дедлайну из ссылки бота (?deadline=<unix>), без перезапусков ---------- */
-  // Нет дедлайна → только строка «Спеццена действует 24 часа после практического урока». После нуля — «спеццена закончилась».
+  // Нет дедлайна → плашки «Новая цена» и таймера нет, только цены. После нуля — «спеццена закончилась», медали сгорают.
   var deadline = 0, dq = qs.get('deadline') || qs.get('t');
   if (dq && /^\d{9,13}$/.test(dq)) { deadline = +dq < 1e12 ? +dq * 1000 : +dq; store.set('offer_deadline', String(deadline)); }
   else deadline = +store.get('offer_deadline') || 0;
@@ -327,16 +342,14 @@
     }
     // блок 4: «Сайт готов 100%» обгоняет «3%»
     var era = $('.era-scene'); once(era, function () { era.classList.add('on'); }, .4);
-    // блок 6: лестница к $1000 растёт по месяцам
-    var lad = $('.lad'); once(lad, function () { lad.classList.add('on'); }, .5);
-    // блок 10: метки маршрута загораются по очереди, «Первый заказ» последним
+    // блок 10 «Уровни»: метки маршрута загораются по очереди, LVL 100 последним
     var route = $('.route'); once(route, function () { route.classList.add('on'); }, .3);
   }
 
   /* ---------- старт ---------- */
   var saved = qs.get('lang') || store.get('lang');
   if (saved && saved !== 'ru' && UZ) applyLang(saved); else { $$('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === 'ru')); }); }
-  track('page_view', { ref: attrib.ref || '', uid: attrib.uid || '', utm_source: attrib.utm_source || '', has_deadline: !!deadline });
+  track('page_view', { ref: attrib.ref || '', uid: attrib.uid || '', utm_source: attrib.utm_source || '', has_deadline: !!deadline, medals: medals === null ? '' : medals });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutScreens);
   window.addEventListener('load', layoutScreens);
   layoutScreens();
