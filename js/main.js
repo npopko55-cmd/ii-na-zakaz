@@ -226,14 +226,20 @@
   if (dq && /^\d{9,13}$/.test(dq)) { deadline = +dq < 1e12 ? +dq * 1000 : +dq; store.set('offer_deadline', String(deadline)); }
   else deadline = +store.get('offer_deadline') || 0;
   function pad(n) { return (n < 10 ? '0' : '') + n; }
-  var lastState = '';
+  // три ступени цены урока 4: live — спеццена до deadline; viewers — «цена для зрителей урока» ещё 24 ч (свой таймер);
+  // regular — обычная цена, без таймера. Перезапуска нет: каждая ступень честно кончается. Цены — prices.json.
+  var DAY = 864e5, lastState = '';
+  function stageNow() { var n = Date.now(); return !deadline ? 'none' : n < deadline ? 'live' : n < deadline + DAY ? 'viewers' : 'regular'; }
   function tick() {
-    var state = !deadline ? 'none' : (Date.now() >= deadline ? 'over' : 'live');
+    var state = stageNow();
     doc.classList.toggle('has-deadline', state === 'live');
-    doc.classList.toggle('deadline-over', state === 'over');
+    doc.classList.toggle('deadline-over', state === 'viewers' || state === 'regular');
+    doc.classList.toggle('stage-viewers', state === 'viewers');
+    doc.classList.toggle('stage-regular', state === 'regular');
     if (state !== lastState) { lastState = state; track('offer_timer', { state: state }); }
-    if (state !== 'live') return;
-    var s = Math.floor((deadline - Date.now()) / 1000), h = Math.floor(s / 3600);
+    if (state !== 'live' && state !== 'viewers') return;
+    var end = state === 'live' ? deadline : deadline + DAY;
+    var s = Math.max(0, Math.floor((end - Date.now()) / 1000)), h = Math.floor(s / 3600);
     var txt = (h < 100 ? pad(h) : h) + ':' + pad(Math.floor(s % 3600 / 60)) + ':' + pad(s % 60);
     $$('[data-timer]').forEach(function (el) { el.textContent = txt; });
   }

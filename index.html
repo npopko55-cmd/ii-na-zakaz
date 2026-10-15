@@ -22,7 +22,7 @@
 <script>/* до отрисовки: пришёл из бота? есть личный дедлайн? сколько медалей (?m=0…9)? — чтобы блок «Миссия пройдена», таймер и цена «Про» не прыгали */
 (function(){try{var q=new URLSearchParams(location.search),d=document.documentElement,st=function(k){try{return localStorage.getItem(k)}catch(e){return null}};
 var dl=q.get('deadline')||q.get('t');dl=dl&&/^\d{9,13}$/.test(dl)?(+dl<1e12?+dl*1000:+dl):(+st('offer_deadline')||0);
-if(dl&&Date.now()<dl)d.classList.add('has-deadline');else if(dl)d.classList.add('deadline-over');
+var nw=Date.now();if(dl&&nw<dl)d.classList.add('has-deadline');else if(dl)d.classList.add('deadline-over',nw<dl+864e5?'stage-viewers':'stage-regular');
 var a={};try{a=JSON.parse(st('attrib')||'{}')||{}}catch(e){}
 var m=q.get('m');if(m!==null&&/^\d$/.test(m)){try{localStorage.setItem('offer_medals',m)}catch(e){}}else m=st('offer_medals');
 if(m!==null&&/^\d$/.test(m))d.classList.add('has-medals','mt-'+(+m>=9?9:+m>=5?5:0));else m=null;
@@ -437,29 +437,25 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   </div>
 </section>
 
-<!-- ============ 21. НАПОМНЮ, ПОЧЕМУ ЭТО РАБОТАЕТ — только «из бота»: блоки 2–5 одним экраном ============ -->
+<!-- ============ 21. ПОЧЕМУ НА ЭТОМ ЗАРАБАТЫВАЮТ УЖЕ СЕЙЧАС — только «из бота»: формула «спрос + скорость + конкурентов почти нет = деньги» (Никита 15.10, без сносок) ============ -->
 <section class="sec s-graphite remind only-bot" id="why" data-b="21" style="--pb:#0B090D">
-  <div class="surf tex-grid" aria-hidden="true" style="--grid-x:28%;--grid-y:58%">
+  <div class="surf tex-grid" aria-hidden="true" style="--grid-x:50%;--grid-y:72%">
     <div class="glows">
-    <div class="glow" style="left:-4%;top:20%;width:50%;height:80%;--a:.14"></div>
+    <div class="glow" style="left:50%;top:58%;width:min(980px,110vw);height:70%;transform:translateX(-50%);--a:.16"></div>
     </div>
   </div>
   <div class="wrap">
-    <h2 class="h2 worn remind-h"><span data-i18n="b21.h2a">Напомню, почему</span> <span class="pink" data-i18n="b21.h2b">это работает</span></h2>
-    <div class="remind-grid">
-      <div class="remind-map">
-        <img src="assets/img/map_iso.webp" alt="" width="1500" height="1168" loading="lazy">
-        <p class="remind-big"><b data-i18n="b21.n1">49%</b><span data-i18n="b21.n1l">компаний Ташкента без&nbsp;сайта*</span></p>
-      </div>
-      <ul class="remind-list" role="list">
-        <li><b data-i18n="b21.n4">Не&nbsp;только сайты</b><span data-i18n="b21.n4l">Бизнесу нужны боты для&nbsp;заявок, контент для&nbsp;соцсетей, рилсы и&nbsp;дизайн</span></li>
-        <li><b data-i18n="b21.n2">≈&nbsp;4,5&nbsp;млн&nbsp;сум</b><span data-i18n="b21.n2l">средний чек одной ИИ-услуги**, это около $380</span></li>
-        <li><b data-i18n="b21.n3">1&nbsp;вечер</b><span data-i18n="b21.n3l">чтобы собрать сайт с&nbsp;нейросетью. Раньше на&nbsp;это учились 3&nbsp;года</span></li>
-        <li><b data-i18n="b21.n5">0,2%</b><span data-i18n="b21.n5l">людей в&nbsp;мире умеют сейчас работать с&nbsp;ИИ на&nbsp;полную***. Конкуренции почти нет</span></li>
-      </ul>
+    <h2 class="h2 worn remind-h"><span class="line" data-i18n="b21.h2a">Почему на&nbsp;этом</span><span class="line" data-i18n="b21.h2b">зарабатывают уже сейчас</span></h2>
+    <div class="fx" role="list">
+      <div class="fx-card gl" role="listitem"><p class="fx-k" data-i18n="b21.k1">Спрос</p><p class="fx-n" data-i18n="b21.n1">49%</p><p class="fx-t" data-i18n="b21.t1">компаний Ташкента без&nbsp;сайта. А&nbsp;ещё им нужны боты, контент и&nbsp;дизайн</p></div>
+      <span class="fx-op" aria-hidden="true">+</span>
+      <div class="fx-card gl" role="listitem"><p class="fx-k" data-i18n="b21.k2">Скорость</p><p class="fx-n" data-i18n="b21.n2">1&nbsp;вечер</p><p class="fx-t" data-i18n="b21.t2">С&nbsp;нейросетью сайт собирается за&nbsp;вечер. Раньше на&nbsp;это учились 3&nbsp;года</p></div>
+      <span class="fx-op" aria-hidden="true">+</span>
+      <div class="fx-card gl" role="listitem"><p class="fx-k" data-i18n="b21.k3">Конкурентов почти нет</p><p class="fx-n" data-i18n="b21.n3">0,2%</p><p class="fx-t" data-i18n="b21.t3">людей в&nbsp;мире умеют работать с&nbsp;ИИ на&nbsp;полную</p></div>
+      <span class="fx-op fx-eq" aria-hidden="true">=</span>
+      <div class="fx-res" role="listitem"><p class="fx-n" data-i18n="b21.n4">≈&nbsp;4,5&nbsp;млн&nbsp;сум</p><p class="fx-t" data-i18n="b21.t4">платит бизнес за&nbsp;одну ИИ-услугу, а&nbsp;делаешь ты её за&nbsp;вечер</p></div>
     </div>
-    <p class="remind-out" data-i18n="b21.out">Работа нужна, делается теперь быстро, платят за&nbsp;неё по-прежнему, а&nbsp;умеющих мало. Осталось научиться находить заказы&nbsp;— этому и&nbsp;учит курс.</p>
-    <p class="note" data-i18n="b21.note">*Наша проверка карт, октябрь 2026: 146 из&nbsp;300 компаний в&nbsp;12&nbsp;нишах. **Среднее из&nbsp;середин рыночных вилок: боты 0,7⁠–⁠7&nbsp;млн, сайты 1,4⁠–⁠9,8&nbsp;млн, контент 2,8⁠–⁠7&nbsp;млн в&nbsp;месяц, дизайн 1,4⁠–⁠5,6&nbsp;млн в&nbsp;месяц (прайсы Ташкента, сентябрь 2026). Рилсы в&nbsp;расчёт не&nbsp;входят: их считают за&nbsp;ролик, 70⁠–⁠700&nbsp;тыс. ***Андрей Карпаты, сооснователь OpenAI, пост в&nbsp;X, 11.10.2026</p>
+    <p class="remind-out" data-i18n="b21.out">Пока таких специалистов мало, платят хорошо. Окно открыто сейчас.</p>
   </div>
 </section>
 
@@ -610,10 +606,10 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       <img src="assets/img/path_d.webp" alt="" loading="lazy">
     </picture>
     <ol class="wps" role="list">
-        <li class="wp wp--above" style="--dx:18.2%;--dy:86.3%;--mx:15.9%;--my:96%;--mrest:0.841"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 1</span><b>$100⁠–⁠150</b><span class="wp-d" data-i18n="b10.d1">первый заказ</span></div></li>
-        <li class="wp wp--above" style="--dx:51.3%;--dy:80.7%;--mx:28.6%;--my:74.5%;--mrest:0.714"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 30</span><b>$500⁠–⁠700</b><span class="wp-d" data-i18n="b10.d2">2⁠–⁠3 заказа</span></div></li>
-        <li class="wp wp--below" style="--dx:69.6%;--dy:60.6%;--mx:35.9%;--my:51.6%;--mrest:0.641"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 80</span><b>$1000+ <span class="wp-u" data-i18n="b10.c3">в&nbsp;месяц</span></b><span class="wp-d" data-i18n="b10.d3">3⁠–⁠4 заказа по&nbsp;$300</span><span class="wp-plan" data-i18n="b10.p3">По&nbsp;плану&nbsp;— через 1⁠–⁠2&nbsp;месяца после курса</span></div></li>
-        <li class="wp wp--al wp--boss" style="--dx:87.1%;--dy:38.7%;--mx:26%;--my:22.2%;--mrest:0.740"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 100</span><b data-i18n="b10.c4">Своё агентство</b><span class="wp-d" data-i18n="b10.d4">как у&nbsp;Никиты</span></div></li>
+        <li class="wp wp--above" style="--dx:18.2%;--dy:86.3%;--mx:15.9%;--mf:.159;--my:96%;--mrest:0.841"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 1</span><b>$100⁠–⁠150</b><span class="wp-d" data-i18n="b10.d1">первый заказ</span></div></li>
+        <li class="wp wp--above" style="--dx:51.3%;--dy:80.7%;--mx:28.6%;--mf:.286;--my:74.5%;--mrest:0.714"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 30</span><b>$500⁠–⁠700</b><span class="wp-d" data-i18n="b10.d2">2⁠–⁠3 заказа</span></div></li>
+        <li class="wp wp--below" style="--dx:69.6%;--dy:60.6%;--mx:35.9%;--mf:.359;--my:51.6%;--mrest:0.641"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 80</span><b>$1000+ <span class="wp-u" data-i18n="b10.c3">в&nbsp;месяц</span></b><span class="wp-d" data-i18n="b10.d3">3⁠–⁠4 заказа по&nbsp;$300</span><span class="wp-plan" data-i18n="b10.p3">По&nbsp;плану&nbsp;— через 1⁠–⁠2&nbsp;месяца после курса</span></div></li>
+        <li class="wp wp--al wp--boss" style="--dx:87.1%;--dy:38.7%;--mx:26%;--mf:.26;--my:22.2%;--mrest:0.740"><i class="wp-dot" aria-hidden="true"></i><div class="wp-l gl"><span class="wp-n">LVL 100</span><b data-i18n="b10.c4">Своё агентство</b><span class="wp-d" data-i18n="b10.d4">как у&nbsp;Никиты</span></div></li>
     </ol>
   </div>
 </section>
@@ -650,14 +646,14 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
           <p class="md-note" data-i18n="b12.md_note">Скидка только на&nbsp;«Про», при оплате частями тоже. Медали сгорают вместе со&nbsp;спецценой.</p>
         </div>
       </div>
-      <p class="t-timer glass"><span class="t-badge" data-i18n="b12.badge">Новая цена&nbsp;— действует 24&nbsp;часа</span><span class="tt-live"><span class="tt-l" data-i18n="b12.left">Осталось</span> <b class="tt-v" data-timer>—</b></span><span class="tt-over" data-i18n="b12.timer_over">Спеццена закончилась. Ниже&nbsp;— актуальные цены</span></p>
+      <p class="t-timer glass"><span class="t-badge" data-i18n="b12.badge">Новая цена&nbsp;— действует 24&nbsp;часа</span><span class="tt-l2 po" data-i18n="b12.badge2">Спеццена закончилась. Цена для&nbsp;зрителей урока действует ещё:</span><span class="tt-live"><span class="tt-l sp" data-i18n="b12.left">Осталось</span> <b class="tt-v" data-timer>—</b></span><span class="tt-over" data-i18n="b12.timer_over">Цены для&nbsp;зрителей урока закончились</span></p>
     </div>
     <div class="t-cards">
       <article class="tcard t-base">
         <h3 class="tc-name" data-i18n="b12.n1">Базовый</h3>
-        <p class="tc-price"><span class="sp" data-i18n="b12.p1">699&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l1">879&nbsp;990&nbsp;сум</span></p>
-        <p class="tc-later"><span data-i18n="b12.later">потом</span> <b data-i18n="b12.l1">879&nbsp;990&nbsp;сум</b></p>
-        <p class="tc-sub"><span class="sp" data-i18n="b12.s1usd">$59</span><span class="po" data-i18n="b12.s1usdo">≈&nbsp;$75</span> · <span data-i18n="b12.s1">доступ 3&nbsp;месяца</span></p>
+        <p class="tc-price"><span class="sp" data-i18n="b12.p1">699&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l1">879&nbsp;990&nbsp;сум</span><span class="pr" data-i18n="b12.r1">1&nbsp;229&nbsp;990&nbsp;сум</span></p>
+        <p class="tc-later"><span data-i18n="b12.later">потом</span> <b class="sp" data-i18n="b12.l1">879&nbsp;990&nbsp;сум</b><b class="po" data-i18n="b12.r1">1&nbsp;229&nbsp;990&nbsp;сум</b></p>
+        <p class="tc-sub"><span class="sp" data-i18n="b12.s1usd">$59</span><span class="po" data-i18n="b12.s1usdo">≈&nbsp;$75</span><span class="pr" data-i18n="b12.s1usdr">≈&nbsp;$104</span> · <span data-i18n="b12.s1">доступ 3&nbsp;месяца</span></p>
         <ul class="tc-list"><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i1a">Модуль «Старт» и&nbsp;4&nbsp;услуги: боты, сайты, контент, дизайн</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i1b">Все материалы модулей</span></li></ul>
         <p class="tc-no" data-i18n="b12.no">Не&nbsp;входит</p>
         <ul class="tc-list tc-list--no"><li><svg viewBox="0 0 20 20" fill="none" stroke="#8E8896" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9"/></svg><span data-i18n="b12.x1">Рилсы с&nbsp;нейросетью</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#8E8896" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9"/></svg><span data-i18n="b12.x2">Поиск клиентов и продажи</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#8E8896" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5.5 5.5l9 9M14.5 5.5l-9 9"/></svg><span data-i18n="b12.x3">ИИ-агент Никиты</span></li></ul>
@@ -666,10 +662,10 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       <article class="tcard t-pro">
         <p class="tc-rec" data-i18n="b12.rec">Рекомендуем</p>
         <h3 class="tc-name" data-i18n="b12.n2">Про</h3>
-        <p class="tc-price"><span class="pp pp0 sp" data-i18n="b12.p2">1&nbsp;649&nbsp;990&nbsp;сум</span><span class="pp pp5" data-i18n="b12.p2m5">1&nbsp;499&nbsp;990&nbsp;сум</span><span class="pp pp9" data-i18n="b12.p2m9">1&nbsp;349&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</span></p>
+        <p class="tc-price"><span class="pp pp0 sp" data-i18n="b12.p2">1&nbsp;649&nbsp;990&nbsp;сум</span><span class="pp pp5" data-i18n="b12.p2m5">1&nbsp;499&nbsp;990&nbsp;сум</span><span class="pp pp9" data-i18n="b12.p2m9">1&nbsp;349&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</span><span class="pr" data-i18n="b12.r2">2&nbsp;889&nbsp;990&nbsp;сум</span></p>
         <p class="tc-medal"><s data-i18n="b12.p2s">1&nbsp;649&nbsp;990</s> <span class="pp pp5" data-i18n="b12.md_off5">−150&nbsp;000&nbsp;сум за&nbsp;медали</span><span class="pp pp9" data-i18n="b12.md_off9">−300&nbsp;000&nbsp;сум за&nbsp;медали</span></p>
-        <p class="tc-later"><span data-i18n="b12.later">потом</span> <b data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</b></p>
-        <p class="tc-sub"><span class="pp pp0 sp" data-i18n="b12.s2usd">$139</span><span class="pp pp5" data-i18n="b12.s2usd5">≈&nbsp;$127</span><span class="pp pp9" data-i18n="b12.s2usd9">≈&nbsp;$114</span><span class="po" data-i18n="b12.s2usdo">≈&nbsp;$175</span> · <span data-i18n="b12.s2">можно частями · доступ 6&nbsp;месяцев</span></p>
+        <p class="tc-later"><span data-i18n="b12.later">потом</span> <b class="sp" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</b><b class="po" data-i18n="b12.r2">2&nbsp;889&nbsp;990&nbsp;сум</b></p>
+        <p class="tc-sub"><span class="pp pp0 sp" data-i18n="b12.s2usd">$139</span><span class="pp pp5" data-i18n="b12.s2usd5">≈&nbsp;$127</span><span class="pp pp9" data-i18n="b12.s2usd9">≈&nbsp;$114</span><span class="po" data-i18n="b12.s2usdo">≈&nbsp;$175</span><span class="pr" data-i18n="b12.s2usdr">≈&nbsp;$245</span> · <span data-i18n="b12.s2">можно частями · доступ 6&nbsp;месяцев</span></p>
         <p class="tc-why" data-i18n="b12.why">Главное в&nbsp;«Про»: учит находить клиентов и&nbsp;брать предоплату</p>
         <ul class="tc-list"><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2a">Всё из&nbsp;«Базового»</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2b">Рилсы с&nbsp;нейросетью</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2c">Как искать клиентов и&nbsp;первый заказ с&nbsp;предоплатой</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2d">ИИ-агент с&nbsp;базой знаний Никиты 24/7 и&nbsp;Gemini на&nbsp;1,5&nbsp;года</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2e">Бот, который сам находит заказы и&nbsp;вакансии</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2f">Сертификат</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2g">Гарантированный первый клиент</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i2h">Розыгрыш iPhone среди всех участников «Про»</span></li></ul>
         <!-- Место под картинку приза (iPhone): даст сборщик слайдов. Пока скрыто, на странице ничего нет. Модель и дату розыгрыша не называем, пока не решит Никита. -->
@@ -678,9 +674,9 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       </article>
       <article class="tcard t-mentor">
         <h3 class="tc-name" data-i18n="b12.n3">Наставничество</h3>
-        <p class="tc-price"><span class="sp" data-i18n="b12.p3">13&nbsp;999&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l3">17&nbsp;499&nbsp;990&nbsp;сум</span></p>
-        <p class="tc-later"><span data-i18n="b12.later">потом</span> <b data-i18n="b12.l3">17&nbsp;499&nbsp;990&nbsp;сум</b></p>
-        <p class="tc-sub"><span class="sp" data-i18n="b12.s3usd">$1190</span><span class="po" data-i18n="b12.s3usdo">≈&nbsp;$1483</span> · <span data-i18n="b12.s3">доступ 12&nbsp;месяцев</span></p>
+        <p class="tc-price"><span class="sp" data-i18n="b12.p3">13&nbsp;999&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l3">17&nbsp;499&nbsp;990&nbsp;сум</span><span class="pr" data-i18n="b12.r3">24&nbsp;499&nbsp;990&nbsp;сум</span></p>
+        <p class="tc-later"><span data-i18n="b12.later">потом</span> <b class="sp" data-i18n="b12.l3">17&nbsp;499&nbsp;990&nbsp;сум</b><b class="po" data-i18n="b12.r3">24&nbsp;499&nbsp;990&nbsp;сум</b></p>
+        <p class="tc-sub"><span class="sp" data-i18n="b12.s3usd">$1190</span><span class="po" data-i18n="b12.s3usdo">≈&nbsp;$1483</span><span class="pr" data-i18n="b12.s3usdr">≈&nbsp;$2076</span> · <span data-i18n="b12.s3">доступ 12&nbsp;месяцев</span></p>
         <ul class="tc-list"><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i3a">Всё из&nbsp;«Про»</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i3b">Личное сопровождение до&nbsp;результата</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i3c">Zoom-разборы и&nbsp;групповые созвоны</span></li><li><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="b12.i3d">Созвоны: как выйти на&nbsp;зарубежный рынок</span></li></ul>
         <p class="tc-hint" data-i18n="b12.h3">Поток стартует, когда наберётся 5&nbsp;человек</p>
         <a class="btn-o tc-btn" href="#pay" data-link="pay_mentor" data-track="tariff" data-tariff="mentor" data-i18n="b12.b3">Выбрать «Наставничество»</a>
@@ -696,26 +692,25 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
   </div>
   <div class="wrap">
     <h2 class="h2 worn vs-h"><span data-i18n="b13.h2a">Давай</span> <span class="pink" data-i18n="b13.h2b">посчитаем</span></h2>
-    <p class="vs-sub"><span data-i18n="b13.sub">Доступ к&nbsp;«Про»&nbsp;— 6&nbsp;месяцев. Раздели цену на&nbsp;дни&nbsp;— выйдет около</span> <span class="pp pp0 sp">9&nbsp;000</span><span class="pp pp5">8&nbsp;200</span><span class="pp pp9">7&nbsp;400</span><span class="po">11&nbsp;300</span>&nbsp;<span data-i18n="b13.sub2">сум в&nbsp;день</span></p>
+    <p class="vs-sub"><span data-i18n="b13.sub">Доступ к&nbsp;«Про»&nbsp;— 6&nbsp;месяцев. Раздели цену на&nbsp;дни&nbsp;— выйдет около</span> <span class="pp pp0 sp">9&nbsp;000</span><span class="pp pp5">8&nbsp;200</span><span class="pp pp9">7&nbsp;400</span><span class="po">11&nbsp;300</span><span class="pr">15&nbsp;800</span>&nbsp;<span data-i18n="b13.sub2">сум в&nbsp;день</span></p>
     <div class="vs-row vs-row--2">
       <div class="fighter f-win">
         <div class="f-art"><div class="floor"></div><img class="cut" src="assets/img/cafe_laptop.webp" alt="" width="814" height="900" loading="lazy"></div>
         <p class="f-l" data-i18n="b13.l1">«Про» в&nbsp;день</p>
-        <p class="f-v"><span class="pp pp0 sp" data-i18n="b13.v1">≈&nbsp;9&nbsp;000&nbsp;сум</span><span class="pp pp5" data-i18n="b13.v1m5">≈&nbsp;8&nbsp;200&nbsp;сум</span><span class="pp pp9" data-i18n="b13.v1m9">≈&nbsp;7&nbsp;400&nbsp;сум</span><span class="po" data-i18n="b13.v1o">≈&nbsp;11&nbsp;300&nbsp;сум</span></p>
-        <p class="f-s"><span class="pp pp0 sp" data-i18n="b13.s1">1&nbsp;649&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="pp pp5" data-i18n="b13.s1m5">1&nbsp;499&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="pp pp9" data-i18n="b13.s1m9">1&nbsp;349&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="po" data-i18n="b13.s1o">2&nbsp;069&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span></p>
+        <p class="f-v"><span class="pp pp0 sp" data-i18n="b13.v1">≈&nbsp;9&nbsp;000&nbsp;сум</span><span class="pp pp5" data-i18n="b13.v1m5">≈&nbsp;8&nbsp;200&nbsp;сум</span><span class="pp pp9" data-i18n="b13.v1m9">≈&nbsp;7&nbsp;400&nbsp;сум</span><span class="po" data-i18n="b13.v1o">≈&nbsp;11&nbsp;300&nbsp;сум</span><span class="pr" data-i18n="b13.v1r">≈&nbsp;15&nbsp;800&nbsp;сум</span></p>
+        <p class="f-s"><span class="pp pp0 sp" data-i18n="b13.s1">1&nbsp;649&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="pp pp5" data-i18n="b13.s1m5">1&nbsp;499&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="pp pp9" data-i18n="b13.s1m9">1&nbsp;349&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="po" data-i18n="b13.s1o">2&nbsp;069&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span><span class="pr" data-i18n="b13.s1r">2&nbsp;889&nbsp;990&nbsp;сум&nbsp;÷ 183&nbsp;дня</span></p>
       </div>
       <span class="vs" aria-hidden="true">VS</span>
       <div class="fighter f-cup">
         <div class="f-art"><img class="cut" src="assets/img/vs_coffee.webp" alt="" width="507" height="900" loading="lazy"></div>
         <p class="f-l" data-i18n="b13.l2">Латте в&nbsp;кофейне</p>
-        <p class="f-v" data-i18n="b13.v2">от&nbsp;22&nbsp;000&nbsp;сум*</p>
+        <p class="f-v" data-i18n="b13.v2">от&nbsp;22&nbsp;000&nbsp;сум</p>
         <p class="f-s" data-i18n="b13.s2">Выпил за&nbsp;10&nbsp;минут&nbsp;— и&nbsp;всё</p>
       </div>
     </div>
     <div class="vs-foot">
       <p class="vs-out" data-i18n="b13.out">Кофе выпил&nbsp;— и&nbsp;его нет. А&nbsp;профессия остаётся с&nbsp;тобой и&nbsp;может приносить <b class="nobr">$1000 в&nbsp;месяц</b></p>
       <a class="btn" href="#tariffs" data-track="cta" data-place="count"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.pro">Записаться в&nbsp;«Про»</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
-      <p class="note" data-i18n="b13.note">*Латте в&nbsp;кофейнях Ташкента, 2026. Нет всей суммы? «Про» можно оплатить частями.</p>
     </div>
   </div>
 </section>
@@ -757,7 +752,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
           <span class="ps-ok"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 25l7 7 15-16"/></svg></span>
           <p class="ps-t" data-i18n="b15.ps1">Оплата прошла</p>
           <p class="ps-s" data-i18n="b15.ps2">Тариф «Про»</p>
-          <p class="ps-sum"><span class="pp pp0 sp" data-i18n="b15.ps3">1&nbsp;649&nbsp;990&nbsp;сум</span><span class="pp pp5" data-i18n="b12.p2m5">1&nbsp;499&nbsp;990&nbsp;сум</span><span class="pp pp9" data-i18n="b12.p2m9">1&nbsp;349&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</span></p>
+          <p class="ps-sum"><span class="pp pp0 sp" data-i18n="b15.ps3">1&nbsp;649&nbsp;990&nbsp;сум</span><span class="pp pp5" data-i18n="b12.p2m5">1&nbsp;499&nbsp;990&nbsp;сум</span><span class="pp pp9" data-i18n="b12.p2m9">1&nbsp;349&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</span><span class="pr" data-i18n="b12.r2">2&nbsp;889&nbsp;990&nbsp;сум</span></p>
           <p class="ps-b" data-i18n="b15.ps4">Открыть модуль «Старт»</p>
         </div>
       </div>
@@ -784,7 +779,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
       </div>
     </div>
     <div class="final-cta">
-      <p class="t-timer t-timer--sm glass"><span class="tt-live"><span class="tt-l" data-i18n="b12.timer">Спеццена:</span> <b class="tt-v" data-timer>—</b></span><span class="tt-over" data-i18n="b16.timer_over">Спеццена закончилась</span></p>
+      <p class="t-timer t-timer--sm glass"><span class="tt-live"><span class="tt-l sp" data-i18n="b12.timer">Спеццена:</span><span class="tt-l po" data-i18n="b16.timer2">Цена для&nbsp;зрителей урока:</span> <b class="tt-v" data-timer>—</b></span></p>
       <a class="btn" href="#tariffs" data-track="cta" data-place="final"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal">Забрать «Про» по&nbsp;спеццене</span></span></a>
       <a class="link" href="#faq" data-link="manager" data-track="manager" data-place="final" data-i18n="b16.ask">Задать вопрос менеджеру</a>
     </div>
@@ -866,7 +861,7 @@ if(!q.get('shot')&&window.matchMedia&&!matchMedia('(prefers-reduced-motion: redu
 <!-- ============ нижняя панель: капсула по центру (от 768 px) / полоса на всю ширину (телефон) ============ -->
 <div class="dock" role="region" aria-label="Быстрые действия" data-i18n-aria-label="dock.region">
   <div class="dock-in">
-    <p class="dock-info"><span class="di-price"><span data-i18n="dock.price_l">«Про»</span> <b><span class="pp pp0 sp" data-i18n="dock.price">1&nbsp;649&nbsp;990&nbsp;сум</span><span class="pp pp5" data-i18n="b12.p2m5">1&nbsp;499&nbsp;990&nbsp;сум</span><span class="pp pp9" data-i18n="b12.p2m9">1&nbsp;349&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</span></b></span><span class="di-timer"><span data-i18n="b12.timer">Спеццена:</span> <b data-timer>—</b></span></p>
+    <p class="dock-info"><span class="di-price"><span data-i18n="dock.price_l">«Про»</span> <b><span class="pp pp0 sp" data-i18n="dock.price">1&nbsp;649&nbsp;990&nbsp;сум</span><span class="pp pp5" data-i18n="b12.p2m5">1&nbsp;499&nbsp;990&nbsp;сум</span><span class="pp pp9" data-i18n="b12.p2m9">1&nbsp;349&nbsp;990&nbsp;сум</span><span class="po" data-i18n="b12.l2">2&nbsp;069&nbsp;990&nbsp;сум</span><span class="pr" data-i18n="b12.r2">2&nbsp;889&nbsp;990&nbsp;сум</span></b></span><span class="di-timer"><span data-i18n="b12.timer">Спеццена:</span> <b data-timer>—</b></span></p>
     <a class="btn dock-btn" href="#tariffs" data-track="cta" data-place="dock"><span class="btn-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><rect x="7.5" y="3" width="12" height="15" rx="2.2"/><path d="M4.5 7v11.5A2.5 2.5 0 0 0 7 21h9.5"/><path d="M11 9.5h5M11 13h3.5"/></svg></span><span class="btn-label"><span class="l-std" data-i18n="cta.start">Начать курс</span><span class="l-dl" data-i18n="cta.deal_s">«Про» по&nbsp;спеццене</span></span></a>
     <a class="dock-mgr" href="#faq" data-link="manager" data-track="manager" data-place="dock" aria-label="Написать менеджеру" data-i18n-aria-label="dock.mgr"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M21 4.5L3.5 11.2l5.6 2.1 2.1 6.2 3-3.9 4.6 3.4z"/><path d="M9.1 13.3l8.3-6.1"/></svg></a>
   </div>
