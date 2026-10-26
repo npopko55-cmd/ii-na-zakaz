@@ -91,7 +91,7 @@
       var url = special ? SPECIAL_PAY[key] : '';
       LINKS[key] = url;
       $$('[data-link="' + key + '"]').forEach(function (a) {
-        a.href = url ? withAttrib(url) : '#pay';
+        a.href = url ? withAttrib(url) : '#tariffs';
         if (url) { a.target = '_blank'; a.rel = 'noopener'; }
         else { a.removeAttribute('target'); a.removeAttribute('rel'); }
       });
