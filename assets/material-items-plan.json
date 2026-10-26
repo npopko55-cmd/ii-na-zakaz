@@ -1,0 +1,227 @@
+[
+  {
+    "module": 0,
+    "items": [
+      {
+        "key": "calc",
+        "label": "Калькулятор «Моя цифра»",
+        "asset": "assets/img/material-items/m0-calc.webp"
+      },
+      {
+        "key": "exercises",
+        "label": "6 упражнений против страха",
+        "asset": "assets/img/material-items/m0-exercises.webp"
+      },
+      {
+        "key": "prompts",
+        "label": "Промпты",
+        "asset": "assets/img/material-items/m0-prompts.webp"
+      },
+      {
+        "key": "guide",
+        "label": "Установка нейросетей",
+        "asset": "assets/img/material-items/m0-guide.webp"
+      }
+    ]
+  },
+  {
+    "module": 1,
+    "items": [
+      {
+        "key": "scenarios",
+        "label": "10 сценариев ботов",
+        "asset": "assets/img/material-items/m1-scenarios.webp"
+      },
+      {
+        "key": "repos",
+        "label": "2 готовых репозитория",
+        "asset": "assets/img/material-items/m1-repos.webp"
+      },
+      {
+        "key": "prompts",
+        "label": "Промпты",
+        "asset": "assets/img/material-items/m1-prompts.webp"
+      },
+      {
+        "key": "plan",
+        "label": "План запуска",
+        "asset": "assets/img/material-items/m1-plan.webp"
+      },
+      {
+        "key": "check",
+        "label": "Чек-лист запуска",
+        "asset": "assets/img/material-items/m1-check.webp"
+      }
+    ]
+  },
+  {
+    "module": 2,
+    "items": [
+      {
+        "key": "catalog",
+        "label": "Каталог сайтов",
+        "asset": "assets/img/material-items/m2-catalog.webp"
+      },
+      {
+        "key": "structures",
+        "label": "5 структур сайтов",
+        "asset": "assets/img/material-items/m2-structures.webp"
+      },
+      {
+        "key": "prompts",
+        "label": "7 промптов",
+        "asset": "assets/img/material-items/m2-prompts.webp"
+      },
+      {
+        "key": "check",
+        "label": "Чек-лист готовности",
+        "asset": "assets/img/material-items/m2-check.webp"
+      }
+    ]
+  },
+  {
+    "module": 3,
+    "items": [
+      {
+        "key": "prompts",
+        "label": "30 промптов",
+        "asset": "assets/img/material-items/m3-prompts.webp"
+      },
+      {
+        "key": "calendar",
+        "label": "Шаблон контент-плана",
+        "asset": "assets/img/material-items/m3-calendar.webp"
+      },
+      {
+        "key": "check",
+        "label": "Чек-лист публикации",
+        "asset": "assets/img/material-items/m3-check.webp"
+      },
+      {
+        "key": "package",
+        "label": "Пример пакета услуг",
+        "asset": "assets/img/material-items/m3-package.webp"
+      }
+    ]
+  },
+  {
+    "module": 4,
+    "items": [
+      {
+        "key": "pipeline",
+        "label": "Скилл «Пайплайн рилса»",
+        "asset": "assets/img/material-items/m4-pipeline.webp"
+      },
+      {
+        "key": "references",
+        "label": "База референсов",
+        "asset": "assets/img/material-items/m4-references.webp"
+      },
+      {
+        "key": "carousel",
+        "label": "Шаблоны каруселей",
+        "asset": "assets/img/material-items/m4-carousel.webp"
+      }
+    ]
+  },
+  {
+    "module": 5,
+    "items": [
+      {
+        "key": "prompts",
+        "label": "20 промптов",
+        "asset": "assets/img/material-items/m5-prompts.webp"
+      },
+      {
+        "key": "cards",
+        "label": "Шаблоны карточек",
+        "asset": "assets/img/material-items/m5-cards.webp"
+      },
+      {
+        "key": "sources",
+        "label": "Исходники",
+        "asset": "assets/img/material-items/m5-sources.webp"
+      },
+      {
+        "key": "check",
+        "label": "Чек-лист качества",
+        "asset": "assets/img/material-items/m5-check.webp"
+      },
+      {
+        "key": "revisions",
+        "label": "Памятка по правкам",
+        "asset": "assets/img/material-items/m5-revisions.webp"
+      }
+    ]
+  },
+  {
+    "module": 6,
+    "items": [
+      {
+        "key": "portfolio",
+        "label": "Портфолио в Telegram",
+        "asset": "assets/img/material-items/m6-portfolio.webp"
+      },
+      {
+        "key": "sources",
+        "label": "15 источников",
+        "asset": "assets/img/material-items/m6-sources.webp"
+      },
+      {
+        "key": "table",
+        "label": "Таблица «30 заказчиков»",
+        "asset": "assets/img/material-items/m6-table.webp"
+      },
+      {
+        "key": "messages",
+        "label": "Шаблоны сообщений",
+        "asset": "assets/img/material-items/m6-messages.webp"
+      },
+      {
+        "key": "errors",
+        "label": "Памятка об ошибках",
+        "asset": "assets/img/material-items/m6-errors.webp"
+      }
+    ]
+  },
+  {
+    "module": 7,
+    "items": [
+      {
+        "key": "calc",
+        "label": "Калькулятор цены",
+        "asset": "assets/img/material-items/m7-calc.webp"
+      },
+      {
+        "key": "call",
+        "label": "Сценарий созвона",
+        "asset": "assets/img/material-items/m7-call.webp"
+      },
+      {
+        "key": "objections",
+        "label": "Ответы на возражения",
+        "asset": "assets/img/material-items/m7-objections.webp"
+      },
+      {
+        "key": "proposal",
+        "label": "Шаблон КП",
+        "asset": "assets/img/material-items/m7-proposal.webp"
+      },
+      {
+        "key": "contract",
+        "label": "Шаблон договора",
+        "asset": "assets/img/material-items/m7-contract.webp"
+      },
+      {
+        "key": "act",
+        "label": "Шаблон акта",
+        "asset": "assets/img/material-items/m7-act.webp"
+      },
+      {
+        "key": "payment",
+        "label": "Памятка об оплате",
+        "asset": "assets/img/material-items/m7-payment.webp"
+      }
+    ]
+  }
+]

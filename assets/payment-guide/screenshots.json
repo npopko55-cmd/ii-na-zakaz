@@ -1,0 +1,24 @@
+{
+  "slides": [
+    {
+      "file": "assets/payment-guide/01-vozrast.webp",
+      "title": "Подтверди, что тебе есть 18",
+      "caption": "На вопросе «Yoshingiz 18 va undan kattami?» нажми «HA»."
+    },
+    {
+      "file": "assets/payment-guide/02-grazhdanstvo.webp",
+      "title": "Выбери гражданство",
+      "caption": "Нажми «Oʻzbekiston Respublikasi»."
+    },
+    {
+      "file": "assets/payment-guide/03-anketa.webp",
+      "title": "Заполни анкету и нажми «Согласен»",
+      "caption": "Курс «ИИ на заказ» и тариф, сумма по цене тарифа, срок в месяцах, ФИО как в паспорте, телефон, почта, паспорт и дата рождения. Включи связь в Telegram и нажми «СОГЛАСЕН(НА)»."
+    },
+    {
+      "file": "assets/payment-guide/04-gotovo.webp",
+      "title": "Заявка отправлена",
+      "caption": "Увидишь «Tabriklaymiz!»: данные ушли на проверку, специалист скоро свяжется с тобой."
+    }
+  ]
+}

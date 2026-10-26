@@ -1,0 +1,266 @@
+{
+  "created": "2026-10-21",
+  "group": "modules3-5",
+  "reference_assets": [
+    "ic_bot.webp",
+    "ic_site.webp",
+    "ic_design.webp"
+  ],
+  "items": [
+    {
+      "id": "m3-prompts",
+      "subject": "A compact small stack of thirty prompt cards represented by a few layered thick dark cards, front card embossed with two simple speech bubbles and three short abstract bars. One unified stack object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A compact small stack of thirty prompt cards represented by a few layered thick dark cards, front card embossed with two simple speech bubbles and three short abstract bars. One unified stack object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m3-prompts.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-b67b7e17-7064-40d6-ab36-e1cc615f740d.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "19c3dbd6e54fc484c34cec334256fd8f50380786ce778b1893c19a2db9c993e5",
+      "bytes": 55268,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m3-calendar",
+      "subject": "A small freestanding desktop flip calendar with two polished binder rings, thick dark square pages, a neat embossed calendar grid and one glowing pink selected cell. One unified calendar object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A small freestanding desktop flip calendar with two polished binder rings, thick dark square pages, a neat embossed calendar grid and one glowing pink selected cell. One unified calendar object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m3-calendar.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-7cdb2c42-24a9-4467-ad9c-2d2a0b36e760.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "55d3978bec57a56e42add5bff779b8e36e719ea7a4cfb7a7fbee535de7374316",
+      "bytes": 54146,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m3-check",
+      "subject": "A small upright checklist clipboard with a dark metal clip, three clean inset horizontal rows and three prominent hot-pink checkmarks. One unified clipboard object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A small upright checklist clipboard with a dark metal clip, three clean inset horizontal rows and three prominent hot-pink checkmarks. One unified clipboard object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m3-check.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-6ac94819-4744-43ef-bb4e-20b8fcc6b434.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "b0b441bf1d78d500990c671b249fc02d29010f916257b38da15e6d1ce9a38721",
+      "bytes": 50552,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m3-package",
+      "subject": "A compact thick dark services folder holding three neatly spaced document tabs, with one small attached blank price tag hanging from its corner. One unified folder-and-documents object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A compact thick dark services folder holding three neatly spaced document tabs, with one small attached blank price tag hanging from its corner. One unified folder-and-documents object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m3-package.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-0791cc78-1db7-4724-83f2-ec86c7e9e66d.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "4a867003cf260c0acdb08595953f456472f714837e7cd53cbf390711af5bd94d",
+      "bytes": 36212,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m4-pipeline",
+      "subject": "A compact upright curved strip of cinema film with square perforations, three small connected metallic workflow nodes with subtle glowing pink connecting links in the foreground. One unified film workflow object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A compact upright curved strip of cinema film with square perforations, three small connected metallic workflow nodes with subtle glowing pink connecting links in the foreground. One unified film workflow object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m4-pipeline.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-14758a4f-bf48-4bcf-8582-4819b735e037.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "d2f43396f6ef49284de1390cdba4c4d94f0102bb7e2bf817d64de2f053a9e650",
+      "bytes": 68032,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m4-references",
+      "subject": "A small neat fan of four thick reference image cards, each with a different abstract thumbnail composition in muted pink and graphite. One unified fan of cards object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A small neat fan of four thick reference image cards, each with a different abstract thumbnail composition in muted pink and graphite. One unified fan of cards object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m4-references.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-ae5c9300-416e-4262-a263-3e09ac04ce4e.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "378048ad793b44f74366385701e86e730585ef6925d16d348bbd5a98092f7c44",
+      "bytes": 50768,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m4-carousel",
+      "subject": "Three thick overlapping social media carousel cards, front card shows simple abstract square and short embossed bars, cards staggered horizontally like a swipe sequence. One unified three-card object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: Three thick overlapping social media carousel cards, front card shows simple abstract square and short embossed bars, cards staggered horizontally like a swipe sequence. One unified three-card object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m4-carousel.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-bd3a214f-c687-4f16-b4ca-21016b0fc4f3.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "84e09711886f0136418afb802f7c90506c540e09415fad1fba4f908780ff8ef9",
+      "bytes": 48928,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m5-prompts",
+      "subject": "A compact thick stack of dark design prompt cards, front card has a polished pink cursor arrow and one small four-point sparkle near the cursor tip. One unified card stack object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A compact thick stack of dark design prompt cards, front card has a polished pink cursor arrow and one small four-point sparkle near the cursor tip. One unified card stack object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m5-prompts.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-d6050692-b83f-4748-be1b-32e339304ecb.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "37a663eb2b9a81aa5822e959aa8755c656dba09563dbd9ce4cc5a76c9c912bf3",
+      "bytes": 55478,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m5-cards",
+      "subject": "Three thick overlapping product listing cards, one shows a simple sculpted perfume bottle, another a small sneaker, third a minimal coffee cup; all are tiny stylized metal objects on the cards, no labels. One compact unified set of product cards.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: Three thick overlapping product listing cards, one shows a simple sculpted perfume bottle, another a small sneaker, third a minimal coffee cup; all are tiny stylized metal objects on the cards, no labels. One compact unified set of product cards. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m5-cards.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-614ebf64-3de6-4cfa-9d62-27cd9cb510e7.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "0183efd95ea35e11a04ae41a9e42667516b8d938696548896c965f42bfb9165b",
+      "bytes": 58484,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m5-sources",
+      "subject": "A compact open dark source-files folder with three clearly separated staggered design layer sheets emerging from it, the front sheet embossed with a simple stacked-layers symbol. One unified folder object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A compact open dark source-files folder with three clearly separated staggered design layer sheets emerging from it, the front sheet embossed with a simple stacked-layers symbol. One unified folder object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m5-sources.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-d7b371ab-0bb1-4a90-89b3-9ba66cb2a806.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "d4b7a93d7bbe74e618ba0eb0d30840983f626d423f74c1e6fd3f3e0714321050",
+      "bytes": 40226,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m5-check",
+      "subject": "A compact dark metallic quality-control board with three embossed check rows and a small polished inspection magnifier leaning against its lower corner. One unified quality checklist object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A compact dark metallic quality-control board with three embossed check rows and a small polished inspection magnifier leaning against its lower corner. One unified quality checklist object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m5-check.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-3dbb8e81-59c0-4766-98ce-aea966791d79.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "8e829e8c1c486cb9f964c9ded1dcaba9ccc7734adb275f86d9ea254909ab648f",
+      "bytes": 65022,
+      "visual_check": "pass"
+    },
+    {
+      "id": "m5-revisions",
+      "subject": "A small thick graphite spiral notepad, front page has two short embossed bars and a prominent raised circular pink revision arrow. One unified notepad object.",
+      "prompt": "Use case: stylized-concept. Asset type: a single small 3D material icon for a premium Russian AI course landing page. Primary request: A small thick graphite spiral notepad, front page has two short embossed bars and a prominent raised circular pink revision arrow. One unified notepad object. Style: polished stylized 3D product icon matching graphite robot, website window and fountain-pen reference icons; dark charcoal gunmetal body, smooth rounded beveled edges, subtle realistic metal reflections, vivid hot pink #ff1685 rim highlights and a restrained pink neon emissive accent. Composition: centered isolated object, square image, front three-quarter isometric view with slight top visibility, entire object within frame, around 15 percent clear padding all sides, coherent compact silhouette readable at 150 pixels. Soft studio lighting illuminates the dark surfaces. Background: genuinely transparent alpha, no backdrop, no floor plane, no studio wall, no large cast shadow, no vignette. No letters, words, digits, labels, logos, watermarks or text. No extra scene, no people, no collage layout. Only the requested object; pink light is local to the object edges, not a background.",
+      "transparent_background": true,
+      "mode": "builtin-image_gen",
+      "status": "complete",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m5-revisions.webp",
+      "source_png": "/Users/nikitapopko/.codex/generated_images/01a15ee9-fc91-7281-ba6a-f0799a1a7727/exec-f4f08407-b000-4113-9a40-323061c5cd65.png",
+      "dimensions": [
+        640,
+        640
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "bb6249fcb89bf86cb2924a01cd22937d4154464b2683bfda8098d41119974009",
+      "bytes": 57052,
+      "visual_check": "pass"
+    }
+  ],
+  "complete_count": 12,
+  "total_webp_bytes": 640168,
+  "qa_preview": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/qa-modules3-5.jpg"
+}

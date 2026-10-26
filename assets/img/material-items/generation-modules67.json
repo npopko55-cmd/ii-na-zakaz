@@ -1,0 +1,216 @@
+{
+  "group": "material-icons-modules67",
+  "created": "2026-10-21",
+  "reference_assets": [
+    "ic_bot.webp",
+    "ic_site.webp",
+    "ic_design.webp"
+  ],
+  "postprocessing": "Only format conversion and resize to 512x512; preserve generated alpha; no programmatic drawing.",
+  "assets": [
+    {
+      "file": "m6-errors.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single compact open-ring graphite notepad with a large central hot pink triangular warning symbol containing a simple vertical exclamation mark. Dark charcoal paper, a few broad debossed short checklist lines, no text. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-bf354ec6-b9ee-40fa-857d-31b5b50288c6.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m6-errors.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 39990,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m6-messages.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: two overlapping chunky three-dimensional chat speech bubbles, dark graphite bodies with smooth bevelled edges and broad pink message-line accents. One coherent compact icon, large main bubble and smaller reply bubble. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-d6a07d49-aa94-4de8-8318-629d4381b90e.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m6-messages.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 34590,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m6-portfolio.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single upright smartphone with a small Telegram-style portfolio layout represented only by three stacked thumbnail cards on its screen. One dominant phone silhouette, small pink media thumbnails on dark screen, no messaging logos or words. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-ca8e8fb7-74d6-4e35-88df-375decd9e9b1.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m6-portfolio.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 30760,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m6-sources.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a compact stack of three thick dark company contact cards, each with a single simple pink building pictogram, and a small graphite magnifying glass leaning over the front card. Clear single compact stack silhouette. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-8aeb89c4-b307-4f35-9c3e-b9a84ac11ee5.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m6-sources.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 35338,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m6-table.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single graphite tablet with a slightly angled landscape screen showing a simple table: four broad columns, five rows, clean raised dark cells and several pink cell accents. Clear unmistakable spreadsheet grid, no words or digits. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-ac8153f8-8b97-41a5-a80f-8a65bade2a7e.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m6-table.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 37606,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-act.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single thick graphite completion document with one large vivid pink checkmark and a small raised round graphite stamp with a pink rim near the lower corner. Broad blank line shapes only, no letters or numbers. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-c8cdf3b6-8f18-4b6e-af12-94d2e813247a.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-act.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 42830,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-calc.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single stylish thick graphite calculator, tactile raised chunky dark keys, a dark blank display with a bright pink border and two pink accent keys. Minimal iconic shape, no numbers or letters on the keys. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-a882caec-056a-48eb-ae2b-9e73eafda7c8.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-calc.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 41328,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-call.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single compact phone receiver leaning against one dark paper plan sheet. The plan sheet has only three broad pink check marks and blank line shapes. Receiver remains dominant and readable, one coherent object assembly. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-acb21422-90a1-4459-8e9c-d009ac0d1520.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-call.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 41096,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-contract.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single dark contract document with one graphite fountain pen laid diagonally across its lower corner, a blank signature line with a small simple pink flourish below it, broad abstract lines above. One compact document-and-pen object, no readable text. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-74e0c13b-1c59-43f6-9e0f-bf5ccc0661f9.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-contract.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 34296,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-objections.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: two overlapping thick graphite chat cards: front card has one large hot pink checkmark, smaller rear card has one bold raised pink question mark. Two-card compact silhouette, no other text. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-c29f80d7-0497-4632-b35e-7c932cae1d76.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-objections.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 36036,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-payment.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single dark graphite bank payment card leaning against a tiny dark notepad, card has a minimal metallic chip and one hot pink stripe, notepad has two simple check marks. Compact coherent icon, no card numbers, names, bank logos or readable text. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-2d7ffd2f-6882-4509-b0c0-f3c0c65985e3.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-payment.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 33858,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "m7-proposal.webp",
+      "prompt": "Use case: stylized-concept. Asset type: one small 3D icon for an AI course landing page, displayed at only 120px. Primary request: a single folded dark business proposal document, its front surface showing three simple vertical price-like columns through abstract blank bars, one pink highlighted column. Thick beveled charcoal paper, folded corner, no actual prices, words or digits. Style/medium: polished premium 3D product icon, physically rendered dark graphite black metal and dark charcoal paper, soft satin surfaces, clear bevels, brilliant hot pink edge lighting and a few glowing pink accents. Strong clean silhouette readable at 120px. Composition: exactly one coherent central object assembly, square canvas, close three-quarter view, object occupies about 82% of canvas with small transparent margins. Lighting: neutral soft studio key light showing dark material, crisp neon pink rim along top and right edges. Scene/backdrop: genuinely transparent background and alpha, no floor, no environment, no rectangle behind subject. Constraints: no readable text, no words, no letters, no numbers, no logos, no watermark, no large scene, no collage, no extraneous ornaments. Keep graphical marks broad and minimal.",
+      "source": "/Users/nikitapopko/.codex/generated_images/01a15f78-6cea-7fc3-9a5f-d0cfd3f9ad1b/exec-a5368129-201a-4a91-9882-5e8bf15035ac.png",
+      "output": "/Users/nikitapopko/Documents/My Claude folder/Работа/Узбекистан маркетинг/дизайн/лендинг-итог/assets/img/material-items/m7-proposal.webp",
+      "mode": "built-in image_gen",
+      "transparent_background": true,
+      "inspection": "approved; isolated compact icon, dark graphite and hot pink",
+      "width": 512,
+      "height": 512,
+      "format": "WebP",
+      "bytes": 31006,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    }
+  ]
+}

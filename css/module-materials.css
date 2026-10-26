@@ -1,0 +1,55 @@
+/* Каждый материал — небольшой отдельный предмет с подписью, 21.10. */
+#program .lv-materials-title {
+  margin: 26px 0 8px;
+  font: 700 17px/1.3 var(--f-text);
+  color: #fff;
+}
+#program .lv-body .lv-materials-row {
+  display: grid;
+  grid-template-columns: repeat(var(--items), minmax(0, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 6px 0 12px;
+}
+#program .lv-body .lv-materials-row li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  text-align: center;
+}
+#program .lv-body .lv-materials-row li::before { display: none; }
+#program .lv-materials-row img {
+  display: block;
+  width: 100%;
+  max-width: 112px;
+  height: 100px;
+  object-fit: contain;
+}
+#program .lv-materials-row span {
+  color: #e6e0e8;
+  font: 600 13px/1.3 var(--f-text);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+@media (max-width: 767px) {
+  #program .lv-body .lv-materials-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: #6d3b57 transparent;
+    padding-bottom: 14px;
+  }
+  #program .lv-body .lv-materials-row li {
+    flex: 0 0 96px;
+    scroll-snap-align: start;
+  }
+  #program .lv-materials-row img { width: 96px; height: 92px; }
+}

@@ -3,11 +3,12 @@
   'use strict';
   var doc = document.documentElement;
   var qs = new URLSearchParams(location.search);
+  var localReview = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && qs.has('preview');
   var SHOT = !!qs.get('shot');
   if (SHOT) { doc.classList.add('shot'); document.querySelectorAll('img[loading=lazy]').forEach(function (i) { i.loading = 'eager'; }); }
   var store = {
-    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
-    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) { /* приватный режим */ } }
+    get: function (k) { if (localReview) return null; try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { if (localReview) return; try { localStorage.setItem(k, v); } catch (e) { /* приватный режим */ } }
   };
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
@@ -15,11 +16,23 @@
   /* ================= НАСТРОЙКИ (вписывает Никита) ================= */
   // Ссылки: Telegram менеджера, оплата по тарифам, документы. Пустая строка — ссылки ещё нет:
   // тарифы ведут к блоку «Как оплатить», менеджер — к блоку «Вопросы», оферта и политика в подвале скрыты.
-  // pay_pro_m5 / pay_pro_m9 — оплата «Про» по цене за медали (5–8 медалей — 1 499 990, все 9 — 1 349 990 сум);
-  // пусто — кнопка «Про» ведёт на обычную ссылку pay_pro.
-  var LINKS = { manager: '', pay_base: '', pay_pro: '', pay_pro_m5: '', pay_pro_m9: '', pay_mentor: '', offer: '', privacy: '' };
+  // 22.10: публичные страницы Tribute сверены по названию и цене.
+  // Решение 22.10: медали не меняют цену. Для поздних ступеней ссылки ещё не предоставлены.
+  var LINKS = { manager: '', pay_base: 'https://web.tribute.tg/p/FEP', pay_pro: 'https://web.tribute.tg/p/H8u', pay_mentor: 'https://web.tribute.tg/p/H8w', pay_parts: 'https://aktivcredit.ru/ak/belyakov/', offer: '', privacy: '' };
+  var SPECIAL_PAY = { pay_base: LINKS.pay_base, pay_pro: LINKS.pay_pro, pay_mentor: LINKS.pay_mentor };
   // Счётчики: номер Яндекс Метрики и/или id проекта Microsoft Clarity. Пусто — не подключаются.
   var ANALYTICS = { metrika: '', clarity: '' };
+  var installmentTariff = null;
+  var paymentReady = !!(LINKS.pay_base || LINKS.pay_pro || LINKS.pay_mentor);
+  if (!LINKS.manager) $$('.help, .faq-ask').forEach(function (el) { el.hidden = true; });
+  function showPaymentAvailability() {
+    if (paymentReady) return;
+    var payIntro = $('[data-i18n="b15.sub"]');
+    if (payIntro) payIntro.textContent = 'Оплата пока недоступна. Способы и условия оплаты появятся здесь к старту набора.';
+    var payFaq = $('[data-i18n="b17.a7"]');
+    if (payFaq) payFaq.textContent = 'Оплата картой и частями откроется к старту набора. Условия рассрочки можно будет узнать до оформления.';
+  }
+  showPaymentAvailability();
 
   /* ---------- аналитика: события в window.dataLayer (и в Метрику, если она подключена) ---------- */
   window.dataLayer = window.dataLayer || [];
@@ -58,30 +71,44 @@
       return url.toString();
     } catch (e) { return u; }
   }
-  /* ---------- медали из бота (?m=0…9): своя цена «Про» по ступени; медали сгорают вместе со спецценой ---------- */
+  /* ---------- медали из бота (?m=0…9): достижения за уроки и задания ---------- */
   var medals = null, mq = qs.get('m');
   if (mq !== null && /^\d$/.test(mq)) { medals = +mq; store.set('offer_medals', mq); }
   else { var ms = store.get('offer_medals'); if (ms !== null && /^\d$/.test(ms)) medals = +ms; }
-  var tier = medals === null ? null : (medals >= 9 ? 9 : medals >= 5 ? 5 : 0);
-  if (tier !== null) {
-    doc.classList.add('has-medals', 'mt-' + tier, 'from-bot');
+  if (medals !== null) {
+    doc.classList.add('has-medals', 'from-bot');
     $$('[data-medals]').forEach(function (el) { el.textContent = String(medals); });
-    if (tier && LINKS['pay_pro_m' + tier]) LINKS.pay_pro = LINKS['pay_pro_m' + tier];
   }
   $$('[data-link]').forEach(function (a) {
     var key = a.getAttribute('data-link'), u = LINKS[key];
     if (u) { a.href = /^https?:/.test(u) ? withAttrib(u) : u; if (/^https?:/.test(u)) { a.target = '_blank'; a.rel = 'noopener'; } }
-    else if (key === 'offer' || key === 'privacy') a.hidden = true;
+    else if (key === 'offer' || key === 'privacy' || key === 'manager') a.hidden = true;
   });
+  function syncPaymentLinks(state) {
+    var special = state === 'live' || state === 'none';
+    ['base', 'pro', 'mentor'].forEach(function (tariff) {
+      var key = 'pay_' + tariff;
+      var url = special ? SPECIAL_PAY[key] : '';
+      LINKS[key] = url;
+      $$('[data-link="' + key + '"]').forEach(function (a) {
+        a.href = url ? withAttrib(url) : '#pay';
+        if (url) { a.target = '_blank'; a.rel = 'noopener'; }
+        else { a.removeAttribute('target'); a.removeAttribute('rel'); }
+      });
+    });
+  }
   document.addEventListener('click', function (e) {
     var a = e.target.closest('[data-track]'); if (!a) return;
     var kind = a.getAttribute('data-track'), place = a.getAttribute('data-place') || '';
     if (kind === 'tariff') {
-      var t = a.getAttribute('data-tariff'), mt = t === 'pro' && tier !== null && !doc.classList.contains('deadline-over') ? tier : '';
-      track('tariff_click', { tariff: t, medals_tier: mt }); if (LINKS['pay_' + t]) track('pay_click', { tariff: t, medals_tier: mt });
+      var t = a.getAttribute('data-tariff');
+      track('tariff_click', { tariff: t, medals: medals }); if (LINKS['pay_' + t]) track('pay_click', { tariff: t, medals: medals });
     }
     else if (kind === 'manager') track('manager_click', { place: place, linked: !!LINKS.manager });
-    else track('cta_click', { place: place });
+    else if (kind === 'installment') track('installment_click', { tariff: installmentTariff, place: place });
+    else {
+      track('cta_click', { place: place });
+    }
   });
 
   /* ---------- язык RU / UZ: переключатель виден, только когда есть перевод (флаг в strings.json → window.I18N_UZ) ---------- */
@@ -106,6 +133,7 @@
       });
     });
     doc.lang = lang;
+    showPaymentAvailability();
     $$('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
     store.set('lang', lang);
     calc(); counter(); tick();
@@ -221,7 +249,7 @@
   }
 
   /* ---------- таймер спеццены: только по дедлайну из ссылки бота (?deadline=<unix>), без перезапусков ---------- */
-  // Нет дедлайна → плашки «Новая цена» и таймера нет, только цены. После нуля — «спеццена закончилась», медали сгорают.
+  // Нет дедлайна → плашки «Новая цена» и таймера нет, только цены. После нуля начинается следующее ценовое окно. Медали цену не меняют.
   var deadline = 0, dq = qs.get('deadline') || qs.get('t');
   if (dq && /^\d{9,13}$/.test(dq)) { deadline = +dq < 1e12 ? +dq * 1000 : +dq; store.set('offer_deadline', String(deadline)); }
   else deadline = +store.get('offer_deadline') || 0;
@@ -236,7 +264,7 @@
     doc.classList.toggle('deadline-over', state === 'viewers' || state === 'regular');
     doc.classList.toggle('stage-viewers', state === 'viewers');
     doc.classList.toggle('stage-regular', state === 'regular');
-    if (state !== lastState) { lastState = state; track('offer_timer', { state: state }); }
+    if (state !== lastState) { syncPaymentLinks(state); lastState = state; track('offer_timer', { state: state }); }
     if (state !== 'live' && state !== 'viewers') return;
     var end = state === 'live' ? deadline : deadline + DAY;
     var s = Math.max(0, Math.floor((end - Date.now()) / 1000)), h = Math.floor(s / 3600);
@@ -280,6 +308,36 @@
         track('pay_tab', { tab: t.id });
       });
     });
+  });
+  $$('[data-pay-method]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      installmentTariff = a.getAttribute('data-installment-tariff') || null;
+      var tab = document.getElementById(a.getAttribute('data-pay-method') === 'parts' ? 'tab-parts' : 'tab-card');
+      if (tab) tab.click();
+    });
+  });
+  $$('[data-pay-carousel]').forEach(function (carousel) {
+    var rail = $('.pay-carousel-track', carousel);
+    var items = $$('li', rail);
+    var prev = $('[data-carousel-prev]', carousel), next = $('[data-carousel-next]', carousel);
+    function update() {
+      prev.disabled = rail.scrollLeft <= 2;
+      next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+    }
+    function move(direction) {
+      var first = items[0]; if (!first) return;
+      var gap = parseFloat(getComputedStyle(rail).columnGap) || 16;
+      rail.scrollBy({ left: direction * (first.getBoundingClientRect().width + gap), behavior: 'smooth' });
+    }
+    prev.addEventListener('click', function () { move(-1); });
+    next.addEventListener('click', function () { move(1); });
+    rail.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    if (window.ResizeObserver) new ResizeObserver(update).observe(rail);
+    $$('[role=tab]').forEach(function (tab) {
+      tab.addEventListener('click', function () { requestAnimationFrame(update); });
+    });
+    update();
   });
 
   var acted = false; ['pointerdown', 'keydown', 'touchstart'].forEach(function (t) { document.addEventListener(t, function () { acted = true; }, { passive: true, once: true }); });
@@ -359,4 +417,45 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutScreens);
   window.addEventListener('load', layoutScreens);
   layoutScreens();
+})();
+
+/* 26.10: рассрочка по шагам — выбор тарифа, сумма по текущей ступени цены (классы stage-* ставит таймер), копирование */
+(function () {
+  function stage() { var c = document.documentElement.classList; return c.contains('stage-regular') ? 'regular' : c.contains('stage-viewers') ? 'viewers' : 'special'; }
+  function sync() {
+    var on = document.querySelector('.ak-tf.on'); if (!on) return;
+    var v = on.getAttribute('data-' + stage());
+    document.querySelectorAll('[data-amount]').forEach(function (el) { if (v && el.textContent !== v) el.textContent = v; });
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('.ak-tf');
+    if (t) { document.querySelectorAll('.ak-tf').forEach(function (b) { var me = b === t; b.classList.toggle('on', me); b.setAttribute('aria-pressed', me ? 'true' : 'false'); }); sync(); }
+  });
+  sync(); setInterval(sync, 30000);
+  function fallback(text) { var t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(t); }
+  function copy(text, done) {
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () { fallback(text); done(); });
+    else { fallback(text); done(); }
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.ak-copy'); if (!b) return;
+    sync(); var v = b.parentNode.querySelector('.ak-v'); if (!v) return;
+    var label = b.textContent;
+    copy(v.textContent.trim(), function () { b.classList.add('ok'); b.textContent = '✓ Скопировано'; setTimeout(function () { b.classList.remove('ok'); b.textContent = label; }, 1500); });
+  });
+})();
+
+/* 26.10: окно «Рассрочка по шагам» — открывается кнопками «Взять в рассрочку» с выбранным тарифом и ссылкой #rassrochka */
+(function () {
+  var m = document.getElementById('ak-modal'); if (!m) return;
+  function pick(t) { var b = m.querySelector('.ak-tf[data-tf="' + t + '"]'); if (b) b.click(); }
+  function open(t) { if (t) pick(t); m.hidden = false; document.body.style.overflow = 'hidden'; var body = m.querySelector('.akm-body'); if (body) body.scrollTop = 0; var c = m.querySelector('.akm-close'); c && c.focus(); }
+  function close() { if (m.hidden) return; m.hidden = true; document.body.style.overflow = ''; if (location.hash === '#rassrochka') history.replaceState(null, '', location.pathname + location.search); }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-ak-open],[data-pay-method="parts"]');
+    if (a) { e.preventDefault(); open(a.getAttribute('data-installment-tariff')); return; }
+    if (e.target === m || (e.target.closest && e.target.closest('[data-ak-close]'))) close();
+  }, true);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  if (location.hash === '#rassrochka') open(new URLSearchParams(location.search).get('tariff'));
 })();
