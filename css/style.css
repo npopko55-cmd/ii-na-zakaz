@@ -1447,7 +1447,7 @@ html:not(.from-bot) .only-bot{display:none!important}
 .ak-tf{min-height:46px;padding:10px 18px;border-radius:14px;border:1px solid #ffffff33;background:#ffffff0a;color:#fff;font:inherit;font-size:16px;font-weight:600;cursor:pointer}
 .ak-tf.on{background:#ff2b85;border-color:#ff2b85;box-shadow:0 0 20px #ff2b8555}
 .ak-step .pay-parts-cta{margin-top:12px}
-.ak-img{display:block;width:100%;max-height:460px;object-fit:contain;object-position:left top;margin-top:12px;border-radius:14px;border:1px solid #ffffff1f;background:#000}
+.ak-img{display:block;width:auto;height:auto;max-width:100%;max-height:520px;margin-top:12px;border-radius:14px;border:1px solid #ffffff1f}
 .ak-form{margin-top:12px;border-radius:16px;border:1px solid #ffffff1f;overflow:hidden}
 .ak-row{padding:12px 14px;background:#ffffff06}.ak-row+.ak-row{border-top:1px solid #ffffff14}
 .ak-row:nth-child(-n+2){background:#ff2b8514}
