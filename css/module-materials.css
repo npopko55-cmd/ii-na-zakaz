@@ -53,3 +53,15 @@
   }
   #program .lv-materials-row img { width: 96px; height: 92px; }
 }
+
+/* 28.10: подписи не рвут слова посередине («Калькулято р цены»). Колонка не уже 100 px: если предметов много, ряд переносится. */
+#program .lv-materials-row span { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+@media (min-width: 768px) {
+  #program .lv-body .lv-materials-row { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+}
+@media (min-width: 1400px) {
+  #program .lv-body .lv-materials-row[style*="--items:6"],
+  #program .lv-body .lv-materials-row[style*="--items:7"] { grid-template-columns: repeat(var(--items), minmax(0, 1fr)); gap: 10px; }
+  #program .lv-materials-row[style*="--items:6"] span,
+  #program .lv-materials-row[style*="--items:7"] span { font-size: 12px; }
+}

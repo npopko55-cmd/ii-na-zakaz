@@ -440,8 +440,8 @@
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('.ak-copy'); if (!b) return;
     sync(); var v = b.parentNode.querySelector('.ak-v'); if (!v) return;
-    var label = b.textContent;
-    copy(v.textContent.trim(), function () { b.classList.add('ok'); b.textContent = '✓ Скопировано'; setTimeout(function () { b.classList.remove('ok'); b.textContent = label; }, 1500); });
+    // 28.10: в кнопке значок и две подписи (data-i18n) — переключаем классом, текст не трогаем
+    copy(v.textContent.trim(), function () { b.classList.add('ok'); clearTimeout(b._t); b._t = setTimeout(function () { b.classList.remove('ok'); }, 1500); });
   });
 })();
 
@@ -455,7 +455,28 @@
     var a = e.target.closest && e.target.closest('[data-ak-open],[data-pay-method="parts"]');
     if (a) { e.preventDefault(); open(a.getAttribute('data-installment-tariff')); return; }
     if (e.target === m || (e.target.closest && e.target.closest('[data-ak-close]'))) close();
+    else if (e.target.closest && e.target.closest('a[href="#privacy"]')) close();   // ссылка на политику в подвале — окно закрываем
   }, true);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   if (location.hash === '#rassrochka') open(new URLSearchParams(location.search).get('tariff'));
+})();
+
+/* 28.10: галочка «Согласен с политикой…» под кнопками оплаты (тарифы и окно рассрочки). Снята — кнопка оплаты неактивна. */
+(function () {
+  function target(box) { var card = box.closest('.tcard, .ak-b'); return card && card.querySelector('.tc-btn, .pay-parts-cta'); }
+  function sync(box) {
+    var a = target(box); if (!a) return;
+    var off = !box.checked;
+    a.classList.toggle('is-off', off);
+    if (off) { a.setAttribute('aria-disabled', 'true'); a.setAttribute('tabindex', '-1'); }
+    else { a.removeAttribute('aria-disabled'); a.removeAttribute('tabindex'); }
+  }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('[data-consent]'), sync); }
+  document.addEventListener('change', function (e) { if (e.target.matches && e.target.matches('[data-consent]')) sync(e.target); });
+  window.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[aria-disabled="true"]');
+    if (a) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+  window.addEventListener('pageshow', all);
+  all();
 })();
