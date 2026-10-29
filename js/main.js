@@ -18,7 +18,7 @@
   // тарифы ведут к блоку «Как оплатить», менеджер — к блоку «Вопросы», оферта и политика в подвале скрыты.
   // 22.10: публичные страницы Tribute сверены по названию и цене.
   // Решение 22.10: медали не меняют цену. Для поздних ступеней ссылки ещё не предоставлены.
-  var LINKS = { manager: '', pay_base: 'https://web.tribute.tg/p/FEP', pay_pro: 'https://web.tribute.tg/p/H8u', pay_mentor: 'https://web.tribute.tg/p/H8w', pay_parts: 'https://aktivcredit.ru/ak/belyakov/', offer: '', privacy: '' };
+  var LINKS = { manager: '', pay_base: 'https://web.tribute.tg/p/FEP', pay_pro: 'https://web.tribute.tg/p/H8u', pay_mentor: 'https://web.tribute.tg/p/H8w', pay_parts: 'https://aktivcredit.ru/ak/belyakov/', offer: 'offer.html', privacy: 'privacy.html' };   // 28.10: документы — свои страницы рядом с index.html
   var SPECIAL_PAY = { pay_base: LINKS.pay_base, pay_pro: LINKS.pay_pro, pay_mentor: LINKS.pay_mentor };
   // Счётчики: номер Яндекс Метрики и/или id проекта Microsoft Clarity. Пусто — не подключаются.
   var ANALYTICS = { metrika: '', clarity: '' };
@@ -121,12 +121,13 @@
     $$('[data-i18n]').forEach(function (el) {
       var k = el.getAttribute('data-i18n');
       if (!(k in RU_CACHE)) RU_CACHE[k] = el.innerHTML;
-      var v = lang === 'ru' ? RU_CACHE[k] : (t[k] == null ? null : String(t[k]).replace(/(\d)–(\d)/g, '$1⁠–⁠$2'));
-      // в шрифте заголовков нет ʻ (U+02BB) — в узбекских заголовках пишем ‘ (o‘, g‘)
-      if (v != null && lang === 'uz' && /Sofia/.test(getComputedStyle(el).fontFamily)) v = v.replace(/ʻ/g, '‘');
+      // 28.10: index.html собирается сразу на узбекском — русский текст берём из словаря (D.ru), а не из разметки
+      var v = lang === 'ru' ? (D.ru && D.ru[k] != null ? D.ru[k] : RU_CACHE[k]) : (t[k] == null ? null : String(t[k]).replace(/(\d)–(\d)/g, '$1⁠–⁠$2'));
+      // в шрифте заголовков нет ʻ (U+02BB) и ʼ (U+02BC) — в узбекских заголовках пишем ‘ и ’ (o‘, g‘, ma’no)
+      if (v != null && lang === 'uz' && /Sofia/.test(getComputedStyle(el).fontFamily)) v = v.replace(/ʻ/g, '‘').replace(/ʼ/g, '’');
       if (v != null && el.innerHTML !== v) el.innerHTML = v;
     });
-    ['alt', 'aria-label'].forEach(function (a) {
+    ['alt', 'aria-label', 'content'].forEach(function (a) {
       $$('[data-i18n-' + a + ']').forEach(function (el) {
         var k = el.getAttribute('data-i18n-' + a);
         if (t[k] != null) el.setAttribute(a, String(t[k]).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' '));
@@ -411,8 +412,9 @@
   }
 
   /* ---------- старт ---------- */
-  var saved = qs.get('lang') || store.get('lang');
-  if (saved && saved !== 'ru' && UZ) applyLang(saved); else { $$('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === 'ru')); }); }
+  // 28.10: узбекский — основной язык. Русский — по ?lang=ru или после выбора RU (выбор хранится в localStorage «lang»)
+  var saved = (qs.get('lang') || store.get('lang') || 'uz').toLowerCase();
+  applyLang(saved === 'ru' ? 'ru' : 'uz');
   track('page_view', { ref: attrib.ref || '', uid: attrib.uid || '', utm_source: attrib.utm_source || '', has_deadline: !!deadline, medals: medals === null ? '' : medals });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutScreens);
   window.addEventListener('load', layoutScreens);
