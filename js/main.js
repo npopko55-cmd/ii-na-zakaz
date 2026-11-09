@@ -274,8 +274,8 @@
   }
   tick(); setInterval(tick, 1000);
 
-  /* ---------- калькулятор дохода (блок 6): цены — нижние границы канона, курс ≈ 11 800 ---------- */
-  var RATE = 11800, calcTimer;
+  /* ---------- калькулятор дохода (блок 6): цены — нижние границы канона, курс 12 000 (правка Асилбека 09.11) ---------- */
+  var RATE = 12000, calcTimer;
   function fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
   function calc() {
     var box = $('[data-calc]'); if (!box) return;
