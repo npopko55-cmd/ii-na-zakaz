@@ -28,9 +28,9 @@
   function showPaymentAvailability() {
     if (paymentReady) return;
     var payIntro = $('[data-i18n="b15.sub"]');
-    if (payIntro) payIntro.textContent = 'Оплата пока недоступна. Способы и условия оплаты появятся здесь к старту набора.';
+    if (payIntro) payIntro.textContent = 'Toʻlov hozircha mavjud emas. Toʻlov usullari va shartlari qabul boshlanishiga qadar shu yerda paydo boʻladi.';
     var payFaq = $('[data-i18n="b17.a7"]');
-    if (payFaq) payFaq.textContent = 'Оплата картой и частями откроется к старту набора. Условия рассрочки можно будет узнать до оформления.';
+    if (payFaq) payFaq.textContent = 'Karta bilan va boʻlib toʻlash qabul boshlanishiga qadar ochiladi. Boʻlib toʻlash shartlarini rasmiylashtirishdan oldin bilib olasiz.';
   }
   showPaymentAvailability();
 
@@ -116,7 +116,7 @@
   var RU_CACHE = {};
   function applyLang(lang) {
     var D = window.I18N || {};
-    if (!D[lang] || (lang === 'uz' && !UZ)) lang = 'ru';
+    lang = 'uz';
     var t = D[lang];
     $$('[data-i18n]').forEach(function (el) {
       var k = el.getAttribute('data-i18n');
@@ -413,8 +413,7 @@
 
   /* ---------- старт ---------- */
   // 28.10: узбекский — основной язык. Русский — по ?lang=ru или после выбора RU (выбор хранится в localStorage «lang»)
-  var saved = (qs.get('lang') || store.get('lang') || 'uz').toLowerCase();
-  applyLang(saved === 'ru' ? 'ru' : 'uz');
+  applyLang('uz'); // 17.11: только узбекский, ?lang=ru и сохранённый выбор не действуют
   track('page_view', { ref: attrib.ref || '', uid: attrib.uid || '', utm_source: attrib.utm_source || '', has_deadline: !!deadline, medals: medals === null ? '' : medals });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutScreens);
   window.addEventListener('load', layoutScreens);
