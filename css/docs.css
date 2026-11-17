@@ -37,3 +37,13 @@ blockquote{margin:0 0 16px;padding:2px 0 2px 16px;border-left:2px solid var(--li
 .foot nav a:hover{text-decoration:underline}
 .foot nav a[aria-current="page"]{color:var(--pink-hi)}
 .foot p{margin:0 0 6px}
+
+/* uz-cta: 17.11 (Никита) — с инструкции рассрочки заметная кнопка дальше, на тарифы сайта курса */
+.cta{margin:0 0 30px;padding:20px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(255,42,127,.18),rgba(255,42,127,.06));border:1px solid rgba(255,42,127,.45)}
+.cta-k{margin:0 0 6px;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink-hi)}
+.cta-t{margin:0 0 16px;color:var(--text)}
+.cta-btn{display:flex;align-items:center;justify-content:center;min-height:56px;padding:12px 20px;border-radius:14px;background:var(--pink);color:#fff;
+font-weight:800;font-size:17px;text-decoration:none;text-align:center;box-shadow:0 10px 28px rgba(255,42,127,.35)}
+.cta-btn:hover{background:var(--pink-hi);color:#fff}
+.cta-alt{display:block;margin-top:12px;text-align:center;color:var(--text-2);font-weight:600}
+.cta-end{margin:26px 0 8px}
