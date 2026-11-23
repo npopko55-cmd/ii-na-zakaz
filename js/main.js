@@ -71,6 +71,17 @@
       return url.toString();
     } catch (e) { return u; }
   }
+  /* ---------- 23.11 (Василий): заявка с тарифа — личка Никиты в Telegram с готовым текстом ---------- */
+  // Текст: тариф + хэштеги (#sayt, тариф, utm_content из бота — например #dars2). По хэштегу заявки ищутся в чатах.
+  var LEAD = { tg: 'npopko_dev', tariffs: { base: 'Bazaviy', pro: 'Pro', mentor: 'Mentorlik' } };
+  function leadSrc() { return (attrib.utm_content || attrib.ref || '').replace(/[^A-Za-z0-9_]/g, '').slice(0, 30); }
+  function leadUrl(tariff) {
+    var tags = ['#sayt', '#' + tariff], src = leadSrc();
+    if (src && /^[A-Za-z]/.test(src)) tags.push('#' + src);
+    var msg = 'Assalomu alaykum! Saytdan yozyapman. «' + (LEAD.tariffs[tariff] || tariff) + '» tarifi haqida batafsil bilmoqchiman.\n' + tags.join(' ');
+    return 'https://t.me/' + LEAD.tg + '?text=' + encodeURIComponent(msg);
+  }
+  $$('[data-lead]').forEach(function (a) { a.href = leadUrl(a.getAttribute('data-lead')); });
   /* ---------- медали из бота (?m=0…9): достижения за уроки и задания ---------- */
   var medals = null, mq = qs.get('m');
   if (mq !== null && /^\d$/.test(mq)) { medals = +mq; store.set('offer_medals', mq); }
@@ -104,6 +115,7 @@
       var t = a.getAttribute('data-tariff');
       track('tariff_click', { tariff: t, medals: medals }); if (LINKS['pay_' + t]) track('pay_click', { tariff: t, medals: medals });
     }
+    else if (kind === 'lead') track('lead_click', { tariff: a.getAttribute('data-tariff'), src: leadSrc(), medals: medals });
     else if (kind === 'manager') track('manager_click', { place: place, linked: !!LINKS.manager });
     else if (kind === 'installment') track('installment_click', { tariff: installmentTariff, place: place });
     else {
