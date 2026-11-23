@@ -13,6 +13,39 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
+  /* ---------- 23.11: учёт для дашборда бота — метка перехода (sid) и события «открыл сайт» / «заявка» ---------- */
+  // sid выдаёт бот в /go/site (зашифрован, Telegram id не виден). Сразу убираем его из адреса, храним 30 дней.
+  // Отправка — sendBeacon text/plain (без CORS-предзапроса); любой сбой молча игнорируется, сайт работает как раньше.
+  var BOT_EVENTS_URL = 'https://dars.aibuyurtma.com/api/site-event';   // пустая строка — учёт выключен
+  var SID_TTL_MS = 30 * 864e5;
+  var botSid = (function () {
+    var fresh = qs.get('sid');
+    if (fresh !== null) {
+      try {
+        qs.delete('sid');
+        var rest = qs.toString();
+        history.replaceState(history.state, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+      } catch (e) { /* старый браузер: метка останется в адресе */ }
+      if (/^v1\.[A-Za-z0-9_-]{40,120}$/.test(fresh)) { store.set('bot_sid', JSON.stringify({ sid: fresh, at: Date.now() })); return fresh; }
+    }
+    try {
+      var saved = JSON.parse(store.get('bot_sid') || 'null');
+      if (saved && typeof saved.sid === 'string' && Date.now() - saved.at < SID_TTL_MS) return saved.sid;
+    } catch (e) { /* испорченная запись — без метки */ }
+    return '';
+  })();
+  function botEvent(name, extra) {
+    if (!BOT_EVENTS_URL || SHOT || localReview) return;
+    try {
+      var body = { v: 1, e: name };
+      if (botSid) body.sid = botSid;
+      for (var k in extra || {}) body[k] = extra[k];
+      var text = JSON.stringify(body), sent = false;
+      try { sent = !!(navigator.sendBeacon && navigator.sendBeacon(BOT_EVENTS_URL, text)); } catch (x) { sent = false; }
+      if (!sent && window.fetch) fetch(BOT_EVENTS_URL, { method: 'POST', body: text, keepalive: true, credentials: 'omit', mode: 'no-cors' }).catch(function () {});
+    } catch (x) { /* учёт не должен мешать сайту */ }
+  }
+
   /* ================= НАСТРОЙКИ (вписывает Никита) ================= */
   // Ссылки: Telegram менеджера, оплата по тарифам, документы. Пустая строка — ссылки ещё нет:
   // тарифы ведут к блоку «Как оплатить», менеджер — к блоку «Вопросы», оферта и политика в подвале скрыты.
@@ -115,7 +148,10 @@
       var t = a.getAttribute('data-tariff');
       track('tariff_click', { tariff: t, medals: medals }); if (LINKS['pay_' + t]) track('pay_click', { tariff: t, medals: medals });
     }
-    else if (kind === 'lead') track('lead_click', { tariff: a.getAttribute('data-tariff'), src: leadSrc(), medals: medals });
+    else if (kind === 'lead') {
+      track('lead_click', { tariff: a.getAttribute('data-tariff'), src: leadSrc(), medals: medals });
+      botEvent('site_lead_click', { tariff: a.getAttribute('data-tariff') });
+    }
     else if (kind === 'manager') track('manager_click', { place: place, linked: !!LINKS.manager });
     else if (kind === 'installment') track('installment_click', { tariff: installmentTariff, place: place });
     else {
@@ -426,6 +462,7 @@
   /* ---------- старт ---------- */
   // 28.10: узбекский — основной язык. Русский — по ?lang=ru или после выбора RU (выбор хранится в localStorage «lang»)
   applyLang('uz'); // 17.11: только узбекский, ?lang=ru и сохранённый выбор не действуют
+  botEvent('site_view');
   track('page_view', { ref: attrib.ref || '', uid: attrib.uid || '', utm_source: attrib.utm_source || '', has_deadline: !!deadline, medals: medals === null ? '' : medals });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutScreens);
   window.addEventListener('load', layoutScreens);
